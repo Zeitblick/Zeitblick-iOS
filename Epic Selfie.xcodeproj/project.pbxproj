@@ -12,6 +12,8 @@
 		411D55FD1D9AF50A0056EE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411D55FB1D9AF50A0056EE98 /* Main.storyboard */; };
 		411D55FF1D9AF50A0056EE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 411D55FE1D9AF50A0056EE98 /* Assets.xcassets */; };
 		411D56021D9AF50A0056EE98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411D56001D9AF50A0056EE98 /* LaunchScreen.storyboard */; };
+		41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB7D8A1D9C65530007ADFE /* Alamofire.framework */; };
+		41BB7D921D9C67520007ADFE /* Spring.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB7D911D9C67520007ADFE /* Spring.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		411D55FE1D9AF50A0056EE98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		411D56011D9AF50A0056EE98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		411D56031D9AF50A0056EE98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41BB7D8A1D9C65530007ADFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		41BB7D911D9C67520007ADFE /* Spring.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Spring.framework; path = Carthage/Build/iOS/Spring.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */,
+				41BB7D921D9C67520007ADFE /* Spring.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +60,7 @@
 		411D55F61D9AF50A0056EE98 /* Epic Selfie */ = {
 			isa = PBXGroup;
 			children = (
+				41BB7D891D9C652A0007ADFE /* vendor */,
 				411D55F71D9AF50A0056EE98 /* AppDelegate.swift */,
 				411D55F91D9AF50A0056EE98 /* ViewController.swift */,
 				411D55FB1D9AF50A0056EE98 /* Main.storyboard */,
@@ -62,6 +69,15 @@
 				411D56031D9AF50A0056EE98 /* Info.plist */,
 			);
 			path = "Epic Selfie";
+			sourceTree = "<group>";
+		};
+		41BB7D891D9C652A0007ADFE /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				41BB7D8A1D9C65530007ADFE /* Alamofire.framework */,
+				41BB7D911D9C67520007ADFE /* Spring.framework */,
+			);
+			name = vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +90,7 @@
 				411D55F01D9AF50A0056EE98 /* Sources */,
 				411D55F11D9AF50A0056EE98 /* Frameworks */,
 				411D55F21D9AF50A0056EE98 /* Resources */,
+				41BB7D901D9C65CA0007ADFE /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -131,6 +148,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41BB7D901D9C65CA0007ADFE /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Spring.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		411D55F01D9AF50A0056EE98 /* Sources */ = {
@@ -260,6 +296,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V432EVYA77;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Epic Selfie/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.digitalstuff.Epic-Selfie";
@@ -273,6 +313,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V432EVYA77;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Epic Selfie/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.digitalstuff.Epic-Selfie";
@@ -300,6 +344,7 @@
 				411D56081D9AF50A0056EE98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
