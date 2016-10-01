@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4103B56F1DA005A00065593A /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4103B56E1DA005A00065593A /* Environment.plist */; };
 		4103B5721DA006A20065593A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103B5711DA006A20065593A /* Environment.swift */; };
+		4103B5741DA00CD00065593A /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103B5731DA00CD00065593A /* ImageHelper.swift */; };
 		411D55F81D9AF50A0056EE98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D55F71D9AF50A0056EE98 /* AppDelegate.swift */; };
 		411D55FA1D9AF50A0056EE98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D55F91D9AF50A0056EE98 /* ViewController.swift */; };
 		411D55FD1D9AF50A0056EE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411D55FB1D9AF50A0056EE98 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		4103B56E1DA005A00065593A /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Environment.plist; sourceTree = "<group>"; };
 		4103B5711DA006A20065593A /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = ../Environment.swift; sourceTree = "<group>"; };
+		4103B5731DA00CD00065593A /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		411D55F41D9AF50A0056EE98 /* Epic Selfie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Epic Selfie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		411D55F71D9AF50A0056EE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		411D55F91D9AF50A0056EE98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				41BB7D891D9C652A0007ADFE /* vendor */,
 				411D55F71D9AF50A0056EE98 /* AppDelegate.swift */,
 				411D55F91D9AF50A0056EE98 /* ViewController.swift */,
+				4103B5731DA00CD00065593A /* ImageHelper.swift */,
 				411D55FB1D9AF50A0056EE98 /* Main.storyboard */,
 				411D55FE1D9AF50A0056EE98 /* Assets.xcassets */,
 				411D56001D9AF50A0056EE98 /* LaunchScreen.storyboard */,
@@ -309,6 +312,7 @@
 				416680521D9C6CE200B60522 /* DesignableTextView.swift in Sources */,
 				4166804F1D9C6CE200B60522 /* DesignableLabel.swift in Sources */,
 				416680651D9C6CE200B60522 /* UnwindSegue.swift in Sources */,
+				4103B5741DA00CD00065593A /* ImageHelper.swift in Sources */,
 				416680631D9C6CE200B60522 /* TransitionManager.swift in Sources */,
 				4166804C1D9C6CE200B60522 /* BlurView.swift in Sources */,
 				416680621D9C6CE200B60522 /* SpringView.swift in Sources */,

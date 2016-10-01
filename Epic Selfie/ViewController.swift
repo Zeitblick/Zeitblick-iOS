@@ -11,7 +11,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var photoButton: DesignableButton!
+    @IBOutlet weak var submitButton: DesignableButton!
+
     @IBOutlet weak var imageView: UIImageView!
+
     var image: UIImage?
 
     private lazy var imagePicker: UIImagePickerController = {
@@ -25,7 +28,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         photoButton.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
-
+        submitButton.addTarget(self, action: #selector(submitPhoto), for: .touchUpInside)
     }
 
     // mark: actions
@@ -33,6 +36,17 @@ class ViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
 
+    func submitPhoto() {
+        guard let image = self.image ?? nil else {
+            print("no image")
+            return
+        }
+
+        guard let imageBase64 = ImageHelper.base64EncodeImage(image: image) else {
+            print("couldn't encode image")
+            return
+        }
+    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {

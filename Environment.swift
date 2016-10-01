@@ -9,6 +9,7 @@
 import Foundation
 
 class Environment {
+    static let sharedInstance = Environment()
 
     private lazy var dict: NSDictionary? = {
         guard let filePath = Bundle.main.path(forResource: "Environment", ofType: "plist") else {
