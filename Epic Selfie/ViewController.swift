@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var photoButton: DesignableButton!
+    @IBOutlet weak var imageView: UIImageView!
+    var image: UIImage?
 
     private lazy var imagePicker: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
@@ -36,6 +38,16 @@ class ViewController: UIViewController {
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print(#function)
+
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.image = image
+            imageView.image = self.image
+        }
+
+        dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
 }
