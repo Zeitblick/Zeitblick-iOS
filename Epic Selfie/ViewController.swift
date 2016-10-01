@@ -46,6 +46,72 @@ class ViewController: UIViewController {
             print("couldn't encode image")
             return
         }
+
+        createRequest(imageData: imageBase64)
+
+    }
+
+    func createRequest(imageData: String) {
+        // Create our request URL
+        let API_KEY = Environment.sharedInstance.googleCloudApiKey
+        let url = URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(API_KEY)")!
+        let request = MutableURLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(Bundle.main.bundleIdentifier ?? "", forHTTPHeaderField: "X-Ios-Bundle-Identifier")
+
+        // Build our API request
+        let jsonRequest: Parameters = [
+            "requests": [
+                "image": [
+                    "content": imageData
+                ],
+                "features": [
+//                    [
+//                        "type": "LABEL_DETECTION",
+//                        "maxResults": 10
+//                    ],
+                    [
+                        "type": "FACE_DETECTION",
+                        "maxResults": 10
+                    ]
+                ]
+            ]
+        ]
+
+//        Alamofire.request("https://vision.googleapis.com/v1/images:annotate?key=\(API_KEY)", method: .post, parameters: parameters, encoding: JSONEncoding.default)
+
+        // Serialize the JSON
+        request.httpBody = try! JSONSerialization.data(withJSONObject: jsonRequest, options: [])
+
+        // Run the request on a background thread
+
+        self.view.showLoading()
+
+        DispatchQueue.global(qos: .background).async {
+            self.runRequestOnBackgroundThread(request as URLRequest)
+        }
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+
+
+
+    }
+
+
+    func runRequestOnBackgroundThread(_ request: URLRequest) {
+        let session = URLSession.shared
+
+        // run the request
+        let task = session.dataTask(with: request, completionHandler: {data, response, error -> Void in
+//            self.analyzeResults(data!)
+            print(response)
+            print(data)
+            DispatchQueue.main.sync {
+                self.view.hideLoading()
+            }
+        })
+        print("fire")
+        task.resume()
     }
 }
 
