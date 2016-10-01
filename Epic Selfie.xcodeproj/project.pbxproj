@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4103B56F1DA005A00065593A /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4103B56E1DA005A00065593A /* Environment.plist */; };
+		4103B5721DA006A20065593A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103B5711DA006A20065593A /* Environment.swift */; };
 		411D55F81D9AF50A0056EE98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D55F71D9AF50A0056EE98 /* AppDelegate.swift */; };
 		411D55FA1D9AF50A0056EE98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D55F91D9AF50A0056EE98 /* ViewController.swift */; };
 		411D55FD1D9AF50A0056EE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411D55FB1D9AF50A0056EE98 /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4103B56E1DA005A00065593A /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Environment.plist; sourceTree = "<group>"; };
+		4103B5711DA006A20065593A /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = ../Environment.swift; sourceTree = "<group>"; };
 		411D55F41D9AF50A0056EE98 /* Epic Selfie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Epic Selfie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		411D55F71D9AF50A0056EE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		411D55F91D9AF50A0056EE98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4103B5701DA005A70065593A /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				4103B56E1DA005A00065593A /* Environment.plist */,
+				4103B5711DA006A20065593A /* Environment.swift */,
+			);
+			name = Environment;
+			sourceTree = "<group>";
+		};
 		411D55EB1D9AF50A0056EE98 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +129,7 @@
 		411D55F61D9AF50A0056EE98 /* Epic Selfie */ = {
 			isa = PBXGroup;
 			children = (
+				4103B5701DA005A70065593A /* Environment */,
 				41BB7D891D9C652A0007ADFE /* vendor */,
 				411D55F71D9AF50A0056EE98 /* AppDelegate.swift */,
 				411D55F91D9AF50A0056EE98 /* ViewController.swift */,
@@ -235,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4103B56F1DA005A00065593A /* Environment.plist in Resources */,
 				416680551D9C6CE200B60522 /* Info.plist in Resources */,
 				411D56021D9AF50A0056EE98 /* LaunchScreen.storyboard in Resources */,
 				411D55FF1D9AF50A0056EE98 /* Assets.xcassets in Resources */,
@@ -287,6 +302,7 @@
 				416680491D9C6CE200B60522 /* AsyncButton.swift in Sources */,
 				416680561D9C6CE200B60522 /* KeyboardLayoutConstraint.swift in Sources */,
 				4166805D1D9C6CE200B60522 /* SpringButton.swift in Sources */,
+				4103B5721DA006A20065593A /* Environment.swift in Sources */,
 				4166804A1D9C6CE200B60522 /* AsyncImageView.swift in Sources */,
 				416680501D9C6CE200B60522 /* DesignableTabBarController.swift in Sources */,
 				4166804B1D9C6CE200B60522 /* AutoTextView.swift in Sources */,
