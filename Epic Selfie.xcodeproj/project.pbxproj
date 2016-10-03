@@ -10,6 +10,7 @@
 		4103B56F1DA005A00065593A /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4103B56E1DA005A00065593A /* Environment.plist */; };
 		4103B5721DA006A20065593A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103B5711DA006A20065593A /* Environment.swift */; };
 		4103B5741DA00CD00065593A /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103B5731DA00CD00065593A /* ImageHelper.swift */; };
+		4103B5761DA02A7E0065593A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4103B5751DA02A7E0065593A /* SwiftyJSON.framework */; };
 		411D55F81D9AF50A0056EE98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D55F71D9AF50A0056EE98 /* AppDelegate.swift */; };
 		411D55FA1D9AF50A0056EE98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D55F91D9AF50A0056EE98 /* ViewController.swift */; };
 		411D55FD1D9AF50A0056EE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411D55FB1D9AF50A0056EE98 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		4103B56E1DA005A00065593A /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Environment.plist; sourceTree = "<group>"; };
 		4103B5711DA006A20065593A /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = ../Environment.swift; sourceTree = "<group>"; };
 		4103B5731DA00CD00065593A /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		4103B5751DA02A7E0065593A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = "<group>"; };
 		411D55F41D9AF50A0056EE98 /* Epic Selfie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Epic Selfie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		411D55F71D9AF50A0056EE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		411D55F91D9AF50A0056EE98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4103B5761DA02A7E0065593A /* SwiftyJSON.framework in Frameworks */,
 				41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +190,7 @@
 			children = (
 				41BB7D8A1D9C65530007ADFE /* Alamofire.framework */,
 				4166802A1D9C6CE200B60522 /* Spring */,
+				4103B5751DA02A7E0065593A /* SwiftyJSON.framework */,
 			);
 			name = vendor;
 			sourceTree = "<group>";
@@ -271,6 +275,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -441,6 +446,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Epic\\ Selfie",
 				);
 				INFOPLIST_FILE = "Epic Selfie/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -459,6 +465,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Epic\\ Selfie",
 				);
 				INFOPLIST_FILE = "Epic Selfie/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
