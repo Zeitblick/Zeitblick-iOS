@@ -10,6 +10,9 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 
+/// pan: left/right, tilt: up/down, roll:sideways
+typealias HeadRotation = (pan: Double, tilt: Double, roll: Double)
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var photoButton: DesignableButton!
@@ -81,8 +84,6 @@ class ViewController: UIViewController {
             ]
         ]
 
-//        Alamofire.request("https://vision.googleapis.com/v1/images:annotate?key=\(API_KEY)", method: .post, parameters: parameters, encoding: JSONEncoding.default)
-
         // Serialize the JSON
         request.httpBody = try! JSONSerialization.data(withJSONObject: jsonRequest, options: [])
 
@@ -102,11 +103,41 @@ class ViewController: UIViewController {
             print(data)
             DispatchQueue.main.sync {
                 self.view.hideLoading()
-                self.analyzeResults(data!)
+//                self.analyzeResults(data!)
+                let rotation = self.getAngles(data!)
             }
         })
         print("fire")
         task.resume()
+    }
+
+    /// of first face
+    func getAngles(_ dataToParse: Data) -> HeadRotation? {
+        let json = JSON(data: dataToParse)
+        let errorObj: JSON = json["error"]
+
+        // Check for errors
+        guard errorObj.dictionaryValue == [:] else {
+            print("Error code \(errorObj["code"]): \(errorObj["message"])")
+            return nil
+        }
+
+        // Parse the response
+        let responses: JSON = json["responses"][0]
+
+        // Get face annotations
+        let faceAnnotations = responses["faceAnnotations"]
+        let numPeopleDetected = faceAnnotations.count
+        guard numPeopleDetected > 0 else {
+            print("No faces found")
+            return nil
+        }
+
+        print("People detected: \(numPeopleDetected)")
+        print("Pick first person")
+
+        let person: JSON = faceAnnotations[0]
+        return HeadRotation(pan: person["panAngle"].doubleValue, tilt: person["tiltAngle"].doubleValue, roll: person["rollAngle"].doubleValue)
     }
 
     func analyzeResults(_ dataToParse: Data) {
