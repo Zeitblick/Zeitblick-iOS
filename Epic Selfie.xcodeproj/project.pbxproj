@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4103B56F1DA005A00065593A /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4103B56E1DA005A00065593A /* Environment.plist */; };
+		4103B5721DA006A20065593A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103B5711DA006A20065593A /* Environment.swift */; };
+		4103B5741DA00CD00065593A /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4103B5731DA00CD00065593A /* ImageHelper.swift */; };
+		4103B5761DA02A7E0065593A /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4103B5751DA02A7E0065593A /* SwiftyJSON.framework */; };
 		411D55F81D9AF50A0056EE98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D55F71D9AF50A0056EE98 /* AppDelegate.swift */; };
 		411D55FA1D9AF50A0056EE98 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411D55F91D9AF50A0056EE98 /* ViewController.swift */; };
 		411D55FD1D9AF50A0056EE98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411D55FB1D9AF50A0056EE98 /* Main.storyboard */; };
 		411D55FF1D9AF50A0056EE98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 411D55FE1D9AF50A0056EE98 /* Assets.xcassets */; };
-		411D56021D9AF50A0056EE98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411D56001D9AF50A0056EE98 /* LaunchScreen.storyboard */; };
 		416680491D9C6CE200B60522 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166802B1D9C6CE200B60522 /* AsyncButton.swift */; };
 		4166804A1D9C6CE200B60522 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166802C1D9C6CE200B60522 /* AsyncImageView.swift */; };
 		4166804B1D9C6CE200B60522 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166802D1D9C6CE200B60522 /* AutoTextView.swift */; };
@@ -42,15 +45,19 @@
 		416680641D9C6CE200B60522 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416680471D9C6CE200B60522 /* TransitionZoom.swift */; };
 		416680651D9C6CE200B60522 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416680481D9C6CE200B60522 /* UnwindSegue.swift */; };
 		41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB7D8A1D9C65530007ADFE /* Alamofire.framework */; };
+		41CE03FA1DA567F800538796 /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41CE03F91DA567F800538796 /* Launch.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4103B56E1DA005A00065593A /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Environment.plist; sourceTree = "<group>"; };
+		4103B5711DA006A20065593A /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = ../Environment.swift; sourceTree = "<group>"; };
+		4103B5731DA00CD00065593A /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		4103B5751DA02A7E0065593A /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = "<group>"; };
 		411D55F41D9AF50A0056EE98 /* Epic Selfie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Epic Selfie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		411D55F71D9AF50A0056EE98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		411D55F91D9AF50A0056EE98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		411D55FC1D9AF50A0056EE98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		411D55FE1D9AF50A0056EE98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		411D56011D9AF50A0056EE98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		411D56031D9AF50A0056EE98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4166802B1D9C6CE200B60522 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		4166802C1D9C6CE200B60522 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -83,6 +90,7 @@
 		416680471D9C6CE200B60522 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		416680481D9C6CE200B60522 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		41BB7D8A1D9C65530007ADFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		41CE03F91DA567F800538796 /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4103B5761DA02A7E0065593A /* SwiftyJSON.framework in Frameworks */,
 				41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4103B5701DA005A70065593A /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				4103B56E1DA005A00065593A /* Environment.plist */,
+				4103B5711DA006A20065593A /* Environment.swift */,
+			);
+			name = Environment;
+			sourceTree = "<group>";
+		};
 		411D55EB1D9AF50A0056EE98 = {
 			isa = PBXGroup;
 			children = (
@@ -116,12 +134,14 @@
 		411D55F61D9AF50A0056EE98 /* Epic Selfie */ = {
 			isa = PBXGroup;
 			children = (
+				4103B5701DA005A70065593A /* Environment */,
 				41BB7D891D9C652A0007ADFE /* vendor */,
 				411D55F71D9AF50A0056EE98 /* AppDelegate.swift */,
 				411D55F91D9AF50A0056EE98 /* ViewController.swift */,
+				4103B5731DA00CD00065593A /* ImageHelper.swift */,
 				411D55FB1D9AF50A0056EE98 /* Main.storyboard */,
 				411D55FE1D9AF50A0056EE98 /* Assets.xcassets */,
-				411D56001D9AF50A0056EE98 /* LaunchScreen.storyboard */,
+				41CE03F91DA567F800538796 /* Launch.xib */,
 				411D56031D9AF50A0056EE98 /* Info.plist */,
 			);
 			path = "Epic Selfie";
@@ -170,6 +190,7 @@
 			children = (
 				41BB7D8A1D9C65530007ADFE /* Alamofire.framework */,
 				4166802A1D9C6CE200B60522 /* Spring */,
+				4103B5751DA02A7E0065593A /* SwiftyJSON.framework */,
 			);
 			name = vendor;
 			sourceTree = "<group>";
@@ -235,8 +256,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4103B56F1DA005A00065593A /* Environment.plist in Resources */,
+				41CE03FA1DA567F800538796 /* Launch.xib in Resources */,
 				416680551D9C6CE200B60522 /* Info.plist in Resources */,
-				411D56021D9AF50A0056EE98 /* LaunchScreen.storyboard in Resources */,
 				411D55FF1D9AF50A0056EE98 /* Assets.xcassets in Resources */,
 				411D55FD1D9AF50A0056EE98 /* Main.storyboard in Resources */,
 				416680581D9C6CE200B60522 /* LoadingView.xib in Resources */,
@@ -253,6 +275,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -287,12 +310,14 @@
 				416680491D9C6CE200B60522 /* AsyncButton.swift in Sources */,
 				416680561D9C6CE200B60522 /* KeyboardLayoutConstraint.swift in Sources */,
 				4166805D1D9C6CE200B60522 /* SpringButton.swift in Sources */,
+				4103B5721DA006A20065593A /* Environment.swift in Sources */,
 				4166804A1D9C6CE200B60522 /* AsyncImageView.swift in Sources */,
 				416680501D9C6CE200B60522 /* DesignableTabBarController.swift in Sources */,
 				4166804B1D9C6CE200B60522 /* AutoTextView.swift in Sources */,
 				416680521D9C6CE200B60522 /* DesignableTextView.swift in Sources */,
 				4166804F1D9C6CE200B60522 /* DesignableLabel.swift in Sources */,
 				416680651D9C6CE200B60522 /* UnwindSegue.swift in Sources */,
+				4103B5741DA00CD00065593A /* ImageHelper.swift in Sources */,
 				416680631D9C6CE200B60522 /* TransitionManager.swift in Sources */,
 				4166804C1D9C6CE200B60522 /* BlurView.swift in Sources */,
 				416680621D9C6CE200B60522 /* SpringView.swift in Sources */,
@@ -309,14 +334,6 @@
 				411D55FC1D9AF50A0056EE98 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		411D56001D9AF50A0056EE98 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				411D56011D9AF50A0056EE98 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -421,6 +438,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Epic\\ Selfie",
 				);
 				INFOPLIST_FILE = "Epic Selfie/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -439,6 +457,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Epic\\ Selfie",
 				);
 				INFOPLIST_FILE = "Epic Selfie/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
