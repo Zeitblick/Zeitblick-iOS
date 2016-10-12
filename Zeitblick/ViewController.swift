@@ -105,7 +105,24 @@ class ViewController: UIViewController {
             DispatchQueue.main.sync {
                 self.view.hideLoading()
 //                self.analyzeResults(data!)
-                let rotation = self.getAngles(data!)
+
+                guard let data = data, let rotation = self.getAngles(data) else {
+                    print("Couldn't get head rotation from selfie")
+                    return
+                }
+
+                let parameters: Parameters = [
+                    "pan": rotation.pan,
+                    "tilt": rotation.tilt,
+                    "roll": rotation.roll
+                ]
+
+                Alamofire.request("https://projekt-lisa.appspot.com/SimilarHeadRotation", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                    if let json = response.result.value {
+                        print("JSON: \(json)")
+                    }
+                    // get image
+                }
             }
         })
         print("fire")
