@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Ohne Kamerazugriff macht diese App keinen Sinn. :(</string>
+	<string>Ohne Kamerazugriff würde diese App wenig Sinn machen :(</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch</string>
 	<key>UIMainStoryboardFile</key>
