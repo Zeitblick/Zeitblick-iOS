@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  Epic Selfie
+//  Zeitblick
 //
 //  Created by Bastian Clausdorff on 27.09.16.
-//  Copyright © 2016 Epic Selfie. All rights reserved.
+//  Copyright © 2016 Zeitblick. All rights reserved.
 //
 
 import UIKit

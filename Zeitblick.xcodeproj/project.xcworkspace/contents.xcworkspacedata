@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Epic Selfie.xcodeproj">
+      location = "self:/Users/bc/Projects/cdv_epic_selfie/EpicSelfie-iOS/Zeitblick.xcodeproj">
    </FileRef>
 </Workspace>

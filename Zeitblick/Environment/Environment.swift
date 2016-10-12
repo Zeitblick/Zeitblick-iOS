@@ -1,9 +1,9 @@
 //
 //  Environment.swift
-//  Epic Selfie
+//  Zeitblick
 //
 //  Created by Bastian Clausdorff on 01.10.16.
-//  Copyright © 2016 Epic Selfie. All rights reserved.
+//  Copyright © 2016 Zeitblick. All rights reserved.
 //
 
 import Foundation
