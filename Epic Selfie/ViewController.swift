@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
+        imagePicker.cameraDevice = .front
         return imagePicker
     }()
 
