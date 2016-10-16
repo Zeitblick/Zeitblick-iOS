@@ -1,3 +1,4 @@
 github "Alamofire/Alamofire" "4.0.1"
 github "MengTo/Spring" "e5c127b7aa6ce31e5f4d01100a8991423a1eb498"
 github "SwiftyJSON/SwiftyJSON" "3.1.0"
+github "Alamofire/AlamofireImage" "3.1.0"

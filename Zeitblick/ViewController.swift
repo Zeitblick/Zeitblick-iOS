@@ -9,6 +9,7 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import AlamofireImage
 
 /// pan: left/right, tilt: up/down, roll:sideways
 typealias HeadRotation = (pan: Double, tilt: Double, roll: Double)
@@ -105,7 +106,45 @@ class ViewController: UIViewController {
             DispatchQueue.main.sync {
                 self.view.hideLoading()
 //                self.analyzeResults(data!)
-                let rotation = self.getAngles(data!)
+
+                guard let data = data, let rotation = self.getAngles(data) else {
+                    print("Couldn't get head rotation from selfie")
+                    return
+                }
+
+                let parameters: Parameters = [
+                    "pan": rotation.pan,
+                    "tilt": rotation.tilt,
+                    "roll": rotation.roll
+                ]
+
+                Alamofire.request("https://projekt-lisa.appspot.com/SimilarHeadRotation", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                    guard let raw = response.result.value else {
+                        print("Problem with SimilarHeadRotation answer json")
+                        return
+                    }
+                    let json = JSON(raw)
+                    print("JSON: \(json)")
+                    // get image
+                    print(json["inventory_no"])
+
+                    guard let inventoryNumber = json["inventory_no"].string else {
+                        print("No inventory no returned")
+                        return
+                    }
+
+//                    Alamofire.request("https://sammlungonline.mkg-hamburg.de/de/object/\(inventoryNumber)/image_download/0", method: .get).responseImage { response in
+                    Alamofire.request("https://storage.googleapis.com/projektlisa_test/\(inventoryNumber).jpg", method: .get).responseImage { response in
+                        guard let image = response.result.value else {
+                            print("Invalid image from mgk")
+                            return
+                        }
+
+                        print(image)
+                        self.imageView.image = image
+                    }
+
+                }
             }
         })
         print("fire")
