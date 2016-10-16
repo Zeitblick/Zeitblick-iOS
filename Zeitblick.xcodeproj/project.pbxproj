@@ -241,7 +241,7 @@
 				TargetAttributes = {
 					411D55F31D9AF50A0056EE98 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = V432EVYA77;
+						DevelopmentTeam = 58X8763ADE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -448,7 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V432EVYA77;
+				DEVELOPMENT_TEAM = 58X8763ADE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -457,7 +457,7 @@
 				INFOPLIST_FILE = Zeitblick/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.digitalstuff.Zeitblick;
+				PRODUCT_BUNDLE_IDENTIFIER = de.digitalstuff.MKGZeitblick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -467,7 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = V432EVYA77;
+				DEVELOPMENT_TEAM = 58X8763ADE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -476,7 +476,7 @@
 				INFOPLIST_FILE = Zeitblick/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.digitalstuff.Zeitblick;
+				PRODUCT_BUNDLE_IDENTIFIER = de.digitalstuff.MKGZeitblick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
