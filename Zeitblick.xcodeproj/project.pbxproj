@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */; };
+		4113833C1DB3A2BA005530CE /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4113833B1DB3A2BA005530CE /* AlamofireImage.framework */; };
 		412651F81DAEB51100865395 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F405551DAEB4CC00B17E0E /* Main.storyboard */; };
 		412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412B31A31DAEB1A0003DD5FE /* Assets.xcassets */; };
 		412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
+		4113833B1DB3A2BA005530CE /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = SOURCE_ROOT; };
 		411D55F41D9AF50A0056EE98 /* Zeitblick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeitblick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		412B31A31DAEB1A0003DD5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Zeitblick/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		412B31A51DAEB1B0003DD5FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Zeitblick/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -98,8 +100,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */,
 				41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */,
+				4113833C1DB3A2BA005530CE /* AlamofireImage.framework in Frameworks */,
+				4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				41BB7D8A1D9C65530007ADFE /* Alamofire.framework */,
+				4113833B1DB3A2BA005530CE /* AlamofireImage.framework */,
 				41F405181DAEB45800B17E0E /* Spring */,
 				4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */,
 			);
@@ -211,10 +215,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 411D56061D9AF50A0056EE98 /* Build configuration list for PBXNativeTarget "Zeitblick" */;
 			buildPhases = (
+				41BB7D901D9C65CA0007ADFE /* Carthage */,
 				411D55F01D9AF50A0056EE98 /* Sources */,
 				411D55F11D9AF50A0056EE98 /* Frameworks */,
 				411D55F21D9AF50A0056EE98 /* Resources */,
-				41BB7D901D9C65CA0007ADFE /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -285,6 +289,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 			);
 			name = Carthage;
 			outputPaths = (
