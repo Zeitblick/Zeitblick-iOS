@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var photoButton: DesignableButton!
     @IBOutlet weak var submitButton: DesignableButton!
+    @IBOutlet weak var photoAgainButton: UIButton!
 
     @IBOutlet weak var imageView: UIImageView!
 
@@ -35,7 +36,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         photoButton.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
+        photoAgainButton.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
         submitButton.addTarget(self, action: #selector(submitPhoto), for: .touchUpInside)
+
+        submitButton.alpha = 0.0
+        photoAgainButton.alpha = 0.0
     }
 
     // mark: actions
@@ -272,6 +277,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.image = image
             imageView.image = self.image
+            photoButton.alpha = 0.0
+            photoAgainButton.alpha = 1.0
+            submitButton.alpha = 1.0
         }
 
         dismiss(animated: true, completion: nil)
