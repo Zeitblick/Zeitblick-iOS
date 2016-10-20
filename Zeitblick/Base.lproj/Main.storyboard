@@ -3,14 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Epic_Selfie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Zeitblick" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,59 +18,128 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-SJ-LAr" customClass="DesignableButton" customModule="Epic_Selfie" customModuleProvider="target">
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Submit"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cci-Ua-MPw">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-SJ-LAr" customClass="DesignableButton" customModule="Zeitblick" customModuleProvider="target">
+                                        <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="184" id="fsY-dI-N8e"/>
+                                            <constraint firstAttribute="height" constant="62" id="mca-as-Pu6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
+                                        <state key="normal" title="Los geht's"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLy-Px-6JD">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="2Dr-C0-2db"/>
+                                            <constraint firstAttribute="height" constant="50" id="rxs-5f-nqj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-Italic" family="Baskerville" pointSize="21"/>
+                                        <state key="normal" title="Nochmal!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.47450980392156861" green="0.41960784313725491" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="W9J-SJ-LAr" secondAttribute="bottom" constant="79" id="aCu-SW-Zbh"/>
+                                    <constraint firstAttribute="height" constant="110" id="vHU-Da-sfy"/>
+                                    <constraint firstItem="KLy-Px-6JD" firstAttribute="top" secondItem="W9J-SJ-LAr" secondAttribute="bottom" constant="8" id="x4V-7Z-evB"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ca1-v8-COu" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="2WE-md-mTc"/>
+                                    <constraint firstAttribute="height" constant="290" id="Fd4-XG-u6b"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glw-Hr-sjH" customClass="DesignableButton" customModule="Zeitblick" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="282" id="WHc-Hb-EVQ"/>
+                                    <constraint firstAttribute="width" constant="282" id="eU4-KA-FGN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                <state key="normal" title="Photo aufnehmen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ca1-v8-COu"/>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glw-Hr-sjH" customClass="DesignableButton" customModule="Epic_Selfie" customModuleProvider="target">
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Take"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfY-Ph-qdO">
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.61176470588235299" green="0.53333333333333333" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ca1-v8-COu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3rJ-9i-ltX"/>
-                            <constraint firstItem="W9J-SJ-LAr" firstAttribute="centerY" secondItem="Glw-Hr-sjH" secondAttribute="centerY" id="A7S-Vi-Xnu"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Glw-Hr-sjH" secondAttribute="bottom" constant="20" id="Bbw-1O-ghG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ca1-v8-COu" secondAttribute="trailing" id="CNH-Ii-KfP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="W9J-SJ-LAr" secondAttribute="trailing" id="Eu9-7y-hFN"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Ca1-v8-COu" secondAttribute="leading" id="GpQ-Xi-8sC"/>
-                            <constraint firstItem="Glw-Hr-sjH" firstAttribute="top" secondItem="Ca1-v8-COu" secondAttribute="bottom" constant="24" id="L6F-yu-3GW"/>
-                            <constraint firstItem="Glw-Hr-sjH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mIg-9M-Lo2"/>
+                            <constraint firstItem="W9J-SJ-LAr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Fd-Og-c5u"/>
+                            <constraint firstItem="Ca1-v8-COu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9fS-5r-SxQ"/>
+                            <constraint firstItem="Glw-Hr-sjH" firstAttribute="top" secondItem="PfY-Ph-qdO" secondAttribute="bottom" constant="39" id="HVu-5N-hns"/>
+                            <constraint firstItem="Ca1-v8-COu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="KYR-eb-PUb"/>
+                            <constraint firstAttribute="trailing" secondItem="cci-Ua-MPw" secondAttribute="trailing" id="MVM-Ft-SSg"/>
+                            <constraint firstAttribute="leading" secondItem="cci-Ua-MPw" secondAttribute="leading" id="Pnl-pa-HqK"/>
+                            <constraint firstItem="Glw-Hr-sjH" firstAttribute="centerY" secondItem="Ca1-v8-COu" secondAttribute="centerY" id="h2u-1Y-bqR"/>
+                            <constraint firstItem="PfY-Ph-qdO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jl1-xI-r9y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cci-Ua-MPw" secondAttribute="bottom" id="szU-B4-AfW"/>
+                            <constraint firstItem="Glw-Hr-sjH" firstAttribute="centerX" secondItem="Ca1-v8-COu" secondAttribute="centerX" id="zZy-Zl-vkj"/>
+                            <constraint firstItem="KLy-Px-6JD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zgF-Pd-nQH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Ca1-v8-COu" id="k2o-4T-q1V"/>
+                        <outlet property="photoAgainButton" destination="KLy-Px-6JD" id="YSH-yE-lBS"/>
                         <outlet property="photoButton" destination="Glw-Hr-sjH" id="TdH-rI-QuE"/>
                         <outlet property="submitButton" destination="W9J-SJ-LAr" id="QEu-uF-NkE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114.375" y="122.53521126760563"/>
+            <point key="canvasLocation" x="250.40000000000001" y="235.23238380809596"/>
         </scene>
     </scenes>
 </document>
