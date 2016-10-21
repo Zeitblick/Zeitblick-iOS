@@ -14,15 +14,84 @@ import AlamofireImage
 /// pan: left/right, tilt: up/down, roll:sideways
 typealias HeadRotation = (pan: Double, tilt: Double, roll: Double)
 
+enum State {
+    case noPhoto
+    case hasPhoto
+    case processing
+    case result
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var photoButton: DesignableButton!
     @IBOutlet weak var submitButton: DesignableButton!
+    @IBOutlet weak var submitButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var photoAgainButton: UIButton!
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var selfieView: DesignableImageView!
+    @IBOutlet weak var selfieViewLeadingConstraint: NSLayoutConstraint!
+
+    typealias Me = ViewController
+    private let imageViewTopOffset: CGFloat = 80.0
+    private let submitButtonBottomOffset: CGFloat = -31.0
+    private let selfieViewLeadingOffset: CGFloat = -74.0
 
     var image: UIImage?
+    var state: State = .noPhoto {
+        willSet(newState) {
+            switch state {
+            case .noPhoto: switch newState {
+                case .hasPhoto:
+                    photoButton.alpha = 0.0
+                    photoAgainButton.alpha = 1.0
+                    submitButton.alpha = 1.0
+                default: return
+                }
+            case .hasPhoto: switch newState {
+                case .processing:
+                    imageViewTopConstraint.constant = -imageView.frame.height - 100
+                    submitButtonBottomConstraint.constant = -500
+                    selfieView.image = imageView.image
+                    UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+                    }, completion: { finished in
+                        print("completed anim")
+                    })
+                    self.view.showLoading()
+                    print("Processing")
+                default: return
+                }
+            case .processing: switch newState {
+                case .result:
+                    self.view.hideLoading()
+                    imageViewTopConstraint.constant = imageViewTopOffset
+                    submitButtonBottomConstraint.constant = submitButtonBottomOffset
+                    submitButton.isHidden = true
+//                    submitButton.setTitle("Bildinformationen", for: .normal)
+//                    submitButton.titleLabel!.font = UIFont.systemFont(ofSize: 17.0)
+//                    photoAgainButton.isHidden = true
+                    selfieViewLeadingConstraint.constant = selfieViewLeadingOffset
+                    UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+                    }, completion: { finished in
+                        print("completed anim")
+                    })
+                default: return
+                }
+            case .result: switch newState {
+                case .hasPhoto:
+                    photoButton.alpha = 0.0
+                    photoAgainButton.alpha = 1.0
+                    submitButton.isHidden = false
+                    selfieViewLeadingConstraint.constant = 300
+                default: return
+                }
+            }
+        }
+    }
 
     private lazy var imagePicker: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
@@ -41,6 +110,7 @@ class ViewController: UIViewController {
 
         submitButton.alpha = 0.0
         photoAgainButton.alpha = 0.0
+        selfieViewLeadingConstraint.constant = 300
     }
 
     // mark: actions
@@ -49,7 +119,8 @@ class ViewController: UIViewController {
     }
 
     func submitPhoto() {
-        self.view.showLoading()
+        state = .processing
+
         guard let image = self.image ?? nil else {
             print("no image")
             return
@@ -109,6 +180,7 @@ class ViewController: UIViewController {
             print(response)
             print(data)
             DispatchQueue.main.sync {
+
 //                self.analyzeResults(data!)
 
                 guard let data = data, let rotation = self.getAngles(data) else {
@@ -149,7 +221,10 @@ class ViewController: UIViewController {
                         }
 
                         print(image)
+
                         self.imageView.image = image
+
+                        self.state = .result
                     }
 
                 }
@@ -280,9 +355,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.image = image
             imageView.image = self.image
-            photoButton.alpha = 0.0
-            photoAgainButton.alpha = 1.0
-            submitButton.alpha = 1.0
+            state = .hasPhoto
         }
 
         dismiss(animated: true, completion: nil)
