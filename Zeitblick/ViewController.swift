@@ -19,6 +19,7 @@ enum State {
     case hasPhoto
     case processing
     case result
+    case error
 }
 
 class ViewController: UIViewController {
@@ -33,6 +34,16 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var selfieView: DesignableImageView!
     @IBOutlet weak var selfieViewLeadingConstraint: NSLayoutConstraint!
+
+    private lazy var alertController: UIAlertController = {
+        let alert = UIAlertController(title: "Error", message: "Message", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: { action in
+            print("Tapped OK on error-message")
+        })
+
+        alert.addAction(okButton)
+        return alert
+    }()
 
     typealias Me = ViewController
     private let imageViewTopOffset: CGFloat = 80.0
@@ -89,6 +100,25 @@ class ViewController: UIViewController {
                     selfieViewLeadingConstraint.constant = 300
                 default: return
                 }
+            case .error: switch newState {
+                case .noPhoto:
+                    imageViewTopConstraint.constant = imageViewTopOffset
+                    submitButtonBottomConstraint.constant = submitButtonBottomOffset
+                    selfieViewLeadingConstraint.constant = 300
+
+                    photoButton.alpha = 1.0
+                    submitButton.alpha = 0.0
+                    photoAgainButton.alpha = 0.0
+                default: return
+                }
+            }
+        }
+        didSet {
+            if self.state == .error {
+                self.view.hideLoading()
+                self.present(alertController, animated: true, completion: {
+                    self.state = .noPhoto
+                })
             }
         }
     }
@@ -122,11 +152,13 @@ class ViewController: UIViewController {
         state = .processing
 
         guard let image = self.image ?? nil else {
+            state = .error
             print("no image")
             return
         }
 
         guard let imageBase64 = ImageHelper.prepareForGoogleCloud(image: image) else {
+            state = .error
             print("couldn't prepare image")
             return
         }
@@ -184,7 +216,7 @@ class ViewController: UIViewController {
 //                self.analyzeResults(data!)
 
                 guard let data = data, let rotation = self.getAngles(data) else {
-                    self.view.hideLoading()
+                    self.state = .error
                     print("Couldn't get head rotation from selfie")
                     return
                 }
@@ -197,7 +229,7 @@ class ViewController: UIViewController {
 
                 Alamofire.request("https://projekt-lisa.appspot.com/SimilarHeadRotation", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                     guard let raw = response.result.value else {
-                        self.view.hideLoading()
+                        self.state = .error
                         print("Problem with SimilarHeadRotation answer json")
                         return
                     }
@@ -207,15 +239,15 @@ class ViewController: UIViewController {
                     print(json["inventory_no"])
 
                     guard let inventoryNumber = json["inventory_no"].string else {
-                        self.view.hideLoading()
+                        self.state = .error
                         print("No inventory no returned")
                         return
                     }
 
 //                    Alamofire.request("https://sammlungonline.mkg-hamburg.de/de/object/\(inventoryNumber)/image_download/0", method: .get).responseImage { response in
                     Alamofire.request("https://storage.googleapis.com/projektlisa_test/\(inventoryNumber).jpg", method: .get).responseImage { response in
-                        self.view.hideLoading()
                         guard let image = response.result.value else {
+                            self.state = .error
                             print("Invalid image from mgk")
                             return
                         }
