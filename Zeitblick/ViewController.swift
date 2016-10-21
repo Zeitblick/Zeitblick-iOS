@@ -14,15 +14,114 @@ import AlamofireImage
 /// pan: left/right, tilt: up/down, roll:sideways
 typealias HeadRotation = (pan: Double, tilt: Double, roll: Double)
 
+enum State {
+    case noPhoto
+    case hasPhoto
+    case processing
+    case result
+    case error
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var photoButton: DesignableButton!
     @IBOutlet weak var submitButton: DesignableButton!
+    @IBOutlet weak var submitButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var photoAgainButton: UIButton!
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var selfieView: DesignableImageView!
+    @IBOutlet weak var selfieViewLeadingConstraint: NSLayoutConstraint!
+
+    private lazy var alertController: UIAlertController = {
+        let alert = UIAlertController(title: "Error", message: "Message", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: { action in
+            print("Tapped OK on error-message")
+        })
+
+        alert.addAction(okButton)
+        return alert
+    }()
+
+    typealias Me = ViewController
+    private let imageViewTopOffset: CGFloat = 80.0
+    private let submitButtonBottomOffset: CGFloat = -31.0
+    private let selfieViewLeadingOffset: CGFloat = -74.0
 
     var image: UIImage?
+    var state: State = .noPhoto {
+        willSet(newState) {
+            switch state {
+            case .noPhoto: switch newState {
+                case .hasPhoto:
+                    photoButton.alpha = 0.0
+                    photoAgainButton.alpha = 1.0
+                    submitButton.alpha = 1.0
+                default: return
+                }
+            case .hasPhoto: switch newState {
+                case .processing:
+                    imageViewTopConstraint.constant = -imageView.frame.height - 100
+                    submitButtonBottomConstraint.constant = -500
+                    selfieView.image = imageView.image
+                    UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+                    }, completion: { finished in
+                        print("completed anim")
+                    })
+                    self.view.showLoading()
+                    print("Processing")
+                default: return
+                }
+            case .processing: switch newState {
+                case .result:
+                    self.view.hideLoading()
+                    imageViewTopConstraint.constant = imageViewTopOffset
+                    submitButtonBottomConstraint.constant = submitButtonBottomOffset
+                    submitButton.isHidden = true
+//                    submitButton.setTitle("Bildinformationen", for: .normal)
+//                    submitButton.titleLabel!.font = UIFont.systemFont(ofSize: 17.0)
+//                    photoAgainButton.isHidden = true
+                    selfieViewLeadingConstraint.constant = selfieViewLeadingOffset
+                    UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveEaseInOut, animations: {
+                        self.view.layoutIfNeeded()
+                    }, completion: { finished in
+                        print("completed anim")
+                    })
+                default: return
+                }
+            case .result: switch newState {
+                case .hasPhoto:
+                    photoButton.alpha = 0.0
+                    photoAgainButton.alpha = 1.0
+                    submitButton.isHidden = false
+                    selfieViewLeadingConstraint.constant = 300
+                default: return
+                }
+            case .error: switch newState {
+                case .noPhoto:
+                    imageViewTopConstraint.constant = imageViewTopOffset
+                    submitButtonBottomConstraint.constant = submitButtonBottomOffset
+                    selfieViewLeadingConstraint.constant = 300
+
+                    photoButton.alpha = 1.0
+                    submitButton.alpha = 0.0
+                    photoAgainButton.alpha = 0.0
+                default: return
+                }
+            }
+        }
+        didSet {
+            if self.state == .error {
+                self.view.hideLoading()
+                self.present(alertController, animated: true, completion: {
+                    self.state = .noPhoto
+                })
+            }
+        }
+    }
 
     private lazy var imagePicker: UIImagePickerController = {
         let imagePicker = UIImagePickerController()
@@ -41,6 +140,7 @@ class ViewController: UIViewController {
 
         submitButton.alpha = 0.0
         photoAgainButton.alpha = 0.0
+        selfieViewLeadingConstraint.constant = 300
     }
 
     // mark: actions
@@ -49,13 +149,16 @@ class ViewController: UIViewController {
     }
 
     func submitPhoto() {
-        self.view.showLoading()
+        state = .processing
+
         guard let image = self.image ?? nil else {
+            state = .error
             print("no image")
             return
         }
 
         guard let imageBase64 = ImageHelper.prepareForGoogleCloud(image: image) else {
+            state = .error
             print("couldn't prepare image")
             return
         }
@@ -109,10 +212,11 @@ class ViewController: UIViewController {
             print(response)
             print(data)
             DispatchQueue.main.sync {
-                self.view.hideLoading()
+
 //                self.analyzeResults(data!)
 
                 guard let data = data, let rotation = self.getAngles(data) else {
+                    self.state = .error
                     print("Couldn't get head rotation from selfie")
                     return
                 }
@@ -125,6 +229,7 @@ class ViewController: UIViewController {
 
                 Alamofire.request("https://projekt-lisa.appspot.com/SimilarHeadRotation", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
                     guard let raw = response.result.value else {
+                        self.state = .error
                         print("Problem with SimilarHeadRotation answer json")
                         return
                     }
@@ -134,6 +239,7 @@ class ViewController: UIViewController {
                     print(json["inventory_no"])
 
                     guard let inventoryNumber = json["inventory_no"].string else {
+                        self.state = .error
                         print("No inventory no returned")
                         return
                     }
@@ -141,12 +247,16 @@ class ViewController: UIViewController {
 //                    Alamofire.request("https://sammlungonline.mkg-hamburg.de/de/object/\(inventoryNumber)/image_download/0", method: .get).responseImage { response in
                     Alamofire.request("https://storage.googleapis.com/projektlisa_test/\(inventoryNumber).jpg", method: .get).responseImage { response in
                         guard let image = response.result.value else {
+                            self.state = .error
                             print("Invalid image from mgk")
                             return
                         }
 
                         print(image)
+
                         self.imageView.image = image
+
+                        self.state = .result
                     }
 
                 }
@@ -277,9 +387,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.image = image
             imageView.image = self.image
-            photoButton.alpha = 0.0
-            photoAgainButton.alpha = 1.0
-            submitButton.alpha = 1.0
+            state = .hasPhoto
         }
 
         dismiss(animated: true, completion: nil)

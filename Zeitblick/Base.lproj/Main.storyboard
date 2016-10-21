@@ -20,35 +20,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cci-Ua-MPw">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-SJ-LAr" customClass="DesignableButton" customModule="Zeitblick" customModuleProvider="target">
-                                        <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="184" id="fsY-dI-N8e"/>
-                                            <constraint firstAttribute="height" constant="62" id="mca-as-Pu6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
-                                        <state key="normal" title="Los geht's"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="30"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
-                                                <real key="value" value="0.0"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLy-Px-6JD">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="2Dr-C0-2db"/>
@@ -62,9 +33,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.47450980392156861" green="0.41960784313725491" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="W9J-SJ-LAr" secondAttribute="bottom" constant="79" id="aCu-SW-Zbh"/>
                                     <constraint firstAttribute="height" constant="110" id="vHU-Da-sfy"/>
-                                    <constraint firstItem="KLy-Px-6JD" firstAttribute="top" secondItem="W9J-SJ-LAr" secondAttribute="bottom" constant="8" id="x4V-7Z-evB"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ca1-v8-COu" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
@@ -107,6 +76,12 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfY-Ph-qdO">
@@ -114,17 +89,77 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-SJ-LAr" customClass="DesignableButton" customModule="Zeitblick" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="fsY-dI-N8e"/>
+                                    <constraint firstAttribute="height" constant="62" id="mca-as-Pu6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="23"/>
+                                <state key="normal" title="Los geht's"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Axr-JB-K52" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="dKY-hT-5Vf"/>
+                                    <constraint firstAttribute="width" constant="90" id="uRA-UB-GMl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.61176470588235299" green="0.53333333333333333" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="W9J-SJ-LAr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Fd-Og-c5u"/>
+                            <constraint firstItem="cci-Ua-MPw" firstAttribute="top" secondItem="W9J-SJ-LAr" secondAttribute="bottom" constant="-31" id="4Yk-Ki-ZH1"/>
+                            <constraint firstItem="Axr-JB-K52" firstAttribute="leading" secondItem="Glw-Hr-sjH" secondAttribute="trailing" constant="-69.5" id="6v8-fC-bes"/>
                             <constraint firstItem="Ca1-v8-COu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9fS-5r-SxQ"/>
                             <constraint firstItem="Glw-Hr-sjH" firstAttribute="top" secondItem="PfY-Ph-qdO" secondAttribute="bottom" constant="39" id="HVu-5N-hns"/>
                             <constraint firstItem="Ca1-v8-COu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="KYR-eb-PUb"/>
                             <constraint firstAttribute="trailing" secondItem="cci-Ua-MPw" secondAttribute="trailing" id="MVM-Ft-SSg"/>
+                            <constraint firstItem="W9J-SJ-LAr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pl4-cV-EG0"/>
                             <constraint firstAttribute="leading" secondItem="cci-Ua-MPw" secondAttribute="leading" id="Pnl-pa-HqK"/>
+                            <constraint firstItem="KLy-Px-6JD" firstAttribute="top" secondItem="W9J-SJ-LAr" secondAttribute="bottom" constant="8" id="Sci-8T-O1N"/>
                             <constraint firstItem="Glw-Hr-sjH" firstAttribute="centerY" secondItem="Ca1-v8-COu" secondAttribute="centerY" id="h2u-1Y-bqR"/>
                             <constraint firstItem="PfY-Ph-qdO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jl1-xI-r9y"/>
+                            <constraint firstItem="Axr-JB-K52" firstAttribute="top" secondItem="Glw-Hr-sjH" secondAttribute="bottom" constant="-44" id="mG5-Ne-nDJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cci-Ua-MPw" secondAttribute="bottom" id="szU-B4-AfW"/>
                             <constraint firstItem="Glw-Hr-sjH" firstAttribute="centerX" secondItem="Ca1-v8-COu" secondAttribute="centerX" id="zZy-Zl-vkj"/>
                             <constraint firstItem="KLy-Px-6JD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zgF-Pd-nQH"/>
@@ -132,9 +167,13 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Ca1-v8-COu" id="k2o-4T-q1V"/>
+                        <outlet property="imageViewTopConstraint" destination="KYR-eb-PUb" id="XQ2-fJ-55h"/>
                         <outlet property="photoAgainButton" destination="KLy-Px-6JD" id="YSH-yE-lBS"/>
                         <outlet property="photoButton" destination="Glw-Hr-sjH" id="TdH-rI-QuE"/>
+                        <outlet property="selfieView" destination="Axr-JB-K52" id="DBA-4i-VGu"/>
+                        <outlet property="selfieViewLeadingConstraint" destination="6v8-fC-bes" id="oX0-Bo-tI7"/>
                         <outlet property="submitButton" destination="W9J-SJ-LAr" id="QEu-uF-NkE"/>
+                        <outlet property="submitButtonBottomConstraint" destination="4Yk-Ki-ZH1" id="psl-fV-EET"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
