@@ -19,6 +19,7 @@
 		412B31B41DAEB259003DD5FE /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 412B31B31DAEB259003DD5FE /* Environment.plist */; };
 		414EA8C71DB93CD50097CBAF /* UIColor+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */; };
 		414EA8C81DB93CD50097CBAF /* UIFont+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */; };
+		41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAFEF31DC00B1B00104C80 /* Alerts.swift */; };
 		41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB7D8A1D9C65530007ADFE /* Alamofire.framework */; };
 		41F405371DAEB45800B17E0E /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405191DAEB45800B17E0E /* AsyncButton.swift */; };
 		41F405381DAEB45800B17E0E /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4051A1DAEB45800B17E0E /* AsyncImageView.swift */; };
@@ -65,6 +66,7 @@
 		412B31B31DAEB259003DD5FE /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Environment.plist; path = Zeitblick/Environment/Environment.plist; sourceTree = SOURCE_ROOT; };
 		414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIColor+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
 		414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIFont+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
+		41BAFEF31DC00B1B00104C80 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerts.swift; path = Zeitblick/Alerts.swift; sourceTree = SOURCE_ROOT; };
 		41BB7D8A1D9C65530007ADFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		41F405191DAEB45800B17E0E /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		41F4051A1DAEB45800B17E0E /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				414EA8C41DB93CA50097CBAF /* Extensions */,
 				4104E7BB1DAEACE10005B019 /* Resources */,
 				41BB7D891D9C652A0007ADFE /* vendor */,
+				41BAFEF31DC00B1B00104C80 /* Alerts.swift */,
 				412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */,
 				412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */,
 				412B31AB1DAEB1DA003DD5FE /* ViewController.swift */,
@@ -329,6 +332,7 @@
 				41F405531DAEB45800B17E0E /* UnwindSegue.swift in Sources */,
 				41F4054D1DAEB45800B17E0E /* SpringLabel.swift in Sources */,
 				412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */,
+				41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */,
 				41F405391DAEB45800B17E0E /* AutoTextView.swift in Sources */,
 				41F4054A1DAEB45800B17E0E /* SpringAnimation.swift in Sources */,
 				41F405421DAEB45800B17E0E /* ImageLoader.swift in Sources */,

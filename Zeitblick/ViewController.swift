@@ -145,7 +145,25 @@ class ViewController: UIViewController {
 
     // mark: actions
     func takePhoto() {
-        present(imagePicker, animated: true, completion: nil)
+//        present(imagePicker, animated: true, completion: nil)
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+
+        Alerts.photo(viewController: self, takePhotoAction: { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            imagePicker.sourceType = .camera
+            strongSelf.present(imagePicker, animated: true, completion: nil)
+        }, choosePhotoAction: { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            imagePicker.sourceType = .photoLibrary
+            strongSelf.present(imagePicker, animated: true, completion: {
+                UIApplication.shared.setStatusBarStyle(.lightContent, animated:true)
+            })
+        })
     }
 
     func submitPhoto() {

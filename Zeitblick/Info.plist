@@ -27,7 +27,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Ohne Kamerazugriff würde diese App wenig Sinn machen :(</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Wenn du auch andere Bilder verwenden möchtest.</string>
+	<string>Lade ein Bild aus deinem Archiv hoch.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch</string>
 	<key>UIMainStoryboardFile</key>
