@@ -29,7 +29,7 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Lade ein Bild aus deinem Archiv hoch.</string>
 	<key>UILaunchStoryboardName</key>
-	<string>Launch</string>
+	<string>Main</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

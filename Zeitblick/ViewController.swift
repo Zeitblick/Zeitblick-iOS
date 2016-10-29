@@ -123,14 +123,6 @@ class ViewController: UIViewController {
         }
     }
 
-    private lazy var imagePicker: UIImagePickerController = {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        imagePicker.cameraDevice = .front
-        return imagePicker
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -146,24 +138,6 @@ class ViewController: UIViewController {
     // mark: actions
     func takePhoto() {
 //        present(imagePicker, animated: true, completion: nil)
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-
-        Alerts.photo(viewController: self, takePhotoAction: { [weak self] in
-            guard let strongSelf = self else {
-                return
-            }
-            imagePicker.sourceType = .camera
-            strongSelf.present(imagePicker, animated: true, completion: nil)
-        }, choosePhotoAction: { [weak self] in
-            guard let strongSelf = self else {
-                return
-            }
-            imagePicker.sourceType = .photoLibrary
-            strongSelf.present(imagePicker, animated: true, completion: {
-                UIApplication.shared.setStatusBarStyle(.lightContent, animated:true)
-            })
-        })
     }
 
     func submitPhoto() {
@@ -398,20 +372,4 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print(#function)
 
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.image = image
-            imageView.image = self.image
-            state = .hasPhoto
-        }
-
-        dismiss(animated: true, completion: nil)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-}

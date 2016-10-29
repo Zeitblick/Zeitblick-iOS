@@ -14,7 +14,6 @@
 		412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */; };
 		412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */; };
 		412B31AC1DAEB1DA003DD5FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31AB1DAEB1DA003DD5FE /* ViewController.swift */; };
-		412B31AE1DAEB1E2003DD5FE /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412B31AD1DAEB1E2003DD5FE /* Launch.xib */; };
 		412B31B21DAEB24D003DD5FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31B11DAEB24D003DD5FE /* Environment.swift */; };
 		412B31B41DAEB259003DD5FE /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 412B31B31DAEB259003DD5FE /* Environment.plist */; };
 		414EA8C71DB93CD50097CBAF /* UIColor+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */; };
@@ -22,6 +21,7 @@
 		4194E1D11DC4D6650011E3AB /* portrait_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4194E1D01DC4D6650011E3AB /* portrait_01.jpg */; };
 		41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAFEF31DC00B1B00104C80 /* Alerts.swift */; };
 		41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB7D8A1D9C65530007ADFE /* Alamofire.framework */; };
+		41E174191DC4E35A00DCDF43 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E174181DC4E35A00DCDF43 /* StartViewController.swift */; };
 		41F405371DAEB45800B17E0E /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405191DAEB45800B17E0E /* AsyncButton.swift */; };
 		41F405381DAEB45800B17E0E /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4051A1DAEB45800B17E0E /* AsyncImageView.swift */; };
 		41F405391DAEB45800B17E0E /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4051B1DAEB45800B17E0E /* AutoTextView.swift */; };
@@ -62,7 +62,6 @@
 		412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Zeitblick/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Zeitblick/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
 		412B31AB1DAEB1DA003DD5FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Zeitblick/ViewController.swift; sourceTree = SOURCE_ROOT; };
-		412B31AD1DAEB1E2003DD5FE /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Launch.xib; path = Zeitblick/Launch.xib; sourceTree = SOURCE_ROOT; };
 		412B31B11DAEB24D003DD5FE /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Zeitblick/Environment/Environment.swift; sourceTree = SOURCE_ROOT; };
 		412B31B31DAEB259003DD5FE /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Environment.plist; path = Zeitblick/Environment/Environment.plist; sourceTree = SOURCE_ROOT; };
 		414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIColor+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
@@ -70,6 +69,7 @@
 		4194E1D01DC4D6650011E3AB /* portrait_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait_01.jpg; sourceTree = SOURCE_ROOT; };
 		41BAFEF31DC00B1B00104C80 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerts.swift; path = Zeitblick/Alerts.swift; sourceTree = SOURCE_ROOT; };
 		41BB7D8A1D9C65530007ADFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		41E174181DC4E35A00DCDF43 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = Zeitblick/StartViewController.swift; sourceTree = SOURCE_ROOT; };
 		41F405191DAEB45800B17E0E /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		41F4051A1DAEB45800B17E0E /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		41F4051B1DAEB45800B17E0E /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 				41BAFEF31DC00B1B00104C80 /* Alerts.swift */,
 				412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */,
 				412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */,
+				41E174181DC4E35A00DCDF43 /* StartViewController.swift */,
 				412B31AB1DAEB1DA003DD5FE /* ViewController.swift */,
-				412B31AD1DAEB1E2003DD5FE /* Launch.xib */,
 				41F405551DAEB4CC00B17E0E /* Main.storyboard */,
 			);
 			name = Zeitblick;
@@ -303,7 +303,6 @@
 				41F405461DAEB45800B17E0E /* LoadingView.xib in Resources */,
 				4194E1D11DC4D6650011E3AB /* portrait_01.jpg in Resources */,
 				41F405431DAEB45800B17E0E /* Info.plist in Resources */,
-				412B31AE1DAEB1E2003DD5FE /* Launch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +348,7 @@
 				41F4054A1DAEB45800B17E0E /* SpringAnimation.swift in Sources */,
 				41F405421DAEB45800B17E0E /* ImageLoader.swift in Sources */,
 				41F4054E1DAEB45800B17E0E /* SpringTextField.swift in Sources */,
+				41E174191DC4E35A00DCDF43 /* StartViewController.swift in Sources */,
 				412B31AC1DAEB1DA003DD5FE /* ViewController.swift in Sources */,
 				41F4053C1DAEB45800B17E0E /* DesignableImageView.swift in Sources */,
 				41F405481DAEB45800B17E0E /* SoundPlayer.swift in Sources */,
