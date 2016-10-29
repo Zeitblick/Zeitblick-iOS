@@ -25,9 +25,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Ohne Kamerazugriff würde diese App wenig Sinn machen :(</string>
+	<string>Mache ein Foto und lass es analysieren.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Lade ein Bild aus deinem Archiv hoch.</string>
+	<string>Lasse ein Foto aus deinem Archiv analysieren.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>

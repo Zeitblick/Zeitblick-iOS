@@ -1,0 +1,3 @@
+/* Permissions*/
+"NSCameraUsageDescription"       = "Take a selfie and let the server find a historical match.";
+"NSPhotoLibraryUsageDescription" = "Pick a selfie from your library and let the server find a historical match.";
