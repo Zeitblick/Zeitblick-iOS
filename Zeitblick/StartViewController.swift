@@ -45,6 +45,7 @@ class StartViewController: UIViewController {
                     return
                 }
                 imagePicker.sourceType = .camera
+                imagePicker.cameraDevice = .front
                 strongSelf.present(imagePicker, animated: true, completion: nil)
             },
             choosePhotoAction: { [weak self] in
