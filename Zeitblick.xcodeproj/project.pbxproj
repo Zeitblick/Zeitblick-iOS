@@ -52,6 +52,9 @@
 		41F405521DAEB45800B17E0E /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405351DAEB45800B17E0E /* TransitionZoom.swift */; };
 		41F405531DAEB45800B17E0E /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405361DAEB45800B17E0E /* UnwindSegue.swift */; };
 		41F83B001DC4F8FB00FBF4EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41F83B021DC4F8FB00FBF4EC /* InfoPlist.strings */; };
+		41F83B071DC4FC0700FBF4EC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F83B061DC4FC0700FBF4EC /* Rswift.framework */; };
+		41F83B081DC4FCE900FBF4EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41F83B0A1DC4FCE900FBF4EC /* Localizable.strings */; };
+		41F83B0D1DC4FF0700FBF4EC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F83B0C1DC4FF0700FBF4EC /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +106,10 @@
 		41F405351DAEB45800B17E0E /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		41F405361DAEB45800B17E0E /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		41F83B011DC4F8FB00FBF4EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		41F83B061DC4FC0700FBF4EC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = SOURCE_ROOT; };
+		41F83B091DC4FCE900FBF4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41F83B0B1DC4FCF700FBF4EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41F83B0C1DC4FF0700FBF4EC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +120,7 @@
 				41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */,
 				4113833C1DB3A2BA005530CE /* AlamofireImage.framework in Frameworks */,
 				4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */,
+				41F83B071DC4FC0700FBF4EC /* Rswift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +143,9 @@
 				412B31A31DAEB1A0003DD5FE /* Assets.xcassets */,
 				412B31A51DAEB1B0003DD5FE /* Info.plist */,
 				41F83B021DC4F8FB00FBF4EC /* InfoPlist.strings */,
+				41F83B0A1DC4FCE900FBF4EC /* Localizable.strings */,
 				41DBE59B1DC4F38800C91AC8 /* Main.storyboard */,
+				41F83B0C1DC4FF0700FBF4EC /* R.generated.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -195,6 +205,7 @@
 			children = (
 				41BB7D8A1D9C65530007ADFE /* Alamofire.framework */,
 				4113833B1DB3A2BA005530CE /* AlamofireImage.framework */,
+				41F83B061DC4FC0700FBF4EC /* Rswift.framework */,
 				41F405181DAEB45800B17E0E /* Spring */,
 				4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */,
 			);
@@ -247,6 +258,7 @@
 			buildConfigurationList = 411D56061D9AF50A0056EE98 /* Build configuration list for PBXNativeTarget "Zeitblick" */;
 			buildPhases = (
 				41BB7D901D9C65CA0007ADFE /* Carthage */,
+				41F83B051DC4FBB900FBF4EC /* Rswift */,
 				411D55F01D9AF50A0056EE98 /* Sources */,
 				411D55F11D9AF50A0056EE98 /* Frameworks */,
 				411D55F21D9AF50A0056EE98 /* Resources */,
@@ -256,7 +268,7 @@
 			dependencies = (
 			);
 			name = Zeitblick;
-			productName = "Epic Selfie";
+			productName = "Zeitblick";
 			productReference = 411D55F41D9AF50A0056EE98 /* Zeitblick.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -268,7 +280,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Epic Selfie";
+				ORGANIZATIONNAME = "Zeitblick";
 				TargetAttributes = {
 					411D55F31D9AF50A0056EE98 = {
 						CreatedOnToolsVersion = 8.0;
@@ -284,6 +296,7 @@
 			knownRegions = (
 				Base,
 				de,
+				en,
 			);
 			mainGroup = 411D55EB1D9AF50A0056EE98;
 			productRefGroup = 411D55F51D9AF50A0056EE98 /* Products */;
@@ -305,6 +318,7 @@
 				412B31B41DAEB259003DD5FE /* Environment.plist in Resources */,
 				412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */,
 				41F405461DAEB45800B17E0E /* LoadingView.xib in Resources */,
+				41F83B081DC4FCE900FBF4EC /* Localizable.strings in Resources */,
 				4194E1D11DC4D6650011E3AB /* portrait_01.jpg in Resources */,
 				41F405431DAEB45800B17E0E /* Info.plist in Resources */,
 			);
@@ -322,6 +336,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -329,6 +344,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		41F83B051DC4FBB900FBF4EC /* Rswift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Rswift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/rswift\" \"$SRCROOT\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -348,6 +377,7 @@
 				41F4054D1DAEB45800B17E0E /* SpringLabel.swift in Sources */,
 				412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */,
 				41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */,
+				41F83B0D1DC4FF0700FBF4EC /* R.generated.swift in Sources */,
 				41F405391DAEB45800B17E0E /* AutoTextView.swift in Sources */,
 				41F4054A1DAEB45800B17E0E /* SpringAnimation.swift in Sources */,
 				41F405421DAEB45800B17E0E /* ImageLoader.swift in Sources */,
@@ -392,6 +422,16 @@
 				41F83B011DC4F8FB00FBF4EC /* en */,
 			);
 			name = InfoPlist.strings;
+			path = Zeitblick;
+			sourceTree = SOURCE_ROOT;
+		};
+		41F83B0A1DC4FCE900FBF4EC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41F83B091DC4FCE900FBF4EC /* Base */,
+				41F83B0B1DC4FCF700FBF4EC /* en */,
+			);
+			name = Localizable.strings;
 			path = Zeitblick;
 			sourceTree = SOURCE_ROOT;
 		};

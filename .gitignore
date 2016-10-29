@@ -65,3 +65,6 @@ fastlane/screenshots
 fastlane/test_output
 Development.plist
 Environment.plist
+
+# R.swift
+*.generated.swift
