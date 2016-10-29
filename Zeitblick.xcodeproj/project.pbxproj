@@ -20,6 +20,7 @@
 		4194E1D11DC4D6650011E3AB /* portrait_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4194E1D01DC4D6650011E3AB /* portrait_01.jpg */; };
 		41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAFEF31DC00B1B00104C80 /* Alerts.swift */; };
 		41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB7D8A1D9C65530007ADFE /* Alamofire.framework */; };
+		41C67CA81DC533AE0049C9D8 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */; };
 		41DBE59D1DC4F38800C91AC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41DBE59B1DC4F38800C91AC8 /* Main.storyboard */; };
 		41E174191DC4E35A00DCDF43 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E174181DC4E35A00DCDF43 /* StartViewController.swift */; };
 		41F405371DAEB45800B17E0E /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405191DAEB45800B17E0E /* AsyncButton.swift */; };
@@ -73,6 +74,7 @@
 		4194E1D01DC4D6650011E3AB /* portrait_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = portrait_01.jpg; sourceTree = SOURCE_ROOT; };
 		41BAFEF31DC00B1B00104C80 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerts.swift; path = Zeitblick/Alerts.swift; sourceTree = SOURCE_ROOT; };
 		41BB7D8A1D9C65530007ADFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = SOURCE_ROOT; };
 		41DBE59C1DC4F38800C91AC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Zeitblick/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		41E174181DC4E35A00DCDF43 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = Zeitblick/StartViewController.swift; sourceTree = SOURCE_ROOT; };
 		41F405191DAEB45800B17E0E /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			files = (
 				41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */,
 				4113833C1DB3A2BA005530CE /* AlamofireImage.framework in Frameworks */,
+				41C67CA81DC533AE0049C9D8 /* PromiseKit.framework in Frameworks */,
 				4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */,
 				41F83B071DC4FC0700FBF4EC /* Rswift.framework in Frameworks */,
 			);
@@ -205,6 +208,7 @@
 			children = (
 				41BB7D8A1D9C65530007ADFE /* Alamofire.framework */,
 				4113833B1DB3A2BA005530CE /* AlamofireImage.framework */,
+				41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */,
 				41F83B061DC4FC0700FBF4EC /* Rswift.framework */,
 				41F405181DAEB45800B17E0E /* Spring */,
 				4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */,
@@ -268,7 +272,7 @@
 			dependencies = (
 			);
 			name = Zeitblick;
-			productName = "Zeitblick";
+			productName = Zeitblick;
 			productReference = 411D55F41D9AF50A0056EE98 /* Zeitblick.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -280,7 +284,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Zeitblick";
+				ORGANIZATIONNAME = Zeitblick;
 				TargetAttributes = {
 					411D55F31D9AF50A0056EE98 = {
 						CreatedOnToolsVersion = 8.0;
@@ -337,6 +341,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
 			);
 			name = Carthage;
 			outputPaths = (
