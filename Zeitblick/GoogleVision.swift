@@ -18,9 +18,8 @@ enum GoogleVisionError: Error {
 
 class GoogleVision {
 
-    func findOneFace(image: UIImage) -> Promise<Face> {
+    func findOneFace(image: UIImage) throws -> Promise<Face> {
         let q = DispatchQueue.global()
-        //UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
         return firstly {
             Alamofire.request(GoogleVisionRouter.analyseImage(image: image)).responseData()
@@ -48,10 +47,6 @@ class GoogleVision {
             let faceJson = faceAnnotations[0]
             let face = Face(fromJSON: faceJson)
             return Promise(value: face)
-        }.always {
-            //UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }.catch { error in
-            print(error)
         }
     }
 }

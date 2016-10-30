@@ -72,12 +72,16 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
 
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
 
-            GoogleVision().findOneFace(image: image).then { face -> Promise<String> in
-                return ZeitblickBackend().findSimilarRotation(face: face)
-            }.then { inventoryNumber in
-                print(inventoryNumber)
+            firstly {
+                return try GoogleVision().findOneFace(image: image)
+            }.then { face -> Promise<String> in
+                return try ZeitblickBackend().findSimilarRotation(face: face)
+            }.then { inventoryNumber -> Promise<UIImage> in
+                return try GoogleDatastore().getImage(inventoryNumber: inventoryNumber)
+            }.then { image in
+                print("got image")
             }.catch { error in
-                print("No success")
+                print(error)
             }
         }
     }

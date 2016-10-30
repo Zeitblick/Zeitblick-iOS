@@ -18,7 +18,7 @@ enum ZeitblickBackendError: Error {
 
 class ZeitblickBackend {
 
-    func findSimilarRotation(face: Face) -> Promise<String> {
+    func findSimilarRotation(face: Face) throws -> Promise<String> {
         let q = DispatchQueue.global()
 
         let parameters: Parameters = [
@@ -49,8 +49,6 @@ class ZeitblickBackend {
             }
 
             return Promise(value: inventoryNumber)
-        }.catch { error in
-            print(error)
         }
     }
 }

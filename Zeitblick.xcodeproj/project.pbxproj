@@ -14,10 +14,10 @@
 		412672FD1DC640C900B78E27 /* GoogleVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672FC1DC640C900B78E27 /* GoogleVision.swift */; };
 		412673001DC656FB00B78E27 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672FF1DC656FB00B78E27 /* Face.swift */; };
 		412673021DC6606D00B78E27 /* ZeitblickBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412673011DC6606D00B78E27 /* ZeitblickBackend.swift */; };
+		412673061DC667AF00B78E27 /* GoogleDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412673051DC667AF00B78E27 /* GoogleDatastore.swift */; };
 		412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412B31A31DAEB1A0003DD5FE /* Assets.xcassets */; };
 		412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */; };
 		412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */; };
-		412B31AC1DAEB1DA003DD5FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31AB1DAEB1DA003DD5FE /* ViewController.swift */; };
 		412B31B21DAEB24D003DD5FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31B11DAEB24D003DD5FE /* Environment.swift */; };
 		412B31B41DAEB259003DD5FE /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 412B31B31DAEB259003DD5FE /* Environment.plist */; };
 		414EA8C71DB93CD50097CBAF /* UIColor+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */; };
@@ -72,11 +72,11 @@
 		412672FC1DC640C900B78E27 /* GoogleVision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleVision.swift; path = Zeitblick/GoogleVision.swift; sourceTree = SOURCE_ROOT; };
 		412672FF1DC656FB00B78E27 /* Face.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Face.swift; path = Zeitblick/Models/Face.swift; sourceTree = SOURCE_ROOT; };
 		412673011DC6606D00B78E27 /* ZeitblickBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZeitblickBackend.swift; path = Zeitblick/ZeitblickBackend.swift; sourceTree = SOURCE_ROOT; };
+		412673051DC667AF00B78E27 /* GoogleDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleDatastore.swift; path = Zeitblick/GoogleDatastore.swift; sourceTree = SOURCE_ROOT; };
 		412B31A31DAEB1A0003DD5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Zeitblick/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		412B31A51DAEB1B0003DD5FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Zeitblick/Info.plist; sourceTree = SOURCE_ROOT; };
 		412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Zeitblick/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Zeitblick/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
-		412B31AB1DAEB1DA003DD5FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Zeitblick/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		412B31B11DAEB24D003DD5FE /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Zeitblick/Environment/Environment.swift; sourceTree = SOURCE_ROOT; };
 		412B31B31DAEB259003DD5FE /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Environment.plist; path = Zeitblick/Environment/Environment.plist; sourceTree = SOURCE_ROOT; };
 		414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIColor+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
@@ -192,7 +192,6 @@
 				412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */,
 				412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */,
 				41E174181DC4E35A00DCDF43 /* StartViewController.swift */,
-				412B31AB1DAEB1DA003DD5FE /* ViewController.swift */,
 			);
 			name = Zeitblick;
 			path = "Epic Selfie";
@@ -201,6 +200,7 @@
 		412672F91DC63ED100B78E27 /* REST */ = {
 			isa = PBXGroup;
 			children = (
+				412673051DC667AF00B78E27 /* GoogleDatastore.swift */,
 				412672FC1DC640C900B78E27 /* GoogleVision.swift */,
 				412672F41DC624C000B78E27 /* GoogleVisionRouter.swift */,
 				412673011DC6606D00B78E27 /* ZeitblickBackend.swift */,
@@ -421,7 +421,6 @@
 				41F4054E1DAEB45800B17E0E /* SpringTextField.swift in Sources */,
 				412672FD1DC640C900B78E27 /* GoogleVision.swift in Sources */,
 				41E174191DC4E35A00DCDF43 /* StartViewController.swift in Sources */,
-				412B31AC1DAEB1DA003DD5FE /* ViewController.swift in Sources */,
 				41F4053C1DAEB45800B17E0E /* DesignableImageView.swift in Sources */,
 				41F405481DAEB45800B17E0E /* SoundPlayer.swift in Sources */,
 				412672F81DC63D4A00B78E27 /* Alamofire+Promise.swift in Sources */,
@@ -440,6 +439,7 @@
 				41F4053D1DAEB45800B17E0E /* DesignableLabel.swift in Sources */,
 				41F405511DAEB45800B17E0E /* TransitionManager.swift in Sources */,
 				414EA8C81DB93CD50097CBAF /* UIFont+ZBAdditions.swift in Sources */,
+				412673061DC667AF00B78E27 /* GoogleDatastore.swift in Sources */,
 				41F4053F1DAEB45800B17E0E /* DesignableTextField.swift in Sources */,
 				41F405451DAEB45800B17E0E /* LoadingView.swift in Sources */,
 				41F405491DAEB45800B17E0E /* Spring.swift in Sources */,
