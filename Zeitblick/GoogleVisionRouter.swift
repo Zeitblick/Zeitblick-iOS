@@ -18,7 +18,6 @@ public enum GoogleVisionRouter {
 
     static let API_KEY = Environment.sharedInstance.googleCloudApiKey
     static let baseURLString = "https://vision.googleapis.com"
-    //static let url = URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(API_KEY)")!
 
     case analyseImage(image: UIImage)
 }
@@ -42,10 +41,6 @@ extension GoogleVisionRouter: URLRequestConvertible {
                         "content": imageBase64
                     ],
                     "features": [
-                        [
-                            "type": "LABEL_DETECTION",
-                            "maxResults": 10
-                        ],
                         [
                             "type": "FACE_DETECTION",
                             "maxResults": 1

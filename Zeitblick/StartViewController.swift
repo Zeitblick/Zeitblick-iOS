@@ -70,14 +70,11 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
         dismiss(animated: false, completion: nil)
 
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            //let request = try! VisionRouter.analyseImage(image: image).asURLRequest()
-            Alamofire.request(GoogleVisionRouter.analyseImage(image: image)).responseJSON { response in
-                debugPrint("All Response Info: \(response)")
 
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
+            GoogleVision().findOneFace(image: image).then { face in
+                dump(face)
             }
+
         }
     }
 

@@ -11,8 +11,6 @@ import SwiftyJSON
 import Alamofire
 import AlamofireImage
 
-/// pan: left/right, tilt: up/down, roll:sideways
-typealias HeadRotation = (pan: Double, tilt: Double, roll: Double)
 
 enum State {
     case noPhoto
@@ -142,35 +140,6 @@ class ViewController: UIViewController {
 
     func submitPhoto() {
         state = .processing
-    }
-
-    /// of first face
-    func getAngles(_ dataToParse: Data) -> HeadRotation? {
-        let json = JSON(data: dataToParse)
-        let errorObj: JSON = json["error"]
-
-        // Check for errors
-        guard errorObj.dictionaryValue == [:] else {
-            print("Error code \(errorObj["code"]): \(errorObj["message"])")
-            return nil
-        }
-
-        // Parse the response
-        let responses: JSON = json["responses"][0]
-
-        // Get face annotations
-        let faceAnnotations = responses["faceAnnotations"]
-        let numPeopleDetected = faceAnnotations.count
-        guard numPeopleDetected > 0 else {
-            print("No faces found")
-            return nil
-        }
-
-        print("People detected: \(numPeopleDetected)")
-        print("Pick first person")
-
-        let person: JSON = faceAnnotations[0]
-        return HeadRotation(pan: person["panAngle"].doubleValue, tilt: person["tiltAngle"].doubleValue, roll: person["rollAngle"].doubleValue)
     }
 
     func analyzeResults(_ dataToParse: Data) {
