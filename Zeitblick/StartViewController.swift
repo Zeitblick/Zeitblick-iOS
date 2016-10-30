@@ -12,6 +12,7 @@ import Alamofire
 import PromiseKit
 
 class StartViewController: UIViewController {
+    typealias Me = StartViewController
 
     @IBOutlet weak var photoButton: DesignableButton!
     @IBOutlet weak var selfieImageView: DesignableImageView!
@@ -20,13 +21,15 @@ class StartViewController: UIViewController {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var logoSubtitle: UILabel!
 
+    static let logoTopOffset: CGFloat = 254.0
+
     var resultImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        selfieImageView.isHidden = true
+        resetController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +67,20 @@ class StartViewController: UIViewController {
                 imagePicker.sourceType = .photoLibrary
                 strongSelf.present(imagePicker, animated: true, completion: nil)
             })
+    }
+
+    @IBAction func unwindToStart(segue: UIStoryboardSegue) {
+        print(#function)
+        resetController()
+    }
+
+    private func resetController() {
+        selfieImageView.image = nil
+        selfieImageView.isHidden = true
+        photoButton.isHidden = false
+
+        logoTopConstraint.constant = Me.logoTopOffset
+        logoSubtitle.isHidden = false
     }
 }
 

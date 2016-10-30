@@ -110,6 +110,12 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DX1-0y-hqe">
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkI-5A-Hde">
+                                        <state key="normal" image="button_plus"/>
+                                        <connections>
+                                            <segue destination="DlD-de-NqD" kind="unwind" unwindAction="unwindToStartWithSegue:" id="RpX-dS-TfF"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -117,6 +123,8 @@
                                     <constraint firstAttribute="trailing" secondItem="DX1-0y-hqe" secondAttribute="trailing" id="Har-kj-4Do"/>
                                     <constraint firstItem="DX1-0y-hqe" firstAttribute="top" secondItem="eae-AN-FVC" secondAttribute="top" id="eLS-Bx-jGl"/>
                                     <constraint firstAttribute="bottom" secondItem="DX1-0y-hqe" secondAttribute="bottom" id="iTU-GD-NyI"/>
+                                    <constraint firstAttribute="trailing" secondItem="HkI-5A-Hde" secondAttribute="trailing" constant="30" id="jmo-ii-wZa"/>
+                                    <constraint firstAttribute="bottom" secondItem="HkI-5A-Hde" secondAttribute="bottom" constant="30" id="uEy-Dn-D5l"/>
                                 </constraints>
                             </scrollView>
                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E5r-qI-rX8" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
@@ -157,12 +165,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9O-5q-i6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="DlD-de-NqD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1920.8" y="-111.0944527736132"/>
         </scene>
     </scenes>
     <resources>
         <image name="button_camera" width="62" height="62"/>
+        <image name="button_plus" width="52" height="52"/>
         <image name="image_02.png" width="375" height="667"/>
         <image name="logo" width="59" height="39"/>
     </resources>
