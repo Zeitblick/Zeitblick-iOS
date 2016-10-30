@@ -86,11 +86,58 @@
                         <outlet property="logoTopConstraint" destination="IpA-mn-VQC" id="U30-54-Mj4"/>
                         <outlet property="photoButton" destination="cqc-gt-lVN" id="1Q1-VU-y4K"/>
                         <outlet property="selfieImageView" destination="XwH-52-KeU" id="PfB-wm-wSN"/>
+                        <segue destination="b1V-2i-Evg" kind="showDetail" identifier="result" animates="NO" id="xxX-4M-CZh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUc-Vf-cf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="970" y="-111"/>
+        </scene>
+        <!--Result Controller-->
+        <scene sceneID="f8w-51-bu6">
+            <objects>
+                <viewController id="b1V-2i-Evg" customClass="ResultController" customModule="Zeitblick" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4xs-Ho-Hmb"/>
+                        <viewControllerLayoutGuide type="bottom" id="wxT-uQ-8N7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hcg-O5-UcW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eae-AN-FVC">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DX1-0y-hqe">
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="DX1-0y-hqe" firstAttribute="leading" secondItem="eae-AN-FVC" secondAttribute="leading" id="8Ap-u3-YEm"/>
+                                    <constraint firstAttribute="trailing" secondItem="DX1-0y-hqe" secondAttribute="trailing" id="Har-kj-4Do"/>
+                                    <constraint firstItem="DX1-0y-hqe" firstAttribute="top" secondItem="eae-AN-FVC" secondAttribute="top" id="eLS-Bx-jGl"/>
+                                    <constraint firstAttribute="bottom" secondItem="DX1-0y-hqe" secondAttribute="bottom" id="iTU-GD-NyI"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DX1-0y-hqe" firstAttribute="height" secondItem="hcg-O5-UcW" secondAttribute="height" id="3ED-lQ-yue"/>
+                            <constraint firstAttribute="trailing" secondItem="eae-AN-FVC" secondAttribute="trailing" id="M17-Sq-QTi"/>
+                            <constraint firstItem="wxT-uQ-8N7" firstAttribute="top" secondItem="eae-AN-FVC" secondAttribute="bottom" id="Oi5-RB-Au3"/>
+                            <constraint firstItem="eae-AN-FVC" firstAttribute="leading" secondItem="hcg-O5-UcW" secondAttribute="leading" id="TT2-cI-iFB"/>
+                            <constraint firstItem="eae-AN-FVC" firstAttribute="top" secondItem="hcg-O5-UcW" secondAttribute="top" id="XoZ-hs-jcH"/>
+                            <constraint firstItem="DX1-0y-hqe" firstAttribute="width" secondItem="hcg-O5-UcW" secondAttribute="width" id="vjy-nb-gfC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultImageView" destination="DX1-0y-hqe" id="BEM-Ia-vbh"/>
+                        <outlet property="scrollView" destination="eae-AN-FVC" id="4BT-X8-7pY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9O-5q-i6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1920.8" y="-111.0944527736132"/>
         </scene>
     </scenes>
     <resources>

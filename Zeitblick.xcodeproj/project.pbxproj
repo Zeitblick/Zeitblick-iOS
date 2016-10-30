@@ -19,6 +19,7 @@
 		4126730D1DC6736100B78E27 /* image_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 412673091DC6736100B78E27 /* image_02.png */; };
 		4126730E1DC6736100B78E27 /* image_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126730A1DC6736100B78E27 /* image_03.png */; };
 		4126730F1DC6736100B78E27 /* image_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126730B1DC6736100B78E27 /* image_04.png */; };
+		412673111DC6856100B78E27 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412673101DC6856100B78E27 /* ResultController.swift */; };
 		412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412B31A31DAEB1A0003DD5FE /* Assets.xcassets */; };
 		412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */; };
 		412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */; };
@@ -81,6 +82,7 @@
 		412673091DC6736100B78E27 /* image_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_02.png; path = Zeitblick/Images/image_02.png; sourceTree = SOURCE_ROOT; };
 		4126730A1DC6736100B78E27 /* image_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_03.png; path = Zeitblick/Images/image_03.png; sourceTree = SOURCE_ROOT; };
 		4126730B1DC6736100B78E27 /* image_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_04.png; path = Zeitblick/Images/image_04.png; sourceTree = SOURCE_ROOT; };
+		412673101DC6856100B78E27 /* ResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultController.swift; path = Zeitblick/ResultController.swift; sourceTree = SOURCE_ROOT; };
 		412B31A31DAEB1A0003DD5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Zeitblick/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		412B31A51DAEB1B0003DD5FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Zeitblick/Info.plist; sourceTree = SOURCE_ROOT; };
 		412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Zeitblick/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -200,6 +202,7 @@
 				41BAFEF31DC00B1B00104C80 /* Alerts.swift */,
 				412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */,
 				412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */,
+				412673101DC6856100B78E27 /* ResultController.swift */,
 				41E174181DC4E35A00DCDF43 /* StartViewController.swift */,
 			);
 			name = Zeitblick;
@@ -445,6 +448,7 @@
 				41F405411DAEB45800B17E0E /* DesignableView.swift in Sources */,
 				41F405501DAEB45800B17E0E /* SpringView.swift in Sources */,
 				412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */,
+				412673111DC6856100B78E27 /* ResultController.swift in Sources */,
 				41F405381DAEB45800B17E0E /* AsyncImageView.swift in Sources */,
 				41F4053B1DAEB45800B17E0E /* DesignableButton.swift in Sources */,
 				41F405521DAEB45800B17E0E /* TransitionZoom.swift in Sources */,

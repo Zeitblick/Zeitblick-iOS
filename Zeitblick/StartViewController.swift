@@ -20,6 +20,8 @@ class StartViewController: UIViewController {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var logoSubtitle: UILabel!
 
+    var image: UIImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,17 +33,19 @@ class StartViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        print("prepare")
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let typedInfo = R.segue.startViewController.result(segue: segue), let image = image {
+            //typedInfo.destination.startProcessing(image: image)
+            typedInfo.destination.image = image
+        }
+
     }
-    */
 
     @IBAction func pickPhoto(_ sender: AnyObject) {
         let imagePicker = UIImagePickerController()
@@ -77,8 +81,8 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
             return
         }
 
-        Async.main {
-            self.view.showLoading()
+        Async.main { [weak self] in
+            self?.view.showLoading()
         }
 
         // Change UI
@@ -100,12 +104,14 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
             return try ZeitblickBackend().findSimilarRotation(face: face)
         }.then { inventoryNumber -> Promise<UIImage> in
             return try GoogleDatastore().getImage(inventoryNumber: inventoryNumber)
-        }.then { image in
+        }.then { [weak self] image -> Void in
             print("got image")
+            self?.image = image
+            self?.performSegue(withIdentifier: R.segue.startViewController.result, sender: self)
         }.catch { error in
             print(error)
-        }.always {
-            self.view.hideLoading()
+        }.always { [weak self] in
+            self?.view.hideLoading()
         }
     }
 
