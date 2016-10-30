@@ -110,12 +110,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DX1-0y-hqe">
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkI-5A-Hde">
-                                        <state key="normal" image="button_plus"/>
-                                        <connections>
-                                            <segue destination="DlD-de-NqD" kind="unwind" unwindAction="unwindToStartWithSegue:" id="RpX-dS-TfF"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -123,8 +117,6 @@
                                     <constraint firstAttribute="trailing" secondItem="DX1-0y-hqe" secondAttribute="trailing" id="Har-kj-4Do"/>
                                     <constraint firstItem="DX1-0y-hqe" firstAttribute="top" secondItem="eae-AN-FVC" secondAttribute="top" id="eLS-Bx-jGl"/>
                                     <constraint firstAttribute="bottom" secondItem="DX1-0y-hqe" secondAttribute="bottom" id="iTU-GD-NyI"/>
-                                    <constraint firstAttribute="trailing" secondItem="HkI-5A-Hde" secondAttribute="trailing" constant="30" id="jmo-ii-wZa"/>
-                                    <constraint firstAttribute="bottom" secondItem="HkI-5A-Hde" secondAttribute="bottom" constant="30" id="uEy-Dn-D5l"/>
                                 </constraints>
                             </scrollView>
                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E5r-qI-rX8" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
@@ -145,16 +137,28 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkI-5A-Hde">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="52" id="mlf-nj-Ptc"/>
+                                    <constraint firstAttribute="height" constant="52" id="yDq-Xm-S0c"/>
+                                </constraints>
+                                <state key="normal" image="button_plus"/>
+                                <connections>
+                                    <segue destination="DlD-de-NqD" kind="unwind" unwindAction="unwindToStartWithSegue:" id="RpX-dS-TfF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DX1-0y-hqe" firstAttribute="height" secondItem="hcg-O5-UcW" secondAttribute="height" id="3ED-lQ-yue"/>
+                            <constraint firstAttribute="bottom" secondItem="E5r-qI-rX8" secondAttribute="bottom" constant="30" id="70q-8S-Ua6"/>
+                            <constraint firstItem="E5r-qI-rX8" firstAttribute="centerX" secondItem="hcg-O5-UcW" secondAttribute="centerX" id="AMu-VY-9N9"/>
+                            <constraint firstAttribute="trailing" secondItem="HkI-5A-Hde" secondAttribute="trailing" constant="30" id="Hip-nt-mfi"/>
                             <constraint firstAttribute="trailing" secondItem="eae-AN-FVC" secondAttribute="trailing" id="M17-Sq-QTi"/>
                             <constraint firstItem="wxT-uQ-8N7" firstAttribute="top" secondItem="eae-AN-FVC" secondAttribute="bottom" id="Oi5-RB-Au3"/>
                             <constraint firstItem="eae-AN-FVC" firstAttribute="leading" secondItem="hcg-O5-UcW" secondAttribute="leading" id="TT2-cI-iFB"/>
-                            <constraint firstItem="wxT-uQ-8N7" firstAttribute="top" secondItem="E5r-qI-rX8" secondAttribute="bottom" constant="30" id="Vtm-Iq-aah"/>
                             <constraint firstItem="eae-AN-FVC" firstAttribute="top" secondItem="hcg-O5-UcW" secondAttribute="top" id="XoZ-hs-jcH"/>
-                            <constraint firstItem="E5r-qI-rX8" firstAttribute="centerX" secondItem="DX1-0y-hqe" secondAttribute="centerX" id="eQ9-aV-Akg"/>
+                            <constraint firstAttribute="bottom" secondItem="HkI-5A-Hde" secondAttribute="bottom" constant="30" id="pq3-Sj-p36"/>
                             <constraint firstItem="DX1-0y-hqe" firstAttribute="width" secondItem="hcg-O5-UcW" secondAttribute="width" id="vjy-nb-gfC"/>
                         </constraints>
                     </view>
