@@ -20,7 +20,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var logoSubtitle: UILabel!
 
-    var image: UIImage?
+    var resultImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +37,11 @@ class StartViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        print("prepare")
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if let typedInfo = R.segue.startViewController.result(segue: segue), let image = image {
+        if let typedInfo = R.segue.startViewController.result(segue: segue) {
             //typedInfo.destination.startProcessing(image: image)
-            typedInfo.destination.image = image
+            typedInfo.destination.selfieImage = selfieImageView.image
+            typedInfo.destination.resultImage = resultImage
         }
-
     }
 
     @IBAction func pickPhoto(_ sender: AnyObject) {
@@ -106,7 +103,7 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
             return try GoogleDatastore().getImage(inventoryNumber: inventoryNumber)
         }.then { [weak self] image -> Void in
             print("got image")
-            self?.image = image
+            self?.resultImage = image
             self?.performSegue(withIdentifier: R.segue.startViewController.result, sender: self)
         }.catch { error in
             print(error)

@@ -77,7 +77,7 @@
                             <constraint firstItem="XwH-52-KeU" firstAttribute="centerY" secondItem="cqc-gt-lVN" secondAttribute="centerY" id="QYz-ej-DWj"/>
                             <constraint firstItem="6in-3t-bqD" firstAttribute="top" secondItem="tE9-WW-g34" secondAttribute="bottom" constant="20" id="WSP-MQ-H0E"/>
                             <constraint firstItem="75W-Cm-Tn4" firstAttribute="top" secondItem="xyC-v3-gdx" secondAttribute="top" id="e0T-Q5-Oc9"/>
-                            <constraint firstItem="x83-aD-mRL" firstAttribute="top" secondItem="cqc-gt-lVN" secondAttribute="bottom" constant="52" id="koQ-gb-8Y7"/>
+                            <constraint firstItem="x83-aD-mRL" firstAttribute="top" secondItem="cqc-gt-lVN" secondAttribute="bottom" constant="53" id="koQ-gb-8Y7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -119,6 +119,24 @@
                                     <constraint firstAttribute="bottom" secondItem="DX1-0y-hqe" secondAttribute="bottom" id="iTU-GD-NyI"/>
                                 </constraints>
                             </scrollView>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E5r-qI-rX8" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Xho-MF-ScK"/>
+                                    <constraint firstAttribute="height" constant="100" id="mIH-KX-ejw"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="49"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -126,13 +144,16 @@
                             <constraint firstAttribute="trailing" secondItem="eae-AN-FVC" secondAttribute="trailing" id="M17-Sq-QTi"/>
                             <constraint firstItem="wxT-uQ-8N7" firstAttribute="top" secondItem="eae-AN-FVC" secondAttribute="bottom" id="Oi5-RB-Au3"/>
                             <constraint firstItem="eae-AN-FVC" firstAttribute="leading" secondItem="hcg-O5-UcW" secondAttribute="leading" id="TT2-cI-iFB"/>
+                            <constraint firstItem="wxT-uQ-8N7" firstAttribute="top" secondItem="E5r-qI-rX8" secondAttribute="bottom" constant="30" id="Vtm-Iq-aah"/>
                             <constraint firstItem="eae-AN-FVC" firstAttribute="top" secondItem="hcg-O5-UcW" secondAttribute="top" id="XoZ-hs-jcH"/>
+                            <constraint firstItem="E5r-qI-rX8" firstAttribute="centerX" secondItem="DX1-0y-hqe" secondAttribute="centerX" id="eQ9-aV-Akg"/>
                             <constraint firstItem="DX1-0y-hqe" firstAttribute="width" secondItem="hcg-O5-UcW" secondAttribute="width" id="vjy-nb-gfC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="resultImageView" destination="DX1-0y-hqe" id="BEM-Ia-vbh"/>
                         <outlet property="scrollView" destination="eae-AN-FVC" id="4BT-X8-7pY"/>
+                        <outlet property="selfieImageView" destination="E5r-qI-rX8" id="ynJ-AL-4M0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9O-5q-i6h" userLabel="First Responder" sceneMemberID="firstResponder"/>

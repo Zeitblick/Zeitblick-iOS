@@ -11,14 +11,17 @@ import UIKit
 class ResultController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var selfieImageView: DesignableImageView!
     @IBOutlet weak var resultImageView: UIImageView!
 
-    var image: UIImage?
+    var selfieImage: UIImage?
+    var resultImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        selfieImageView.image = selfieImage
         configureImageView()
     }
 
@@ -39,7 +42,7 @@ class ResultController: UIViewController {
     */
 
     func configureImageView() {
-        resultImageView.image = image
+        resultImageView.image = resultImage
         resultImageView.sizeToFit()
 
         scrollView.delegate = self
