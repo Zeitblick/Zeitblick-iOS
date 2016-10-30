@@ -60,6 +60,7 @@
 		41F405511DAEB45800B17E0E /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405341DAEB45800B17E0E /* TransitionManager.swift */; };
 		41F405521DAEB45800B17E0E /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405351DAEB45800B17E0E /* TransitionZoom.swift */; };
 		41F405531DAEB45800B17E0E /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405361DAEB45800B17E0E /* UnwindSegue.swift */; };
+		41F699BA1DC54DCE002FCE5D /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F699B91DC54DCE002FCE5D /* Async.framework */; };
 		41F83B001DC4F8FB00FBF4EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41F83B021DC4F8FB00FBF4EC /* InfoPlist.strings */; };
 		41F83B071DC4FC0700FBF4EC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F83B061DC4FC0700FBF4EC /* Rswift.framework */; };
 		41F83B081DC4FCE900FBF4EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41F83B0A1DC4FCE900FBF4EC /* Localizable.strings */; };
@@ -123,6 +124,7 @@
 		41F405341DAEB45800B17E0E /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		41F405351DAEB45800B17E0E /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		41F405361DAEB45800B17E0E /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		41F699B91DC54DCE002FCE5D /* Async.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Async.framework; path = Carthage/Build/iOS/Async.framework; sourceTree = SOURCE_ROOT; };
 		41F83B011DC4F8FB00FBF4EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		41F83B061DC4FC0700FBF4EC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = SOURCE_ROOT; };
 		41F83B091DC4FCE900FBF4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				41C67CA81DC533AE0049C9D8 /* PromiseKit.framework in Frameworks */,
 				4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */,
 				41F83B071DC4FC0700FBF4EC /* Rswift.framework in Frameworks */,
+				41F699BA1DC54DCE002FCE5D /* Async.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +251,7 @@
 			children = (
 				41BB7D8A1D9C65530007ADFE /* Alamofire.framework */,
 				4113833B1DB3A2BA005530CE /* AlamofireImage.framework */,
+				41F699B91DC54DCE002FCE5D /* Async.framework */,
 				41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */,
 				41F83B061DC4FC0700FBF4EC /* Rswift.framework */,
 				41F405181DAEB45800B17E0E /* Spring */,
@@ -385,6 +389,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Async.framework",
 			);
 			name = Carthage;
 			outputPaths = (

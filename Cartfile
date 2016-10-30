@@ -1,5 +1,6 @@
 github "Alamofire/Alamofire" ~> 4.0
 github "Alamofire/AlamofireImage" ~> 3.1
+github "duemunk/Async" ~> 2.0
 github "mxcl/PromiseKit" ~> 4.0
 github "mac-cain13/R.swift.Library" ~> 3.0
 github "SwiftyJSON/SwiftyJSON" ~> 3.1
