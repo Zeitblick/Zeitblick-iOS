@@ -19,25 +19,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="75W-Cm-Tn4" userLabel="Image"/>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XwH-52-KeU" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
-                                <frame key="frameInset" minX="10" minY="10" width="100" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="5rB-Xl-Lii"/>
-                                    <constraint firstAttribute="width" constant="100" id="btF-7U-lgp"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="49"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tE9-WW-g34">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="Xdp-iq-ZuW"/>
@@ -64,6 +45,24 @@
                                     <action selector="pickPhoto:" destination="nzy-fN-EJb" eventType="touchUpInside" id="GEz-4i-Apj"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XwH-52-KeU" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5rB-Xl-Lii"/>
+                                    <constraint firstAttribute="width" constant="100" id="btF-7U-lgp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="49"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -73,14 +72,20 @@
                             <constraint firstItem="tE9-WW-g34" firstAttribute="centerX" secondItem="xyC-v3-gdx" secondAttribute="centerX" id="7Hl-Ql-SYq"/>
                             <constraint firstItem="75W-Cm-Tn4" firstAttribute="leading" secondItem="xyC-v3-gdx" secondAttribute="leading" id="8id-V9-LBB"/>
                             <constraint firstItem="6in-3t-bqD" firstAttribute="centerX" secondItem="tE9-WW-g34" secondAttribute="centerX" id="9T0-cD-PlD"/>
+                            <constraint firstItem="XwH-52-KeU" firstAttribute="centerX" secondItem="cqc-gt-lVN" secondAttribute="centerX" id="EDO-pB-l5X"/>
                             <constraint firstItem="tE9-WW-g34" firstAttribute="top" secondItem="BJp-Wn-3R8" secondAttribute="bottom" constant="254" id="IpA-mn-VQC"/>
+                            <constraint firstItem="XwH-52-KeU" firstAttribute="centerY" secondItem="cqc-gt-lVN" secondAttribute="centerY" id="QYz-ej-DWj"/>
                             <constraint firstItem="6in-3t-bqD" firstAttribute="top" secondItem="tE9-WW-g34" secondAttribute="bottom" constant="20" id="WSP-MQ-H0E"/>
                             <constraint firstItem="75W-Cm-Tn4" firstAttribute="top" secondItem="xyC-v3-gdx" secondAttribute="top" id="e0T-Q5-Oc9"/>
                             <constraint firstItem="x83-aD-mRL" firstAttribute="top" secondItem="cqc-gt-lVN" secondAttribute="bottom" constant="52" id="koQ-gb-8Y7"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logo" destination="tE9-WW-g34" id="XCm-Cq-Qwj"/>
+                        <outlet property="logoSubtitle" destination="6in-3t-bqD" id="lBZ-vy-kOl"/>
+                        <outlet property="logoTopConstraint" destination="IpA-mn-VQC" id="U30-54-Mj4"/>
                         <outlet property="photoButton" destination="cqc-gt-lVN" id="1Q1-VU-y4K"/>
+                        <outlet property="selfieImageView" destination="XwH-52-KeU" id="PfB-wm-wSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUc-Vf-cf2" userLabel="First Responder" sceneMemberID="firstResponder"/>

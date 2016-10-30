@@ -13,12 +13,17 @@ import PromiseKit
 class StartViewController: UIViewController {
 
     @IBOutlet weak var photoButton: DesignableButton!
+    @IBOutlet weak var selfieImageView: DesignableImageView!
+
+    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var logoSubtitle: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
+        selfieImageView.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +76,12 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
         dismiss(animated: false, completion: nil)
 
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            selfieImageView.image = image
+            selfieImageView.isHidden = false
+            photoButton.isHidden = true
+
+            logoTopConstraint.constant = 22.0
+            logoSubtitle.isHidden = true
 
             firstly {
                 return try GoogleVision().findOneFace(image: image)
