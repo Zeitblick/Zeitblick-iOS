@@ -18,7 +18,6 @@
 		4126730C1DC6736100B78E27 /* image_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 412673081DC6736100B78E27 /* image_01.png */; };
 		4126730D1DC6736100B78E27 /* image_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 412673091DC6736100B78E27 /* image_02.png */; };
 		4126730E1DC6736100B78E27 /* image_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126730A1DC6736100B78E27 /* image_03.png */; };
-		4126730F1DC6736100B78E27 /* image_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126730B1DC6736100B78E27 /* image_04.png */; };
 		412673111DC6856100B78E27 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412673101DC6856100B78E27 /* ResultController.swift */; };
 		412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412B31A31DAEB1A0003DD5FE /* Assets.xcassets */; };
 		412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */; };
@@ -81,7 +80,6 @@
 		412673081DC6736100B78E27 /* image_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_01.png; path = Zeitblick/Images/image_01.png; sourceTree = SOURCE_ROOT; };
 		412673091DC6736100B78E27 /* image_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_02.png; path = Zeitblick/Images/image_02.png; sourceTree = SOURCE_ROOT; };
 		4126730A1DC6736100B78E27 /* image_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_03.png; path = Zeitblick/Images/image_03.png; sourceTree = SOURCE_ROOT; };
-		4126730B1DC6736100B78E27 /* image_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_04.png; path = Zeitblick/Images/image_04.png; sourceTree = SOURCE_ROOT; };
 		412673101DC6856100B78E27 /* ResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultController.swift; path = Zeitblick/ResultController.swift; sourceTree = SOURCE_ROOT; };
 		412B31A31DAEB1A0003DD5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Zeitblick/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		412B31A51DAEB1B0003DD5FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Zeitblick/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -234,7 +232,6 @@
 				412673081DC6736100B78E27 /* image_01.png */,
 				412673091DC6736100B78E27 /* image_02.png */,
 				4126730A1DC6736100B78E27 /* image_03.png */,
-				4126730B1DC6736100B78E27 /* image_04.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -370,7 +367,6 @@
 				41F83B001DC4F8FB00FBF4EC /* InfoPlist.strings in Resources */,
 				4126730C1DC6736100B78E27 /* image_01.png in Resources */,
 				412B31B41DAEB259003DD5FE /* Environment.plist in Resources */,
-				4126730F1DC6736100B78E27 /* image_04.png in Resources */,
 				412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */,
 				41F405461DAEB45800B17E0E /* LoadingView.xib in Resources */,
 				41F83B081DC4FCE900FBF4EC /* Localizable.strings in Resources */,
