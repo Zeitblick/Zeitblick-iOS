@@ -60,9 +60,7 @@ class StartViewController: UIViewController {
                     return
                 }
                 imagePicker.sourceType = .photoLibrary
-                strongSelf.present(imagePicker, animated: true, completion: {
-                    UIApplication.shared.setStatusBarStyle(.lightContent, animated:true)
-                })
+                strongSelf.present(imagePicker, animated: true, completion: nil)
             })
     }
 
