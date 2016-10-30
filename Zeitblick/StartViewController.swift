@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class StartViewController: UIViewController {
 
@@ -63,13 +64,21 @@ class StartViewController: UIViewController {
 
 extension StartViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print(#function)
+
+        print("selected photo")
+
+        dismiss(animated: false, completion: nil)
 
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            //let request = try! VisionRouter.analyseImage(image: image).asURLRequest()
+            Alamofire.request(GoogleVisionRouter.analyseImage(image: image)).responseJSON { response in
+                debugPrint("All Response Info: \(response)")
 
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+            }
         }
-
-        dismiss(animated: true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */; };
 		4113833C1DB3A2BA005530CE /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4113833B1DB3A2BA005530CE /* AlamofireImage.framework */; };
+		412672F51DC624C000B78E27 /* GoogleVisionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672F41DC624C000B78E27 /* GoogleVisionRouter.swift */; };
 		412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412B31A31DAEB1A0003DD5FE /* Assets.xcassets */; };
 		412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */; };
 		412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */; };
@@ -62,6 +63,7 @@
 		4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		4113833B1DB3A2BA005530CE /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = SOURCE_ROOT; };
 		411D55F41D9AF50A0056EE98 /* Zeitblick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeitblick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		412672F41DC624C000B78E27 /* GoogleVisionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleVisionRouter.swift; path = Zeitblick/GoogleVisionRouter.swift; sourceTree = SOURCE_ROOT; };
 		412B31A31DAEB1A0003DD5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Zeitblick/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		412B31A51DAEB1B0003DD5FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Zeitblick/Info.plist; sourceTree = SOURCE_ROOT; };
 		412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Zeitblick/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -175,6 +177,7 @@
 				4103B5701DA005A70065593A /* Environment */,
 				414EA8C41DB93CA50097CBAF /* Extensions */,
 				4104E7BB1DAEACE10005B019 /* Resources */,
+				412672F91DC63ED100B78E27 /* REST */,
 				41BB7D891D9C652A0007ADFE /* vendor */,
 				41BAFEF31DC00B1B00104C80 /* Alerts.swift */,
 				412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */,
@@ -184,6 +187,14 @@
 			);
 			name = Zeitblick;
 			path = "Epic Selfie";
+			sourceTree = "<group>";
+		};
+		412672F91DC63ED100B78E27 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				412672F41DC624C000B78E27 /* GoogleVisionRouter.swift */,
+			);
+			name = REST;
 			sourceTree = "<group>";
 		};
 		414EA8C41DB93CA50097CBAF /* Extensions */ = {
@@ -382,6 +393,7 @@
 				41F4054D1DAEB45800B17E0E /* SpringLabel.swift in Sources */,
 				412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */,
 				41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */,
+				412672F51DC624C000B78E27 /* GoogleVisionRouter.swift in Sources */,
 				41F83B0D1DC4FF0700FBF4EC /* R.generated.swift in Sources */,
 				41F405391DAEB45800B17E0E /* AutoTextView.swift in Sources */,
 				41F4054A1DAEB45800B17E0E /* SpringAnimation.swift in Sources */,
