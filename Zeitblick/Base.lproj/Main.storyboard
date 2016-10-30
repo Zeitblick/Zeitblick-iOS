@@ -45,7 +45,7 @@
                                     <action selector="pickPhoto:" destination="nzy-fN-EJb" eventType="touchUpInside" id="GEz-4i-Apj"/>
                                 </connections>
                             </button>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XwH-52-KeU" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
+                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XwH-52-KeU" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="5rB-Xl-Lii"/>
