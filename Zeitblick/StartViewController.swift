@@ -12,6 +12,7 @@ import Alamofire
 import PromiseKit
 
 class StartViewController: UIViewController {
+    typealias Me = StartViewController
 
     @IBOutlet weak var photoButton: DesignableButton!
     @IBOutlet weak var selfieImageView: DesignableImageView!
@@ -20,28 +21,31 @@ class StartViewController: UIViewController {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var logoSubtitle: UILabel!
 
+    static let logoTopOffset: CGFloat = 254.0
+
+    var resultImage: UIImage?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        selfieImageView.isHidden = true
+        resetController()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+        if let typedInfo = R.segue.startViewController.result(segue: segue) {
+            //typedInfo.destination.startProcessing(image: image)
+            typedInfo.destination.selfieImage = selfieImageView.image
+            typedInfo.destination.resultImage = resultImage
+        }
     }
-    */
 
     @IBAction func pickPhoto(_ sender: AnyObject) {
         let imagePicker = UIImagePickerController()
@@ -64,6 +68,20 @@ class StartViewController: UIViewController {
                 strongSelf.present(imagePicker, animated: true, completion: nil)
             })
     }
+
+    @IBAction func unwindToStart(segue: UIStoryboardSegue) {
+        print(#function)
+        resetController()
+    }
+
+    private func resetController() {
+        selfieImageView.image = nil
+        selfieImageView.isHidden = true
+        photoButton.isHidden = false
+
+        logoTopConstraint.constant = Me.logoTopOffset
+        logoSubtitle.isHidden = false
+    }
 }
 
 extension StartViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -77,8 +95,8 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
             return
         }
 
-        Async.main {
-            self.view.showLoading()
+        Async.main { [weak self] in
+            self?.view.showLoading()
         }
 
         // Change UI
@@ -100,12 +118,14 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
             return try ZeitblickBackend().findSimilarRotation(face: face)
         }.then { inventoryNumber -> Promise<UIImage> in
             return try GoogleDatastore().getImage(inventoryNumber: inventoryNumber)
-        }.then { image in
+        }.then { [weak self] image -> Void in
             print("got image")
+            self?.resultImage = image
+            self?.performSegue(withIdentifier: R.segue.startViewController.result, sender: self)
         }.catch { error in
             print(error)
-        }.always {
-            self.view.hideLoading()
+        }.always { [weak self] in
+            self?.view.hideLoading()
         }
     }
 
