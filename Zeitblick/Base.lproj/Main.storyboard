@@ -19,6 +19,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="75W-Cm-Tn4" userLabel="Image"/>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XwH-52-KeU" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
+                                <frame key="frameInset" minX="10" minY="10" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5rB-Xl-Lii"/>
+                                    <constraint firstAttribute="width" constant="100" id="btF-7U-lgp"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="49"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tE9-WW-g34">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="Xdp-iq-ZuW"/>
@@ -30,12 +49,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqc-gt-lVN" customClass="DesignableButton" customModule="Zeitblick" customModuleProvider="target">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqc-gt-lVN" customClass="DesignableButton" customModule="Zeitblick" customModuleProvider="target">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="ASB-7G-MNC"/>
                                     <constraint firstAttribute="width" constant="54" id="q2j-1R-sXc"/>
                                 </constraints>
+                                <state key="normal" image="button_camera"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="27"/>
@@ -62,57 +81,15 @@
                     </view>
                     <connections>
                         <outlet property="photoButton" destination="cqc-gt-lVN" id="1Q1-VU-y4K"/>
-                        <segue destination="3p5-54-H9A" kind="show" identifier="Processing" animates="NO" id="DlH-dA-yC6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUc-Vf-cf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="970" y="-111"/>
         </scene>
-        <!--Processing View Controller-->
-        <scene sceneID="sf5-q0-OKw">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1dc-T1-DK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="3p5-54-H9A" customClass="ProcessingViewController" customModule="Zeitblick" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="x1Q-U4-hgt"/>
-                        <viewControllerLayoutGuide type="bottom" id="ooS-KK-y80"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GqB-x7-0Pe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rvu-d1-U4I" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="7hf-zy-Vqw"/>
-                                    <constraint firstAttribute="height" constant="100" id="RyK-o2-BIt"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="49"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="ooS-KK-y80" firstAttribute="top" secondItem="Rvu-d1-U4I" secondAttribute="bottom" constant="20" id="6gU-oq-F2m"/>
-                            <constraint firstItem="Rvu-d1-U4I" firstAttribute="centerX" secondItem="GqB-x7-0Pe" secondAttribute="centerX" id="KF1-Hw-SVX"/>
-                        </constraints>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1946" y="-111"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="button_camera" width="62" height="62"/>
         <image name="image_02.png" width="375" height="667"/>
         <image name="logo" width="59" height="39"/>
     </resources>
