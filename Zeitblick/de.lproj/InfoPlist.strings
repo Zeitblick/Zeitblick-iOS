@@ -1,0 +1,3 @@
+/* Permissions*/
+"NSCameraUsageDescription"       = "Mache ein Foto und lass es analysieren.";
+"NSPhotoLibraryUsageDescription" = "Lasse ein Foto aus deinem Archiv analysieren.";

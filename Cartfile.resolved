@@ -1,4 +1,6 @@
 github "Alamofire/Alamofire" "4.0.1"
-github "MengTo/Spring" "e5c127b7aa6ce31e5f4d01100a8991423a1eb498"
+github "duemunk/Async" "2.0.0"
+github "mxcl/PromiseKit" "4.0.5"
+github "mac-cain13/R.swift.Library" "v3.0.2"
 github "SwiftyJSON/SwiftyJSON" "3.1.0"
 github "Alamofire/AlamofireImage" "3.1.0"

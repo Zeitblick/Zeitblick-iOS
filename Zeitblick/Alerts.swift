@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 class Alerts {
     typealias Action = () -> Void
@@ -18,13 +19,13 @@ class Alerts {
 
         if isCameraAvailable {
             let alert = UIAlertController()
-            alert.addAction(UIAlertAction(title: "Bild machen", style: .default, handler:  { action in
+            alert.addAction(UIAlertAction(title: R.string.localizable.imagePicker_takePhoto(), style: .default, handler:  { action in
                 takePhotoAction()
             }))
-            alert.addAction(UIAlertAction(title: "Bild wählen", style: .default, handler: { action in
+            alert.addAction(UIAlertAction(title: R.string.localizable.imagePicker_pickPhoto(), style: .default, handler: { action in
                 choosePhotoAction()
             }))
-            alert.addAction(UIAlertAction(title: "Abbrechen", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: R.string.localizable.imagePicker_cancel(), style: .cancel, handler: nil))
 
             viewController.present(alert, animated: true, completion: nil)
         } else if isLibraryAvailable {

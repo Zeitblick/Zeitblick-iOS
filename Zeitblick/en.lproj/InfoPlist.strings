@@ -1,0 +1,11 @@
+/*
+ InfoPlist.strings
+ Zeitblick
+
+ Created by Bastian Clausdorff on 29.10.16.
+ Copyright © 2016 Zeitblick. All rights reserved.
+ */
+
+/* Permissions*/
+"NSCameraUsageDescription"       = "Take a selfie and let the server find a historical match.";
+"NSPhotoLibraryUsageDescription" = "Pick a selfie from your library and let the server find a historical match.";

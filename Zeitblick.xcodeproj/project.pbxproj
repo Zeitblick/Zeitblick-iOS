@@ -9,18 +9,28 @@
 /* Begin PBXBuildFile section */
 		4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */; };
 		4113833C1DB3A2BA005530CE /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4113833B1DB3A2BA005530CE /* AlamofireImage.framework */; };
-		412651F81DAEB51100865395 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F405551DAEB4CC00B17E0E /* Main.storyboard */; };
+		412672F51DC624C000B78E27 /* GoogleVisionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672F41DC624C000B78E27 /* GoogleVisionRouter.swift */; };
+		412672F81DC63D4A00B78E27 /* Alamofire+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672F71DC63D4A00B78E27 /* Alamofire+Promise.swift */; };
+		412672FD1DC640C900B78E27 /* GoogleVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672FC1DC640C900B78E27 /* GoogleVision.swift */; };
+		412673001DC656FB00B78E27 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672FF1DC656FB00B78E27 /* Face.swift */; };
+		412673021DC6606D00B78E27 /* ZeitblickBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412673011DC6606D00B78E27 /* ZeitblickBackend.swift */; };
+		412673061DC667AF00B78E27 /* GoogleDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412673051DC667AF00B78E27 /* GoogleDatastore.swift */; };
+		4126730C1DC6736100B78E27 /* image_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 412673081DC6736100B78E27 /* image_01.png */; };
+		4126730D1DC6736100B78E27 /* image_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 412673091DC6736100B78E27 /* image_02.png */; };
+		4126730E1DC6736100B78E27 /* image_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 4126730A1DC6736100B78E27 /* image_03.png */; };
+		412673111DC6856100B78E27 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412673101DC6856100B78E27 /* ResultController.swift */; };
 		412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412B31A31DAEB1A0003DD5FE /* Assets.xcassets */; };
 		412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */; };
 		412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */; };
-		412B31AC1DAEB1DA003DD5FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31AB1DAEB1DA003DD5FE /* ViewController.swift */; };
-		412B31AE1DAEB1E2003DD5FE /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412B31AD1DAEB1E2003DD5FE /* Launch.xib */; };
 		412B31B21DAEB24D003DD5FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31B11DAEB24D003DD5FE /* Environment.swift */; };
 		412B31B41DAEB259003DD5FE /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 412B31B31DAEB259003DD5FE /* Environment.plist */; };
 		414EA8C71DB93CD50097CBAF /* UIColor+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */; };
 		414EA8C81DB93CD50097CBAF /* UIFont+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */; };
 		41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAFEF31DC00B1B00104C80 /* Alerts.swift */; };
 		41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB7D8A1D9C65530007ADFE /* Alamofire.framework */; };
+		41C67CA81DC533AE0049C9D8 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */; };
+		41DBE59D1DC4F38800C91AC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41DBE59B1DC4F38800C91AC8 /* Main.storyboard */; };
+		41E174191DC4E35A00DCDF43 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E174181DC4E35A00DCDF43 /* StartViewController.swift */; };
 		41F405371DAEB45800B17E0E /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405191DAEB45800B17E0E /* AsyncButton.swift */; };
 		41F405381DAEB45800B17E0E /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4051A1DAEB45800B17E0E /* AsyncImageView.swift */; };
 		41F405391DAEB45800B17E0E /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4051B1DAEB45800B17E0E /* AutoTextView.swift */; };
@@ -50,24 +60,40 @@
 		41F405511DAEB45800B17E0E /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405341DAEB45800B17E0E /* TransitionManager.swift */; };
 		41F405521DAEB45800B17E0E /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405351DAEB45800B17E0E /* TransitionZoom.swift */; };
 		41F405531DAEB45800B17E0E /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F405361DAEB45800B17E0E /* UnwindSegue.swift */; };
+		41F699BA1DC54DCE002FCE5D /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F699B91DC54DCE002FCE5D /* Async.framework */; };
+		41F83B001DC4F8FB00FBF4EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41F83B021DC4F8FB00FBF4EC /* InfoPlist.strings */; };
+		41F83B071DC4FC0700FBF4EC /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F83B061DC4FC0700FBF4EC /* Rswift.framework */; };
+		41F83B081DC4FCE900FBF4EC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41F83B0A1DC4FCE900FBF4EC /* Localizable.strings */; };
+		41F83B0D1DC4FF0700FBF4EC /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F83B0C1DC4FF0700FBF4EC /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		4113833B1DB3A2BA005530CE /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = SOURCE_ROOT; };
 		411D55F41D9AF50A0056EE98 /* Zeitblick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeitblick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		412672F41DC624C000B78E27 /* GoogleVisionRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleVisionRouter.swift; path = Zeitblick/GoogleVisionRouter.swift; sourceTree = SOURCE_ROOT; };
+		412672F71DC63D4A00B78E27 /* Alamofire+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alamofire+Promise.swift"; path = "Zeitblick/Extensions/Alamofire+Promise.swift"; sourceTree = SOURCE_ROOT; };
+		412672FC1DC640C900B78E27 /* GoogleVision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleVision.swift; path = Zeitblick/GoogleVision.swift; sourceTree = SOURCE_ROOT; };
+		412672FF1DC656FB00B78E27 /* Face.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Face.swift; path = Zeitblick/Models/Face.swift; sourceTree = SOURCE_ROOT; };
+		412673011DC6606D00B78E27 /* ZeitblickBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZeitblickBackend.swift; path = Zeitblick/ZeitblickBackend.swift; sourceTree = SOURCE_ROOT; };
+		412673051DC667AF00B78E27 /* GoogleDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleDatastore.swift; path = Zeitblick/GoogleDatastore.swift; sourceTree = SOURCE_ROOT; };
+		412673081DC6736100B78E27 /* image_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_01.png; path = Zeitblick/Images/image_01.png; sourceTree = SOURCE_ROOT; };
+		412673091DC6736100B78E27 /* image_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_02.png; path = Zeitblick/Images/image_02.png; sourceTree = SOURCE_ROOT; };
+		4126730A1DC6736100B78E27 /* image_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image_03.png; path = Zeitblick/Images/image_03.png; sourceTree = SOURCE_ROOT; };
+		412673101DC6856100B78E27 /* ResultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultController.swift; path = Zeitblick/ResultController.swift; sourceTree = SOURCE_ROOT; };
 		412B31A31DAEB1A0003DD5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Zeitblick/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		412B31A51DAEB1B0003DD5FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Zeitblick/Info.plist; sourceTree = SOURCE_ROOT; };
 		412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Zeitblick/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Zeitblick/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
-		412B31AB1DAEB1DA003DD5FE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Zeitblick/ViewController.swift; sourceTree = SOURCE_ROOT; };
-		412B31AD1DAEB1E2003DD5FE /* Launch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Launch.xib; path = Zeitblick/Launch.xib; sourceTree = SOURCE_ROOT; };
 		412B31B11DAEB24D003DD5FE /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Zeitblick/Environment/Environment.swift; sourceTree = SOURCE_ROOT; };
 		412B31B31DAEB259003DD5FE /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Environment.plist; path = Zeitblick/Environment/Environment.plist; sourceTree = SOURCE_ROOT; };
 		414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIColor+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
 		414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIFont+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
 		41BAFEF31DC00B1B00104C80 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerts.swift; path = Zeitblick/Alerts.swift; sourceTree = SOURCE_ROOT; };
 		41BB7D8A1D9C65530007ADFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
+		41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = SOURCE_ROOT; };
+		41DBE59C1DC4F38800C91AC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Zeitblick/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		41E174181DC4E35A00DCDF43 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = Zeitblick/StartViewController.swift; sourceTree = SOURCE_ROOT; };
 		41F405191DAEB45800B17E0E /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		41F4051A1DAEB45800B17E0E /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		41F4051B1DAEB45800B17E0E /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -98,7 +124,12 @@
 		41F405341DAEB45800B17E0E /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		41F405351DAEB45800B17E0E /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		41F405361DAEB45800B17E0E /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
-		41F405561DAEB4CC00B17E0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Zeitblick/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		41F699B91DC54DCE002FCE5D /* Async.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Async.framework; path = Carthage/Build/iOS/Async.framework; sourceTree = SOURCE_ROOT; };
+		41F83B011DC4F8FB00FBF4EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		41F83B061DC4FC0700FBF4EC /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = Carthage/Build/iOS/Rswift.framework; sourceTree = SOURCE_ROOT; };
+		41F83B091DC4FCE900FBF4EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41F83B0B1DC4FCF700FBF4EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41F83B0C1DC4FF0700FBF4EC /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +139,10 @@
 			files = (
 				41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */,
 				4113833C1DB3A2BA005530CE /* AlamofireImage.framework in Frameworks */,
+				41C67CA81DC533AE0049C9D8 /* PromiseKit.framework in Frameworks */,
 				4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */,
+				41F83B071DC4FC0700FBF4EC /* Rswift.framework in Frameworks */,
+				41F699BA1DC54DCE002FCE5D /* Async.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,8 +161,13 @@
 		4104E7BB1DAEACE10005B019 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				412673071DC6734A00B78E27 /* Images */,
 				412B31A31DAEB1A0003DD5FE /* Assets.xcassets */,
 				412B31A51DAEB1B0003DD5FE /* Info.plist */,
+				41F83B021DC4F8FB00FBF4EC /* InfoPlist.strings */,
+				41F83B0A1DC4FCE900FBF4EC /* Localizable.strings */,
+				41DBE59B1DC4F38800C91AC8 /* Main.storyboard */,
+				41F83B0C1DC4FF0700FBF4EC /* R.generated.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -154,22 +193,53 @@
 			children = (
 				4103B5701DA005A70065593A /* Environment */,
 				414EA8C41DB93CA50097CBAF /* Extensions */,
+				412672FE1DC6416500B78E27 /* Models */,
 				4104E7BB1DAEACE10005B019 /* Resources */,
+				412672F91DC63ED100B78E27 /* REST */,
 				41BB7D891D9C652A0007ADFE /* vendor */,
 				41BAFEF31DC00B1B00104C80 /* Alerts.swift */,
 				412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */,
 				412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */,
-				412B31AB1DAEB1DA003DD5FE /* ViewController.swift */,
-				412B31AD1DAEB1E2003DD5FE /* Launch.xib */,
-				41F405551DAEB4CC00B17E0E /* Main.storyboard */,
+				412673101DC6856100B78E27 /* ResultController.swift */,
+				41E174181DC4E35A00DCDF43 /* StartViewController.swift */,
 			);
 			name = Zeitblick;
 			path = "Epic Selfie";
 			sourceTree = "<group>";
 		};
+		412672F91DC63ED100B78E27 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				412673051DC667AF00B78E27 /* GoogleDatastore.swift */,
+				412672FC1DC640C900B78E27 /* GoogleVision.swift */,
+				412672F41DC624C000B78E27 /* GoogleVisionRouter.swift */,
+				412673011DC6606D00B78E27 /* ZeitblickBackend.swift */,
+			);
+			name = REST;
+			sourceTree = "<group>";
+		};
+		412672FE1DC6416500B78E27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				412672FF1DC656FB00B78E27 /* Face.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		412673071DC6734A00B78E27 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				412673081DC6736100B78E27 /* image_01.png */,
+				412673091DC6736100B78E27 /* image_02.png */,
+				4126730A1DC6736100B78E27 /* image_03.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		414EA8C41DB93CA50097CBAF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				412672F71DC63D4A00B78E27 /* Alamofire+Promise.swift */,
 				414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */,
 				414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */,
 			);
@@ -181,6 +251,9 @@
 			children = (
 				41BB7D8A1D9C65530007ADFE /* Alamofire.framework */,
 				4113833B1DB3A2BA005530CE /* AlamofireImage.framework */,
+				41F699B91DC54DCE002FCE5D /* Async.framework */,
+				41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */,
+				41F83B061DC4FC0700FBF4EC /* Rswift.framework */,
 				41F405181DAEB45800B17E0E /* Spring */,
 				4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */,
 			);
@@ -233,6 +306,7 @@
 			buildConfigurationList = 411D56061D9AF50A0056EE98 /* Build configuration list for PBXNativeTarget "Zeitblick" */;
 			buildPhases = (
 				41BB7D901D9C65CA0007ADFE /* Carthage */,
+				41F83B051DC4FBB900FBF4EC /* Rswift */,
 				411D55F01D9AF50A0056EE98 /* Sources */,
 				411D55F11D9AF50A0056EE98 /* Frameworks */,
 				411D55F21D9AF50A0056EE98 /* Resources */,
@@ -242,7 +316,7 @@
 			dependencies = (
 			);
 			name = Zeitblick;
-			productName = "Epic Selfie";
+			productName = Zeitblick;
 			productReference = 411D55F41D9AF50A0056EE98 /* Zeitblick.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -254,7 +328,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Epic Selfie";
+				ORGANIZATIONNAME = Zeitblick;
 				TargetAttributes = {
 					411D55F31D9AF50A0056EE98 = {
 						CreatedOnToolsVersion = 8.0;
@@ -265,11 +339,12 @@
 			};
 			buildConfigurationList = 411D55EF1D9AF50A0056EE98 /* Build configuration list for PBXProject "Zeitblick" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = German;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				de,
+				en,
 			);
 			mainGroup = 411D55EB1D9AF50A0056EE98;
 			productRefGroup = 411D55F51D9AF50A0056EE98 /* Products */;
@@ -286,12 +361,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				412651F81DAEB51100865395 /* Main.storyboard in Resources */,
+				4126730D1DC6736100B78E27 /* image_02.png in Resources */,
+				41DBE59D1DC4F38800C91AC8 /* Main.storyboard in Resources */,
+				4126730E1DC6736100B78E27 /* image_03.png in Resources */,
+				41F83B001DC4F8FB00FBF4EC /* InfoPlist.strings in Resources */,
+				4126730C1DC6736100B78E27 /* image_01.png in Resources */,
 				412B31B41DAEB259003DD5FE /* Environment.plist in Resources */,
 				412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */,
 				41F405461DAEB45800B17E0E /* LoadingView.xib in Resources */,
+				41F83B081DC4FCE900FBF4EC /* Localizable.strings in Resources */,
 				41F405431DAEB45800B17E0E /* Info.plist in Resources */,
-				412B31AE1DAEB1E2003DD5FE /* Launch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +386,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Async.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -314,6 +396,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		41F83B051DC4FBB900FBF4EC /* Rswift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Rswift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/rswift\" \"$SRCROOT\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -333,26 +429,34 @@
 				41F4054D1DAEB45800B17E0E /* SpringLabel.swift in Sources */,
 				412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */,
 				41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */,
+				412672F51DC624C000B78E27 /* GoogleVisionRouter.swift in Sources */,
+				41F83B0D1DC4FF0700FBF4EC /* R.generated.swift in Sources */,
 				41F405391DAEB45800B17E0E /* AutoTextView.swift in Sources */,
 				41F4054A1DAEB45800B17E0E /* SpringAnimation.swift in Sources */,
 				41F405421DAEB45800B17E0E /* ImageLoader.swift in Sources */,
 				41F4054E1DAEB45800B17E0E /* SpringTextField.swift in Sources */,
-				412B31AC1DAEB1DA003DD5FE /* ViewController.swift in Sources */,
+				412672FD1DC640C900B78E27 /* GoogleVision.swift in Sources */,
+				41E174191DC4E35A00DCDF43 /* StartViewController.swift in Sources */,
 				41F4053C1DAEB45800B17E0E /* DesignableImageView.swift in Sources */,
 				41F405481DAEB45800B17E0E /* SoundPlayer.swift in Sources */,
+				412672F81DC63D4A00B78E27 /* Alamofire+Promise.swift in Sources */,
 				41F405471DAEB45800B17E0E /* Misc.swift in Sources */,
 				41F405411DAEB45800B17E0E /* DesignableView.swift in Sources */,
 				41F405501DAEB45800B17E0E /* SpringView.swift in Sources */,
 				412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */,
+				412673111DC6856100B78E27 /* ResultController.swift in Sources */,
 				41F405381DAEB45800B17E0E /* AsyncImageView.swift in Sources */,
 				41F4053B1DAEB45800B17E0E /* DesignableButton.swift in Sources */,
 				41F405521DAEB45800B17E0E /* TransitionZoom.swift in Sources */,
+				412673001DC656FB00B78E27 /* Face.swift in Sources */,
+				412673021DC6606D00B78E27 /* ZeitblickBackend.swift in Sources */,
 				41F4054C1DAEB45800B17E0E /* SpringImageView.swift in Sources */,
 				41F4054B1DAEB45800B17E0E /* SpringButton.swift in Sources */,
 				41F4053E1DAEB45800B17E0E /* DesignableTabBarController.swift in Sources */,
 				41F4053D1DAEB45800B17E0E /* DesignableLabel.swift in Sources */,
 				41F405511DAEB45800B17E0E /* TransitionManager.swift in Sources */,
 				414EA8C81DB93CD50097CBAF /* UIFont+ZBAdditions.swift in Sources */,
+				412673061DC667AF00B78E27 /* GoogleDatastore.swift in Sources */,
 				41F4053F1DAEB45800B17E0E /* DesignableTextField.swift in Sources */,
 				41F405451DAEB45800B17E0E /* LoadingView.swift in Sources */,
 				41F405491DAEB45800B17E0E /* Spring.swift in Sources */,
@@ -362,13 +466,32 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		41F405551DAEB4CC00B17E0E /* Main.storyboard */ = {
+		41DBE59B1DC4F38800C91AC8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				41F405561DAEB4CC00B17E0E /* Base */,
+				41DBE59C1DC4F38800C91AC8 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
+		};
+		41F83B021DC4F8FB00FBF4EC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41F83B011DC4F8FB00FBF4EC /* en */,
+			);
+			name = InfoPlist.strings;
+			path = Zeitblick;
+			sourceTree = SOURCE_ROOT;
+		};
+		41F83B0A1DC4FCE900FBF4EC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41F83B091DC4FCE900FBF4EC /* Base */,
+				41F83B0B1DC4FCF700FBF4EC /* en */,
+			);
+			name = Localizable.strings;
+			path = Zeitblick;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
@@ -377,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -426,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

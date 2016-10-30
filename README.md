@@ -25,3 +25,9 @@ Created during the culture hackathon [Coding Da Vinci Nord 2016](https://codingd
   ```
 
 4. Ready :)
+
+## License
+
+The source code is released under [GPLv3](https://github.com/Zeitblick/Zeitblick-iOS/blob/master/LICENSE).  
+All included graphics are released under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).  
+The images [image_01.png](http://sammlungonline.mkg-hamburg.de/de/object/Der-Schauspieler-Ichikawa-Danj%C5%ABr%C5%8D-VI/1973.115/dc00117957), [image_02.png](http://sammlungonline.mkg-hamburg.de/de/object/Herrenportr%C3%A4t/P1976.470.17/mkg-e00137648) and [image_03.png](http://sammlungonline.mkg-hamburg.de/de/object/Selbstportr%C3%A4t-mit-silberner-Kugel/P2009.67/dc00036266) are kindly released under [CC0](https://creativecommons.org/publicdomain/zero/1.0/) by the [MKG-Hamburg](http://www.mkg-hamburg.de/en/).

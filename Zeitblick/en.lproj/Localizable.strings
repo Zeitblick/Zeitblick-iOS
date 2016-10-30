@@ -1,0 +1,12 @@
+/*
+ Localizable.strings
+ Zeitblick
+
+ Created by Bastian Clausdorff on 29.10.16.
+ Copyright © 2016 Zeitblick. All rights reserved.
+ */
+
+/* Alert UIImagePicker */
+"ImagePicker_cancel"    = "Back";
+"ImagePicker_takePhoto" = "Take photo";
+"ImagePicker_pickPhoto" = "Pick photo from library";
