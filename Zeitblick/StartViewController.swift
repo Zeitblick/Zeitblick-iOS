@@ -7,16 +7,24 @@
 //
 
 import UIKit
+import Async
+import Alamofire
+import PromiseKit
 
 class StartViewController: UIViewController {
 
     @IBOutlet weak var photoButton: DesignableButton!
+    @IBOutlet weak var selfieImageView: DesignableImageView!
+
+    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var logoSubtitle: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
+        selfieImageView.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +53,7 @@ class StartViewController: UIViewController {
                     return
                 }
                 imagePicker.sourceType = .camera
+                imagePicker.cameraDevice = .front
                 strongSelf.present(imagePicker, animated: true, completion: nil)
             },
             choosePhotoAction: { [weak self] in
@@ -52,23 +61,52 @@ class StartViewController: UIViewController {
                     return
                 }
                 imagePicker.sourceType = .photoLibrary
-                strongSelf.present(imagePicker, animated: true, completion: {
-                    UIApplication.shared.setStatusBarStyle(.lightContent, animated:true)
-                })
+                strongSelf.present(imagePicker, animated: true, completion: nil)
             })
     }
-
 }
 
 extension StartViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print(#function)
 
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-
-        }
+        print("selected photo")
 
         dismiss(animated: true, completion: nil)
+
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
+
+        Async.main {
+            self.view.showLoading()
+        }
+
+        // Change UI
+        selfieImageView.image = image
+        selfieImageView.isHidden = false
+        photoButton.isHidden = true
+
+        logoTopConstraint.constant = 22.0
+        logoSubtitle.isHidden = true
+
+        // Start processing animation
+        // images durchrattern, bis result kommt 
+        // dann zum Ende kommen und ResultViewController aufrufen
+
+        // Find match
+        firstly {
+            return try GoogleVision().findOneFace(image: image)
+        }.then { face -> Promise<String> in
+            return try ZeitblickBackend().findSimilarRotation(face: face)
+        }.then { inventoryNumber -> Promise<UIImage> in
+            return try GoogleDatastore().getImage(inventoryNumber: inventoryNumber)
+        }.then { image in
+            print("got image")
+        }.catch { error in
+            print(error)
+        }.always {
+            self.view.hideLoading()
+        }
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
