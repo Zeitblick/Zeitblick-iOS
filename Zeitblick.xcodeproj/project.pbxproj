@@ -13,6 +13,7 @@
 		412672F81DC63D4A00B78E27 /* Alamofire+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672F71DC63D4A00B78E27 /* Alamofire+Promise.swift */; };
 		412672FD1DC640C900B78E27 /* GoogleVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672FC1DC640C900B78E27 /* GoogleVision.swift */; };
 		412673001DC656FB00B78E27 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412672FF1DC656FB00B78E27 /* Face.swift */; };
+		412673021DC6606D00B78E27 /* ZeitblickBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412673011DC6606D00B78E27 /* ZeitblickBackend.swift */; };
 		412B31A41DAEB1A0003DD5FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 412B31A31DAEB1A0003DD5FE /* Assets.xcassets */; };
 		412B31A81DAEB1BE003DD5FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */; };
 		412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */; };
@@ -70,6 +71,7 @@
 		412672F71DC63D4A00B78E27 /* Alamofire+Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Alamofire+Promise.swift"; path = "Zeitblick/Extensions/Alamofire+Promise.swift"; sourceTree = SOURCE_ROOT; };
 		412672FC1DC640C900B78E27 /* GoogleVision.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoogleVision.swift; path = Zeitblick/GoogleVision.swift; sourceTree = SOURCE_ROOT; };
 		412672FF1DC656FB00B78E27 /* Face.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Face.swift; path = Zeitblick/Models/Face.swift; sourceTree = SOURCE_ROOT; };
+		412673011DC6606D00B78E27 /* ZeitblickBackend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZeitblickBackend.swift; path = Zeitblick/ZeitblickBackend.swift; sourceTree = SOURCE_ROOT; };
 		412B31A31DAEB1A0003DD5FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Zeitblick/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		412B31A51DAEB1B0003DD5FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Zeitblick/Info.plist; sourceTree = SOURCE_ROOT; };
 		412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Zeitblick/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -201,6 +203,7 @@
 			children = (
 				412672FC1DC640C900B78E27 /* GoogleVision.swift */,
 				412672F41DC624C000B78E27 /* GoogleVisionRouter.swift */,
+				412673011DC6606D00B78E27 /* ZeitblickBackend.swift */,
 			);
 			name = REST;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				41F4053B1DAEB45800B17E0E /* DesignableButton.swift in Sources */,
 				41F405521DAEB45800B17E0E /* TransitionZoom.swift in Sources */,
 				412673001DC656FB00B78E27 /* Face.swift in Sources */,
+				412673021DC6606D00B78E27 /* ZeitblickBackend.swift in Sources */,
 				41F4054C1DAEB45800B17E0E /* SpringImageView.swift in Sources */,
 				41F4054B1DAEB45800B17E0E /* SpringButton.swift in Sources */,
 				41F4053E1DAEB45800B17E0E /* DesignableTabBarController.swift in Sources */,

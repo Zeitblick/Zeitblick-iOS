@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import PromiseKit
 
 class StartViewController: UIViewController {
 
@@ -71,10 +72,13 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
 
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
 
-            GoogleVision().findOneFace(image: image).then { face in
-                dump(face)
+            GoogleVision().findOneFace(image: image).then { face -> Promise<String> in
+                return ZeitblickBackend().findSimilarRotation(face: face)
+            }.then { inventoryNumber in
+                print(inventoryNumber)
+            }.catch { error in
+                print("No success")
             }
-
         }
     }
 
