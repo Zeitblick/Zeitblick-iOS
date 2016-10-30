@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Async
 import Alamofire
 import PromiseKit
 
@@ -63,7 +64,6 @@ class StartViewController: UIViewController {
                 strongSelf.present(imagePicker, animated: true, completion: nil)
             })
     }
-
 }
 
 extension StartViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -71,27 +71,41 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
 
         print("selected photo")
 
-        dismiss(animated: false, completion: nil)
+        dismiss(animated: true, completion: nil)
 
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            selfieImageView.image = image
-            selfieImageView.isHidden = false
-            photoButton.isHidden = true
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
 
-            logoTopConstraint.constant = 22.0
-            logoSubtitle.isHidden = true
+        Async.main {
+            self.view.showLoading()
+        }
 
-            firstly {
-                return try GoogleVision().findOneFace(image: image)
-            }.then { face -> Promise<String> in
-                return try ZeitblickBackend().findSimilarRotation(face: face)
-            }.then { inventoryNumber -> Promise<UIImage> in
-                return try GoogleDatastore().getImage(inventoryNumber: inventoryNumber)
-            }.then { image in
-                print("got image")
-            }.catch { error in
-                print(error)
-            }
+        // Change UI
+        selfieImageView.image = image
+        selfieImageView.isHidden = false
+        photoButton.isHidden = true
+
+        logoTopConstraint.constant = 22.0
+        logoSubtitle.isHidden = true
+
+        // Start processing animation
+        // images durchrattern, bis result kommt 
+        // dann zum Ende kommen und ResultViewController aufrufen
+
+        // Find match
+        firstly {
+            return try GoogleVision().findOneFace(image: image)
+        }.then { face -> Promise<String> in
+            return try ZeitblickBackend().findSimilarRotation(face: face)
+        }.then { inventoryNumber -> Promise<UIImage> in
+            return try GoogleDatastore().getImage(inventoryNumber: inventoryNumber)
+        }.then { image in
+            print("got image")
+        }.catch { error in
+            print(error)
+        }.always {
+            self.view.hideLoading()
         }
     }
 
