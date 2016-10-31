@@ -24,6 +24,7 @@
 		412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */; };
 		412B31B21DAEB24D003DD5FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31B11DAEB24D003DD5FE /* Environment.swift */; };
 		412B31B41DAEB259003DD5FE /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 412B31B31DAEB259003DD5FE /* Environment.plist */; };
+		412BC64A1DC80BFD00ED5A47 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412BC6491DC80BFD00ED5A47 /* SnapKit.framework */; };
 		414EA8C71DB93CD50097CBAF /* UIColor+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */; };
 		414EA8C81DB93CD50097CBAF /* UIFont+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */; };
 		41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAFEF31DC00B1B00104C80 /* Alerts.swift */; };
@@ -87,6 +88,7 @@
 		412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Zeitblick/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
 		412B31B11DAEB24D003DD5FE /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Zeitblick/Environment/Environment.swift; sourceTree = SOURCE_ROOT; };
 		412B31B31DAEB259003DD5FE /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Environment.plist; path = Zeitblick/Environment/Environment.plist; sourceTree = SOURCE_ROOT; };
+		412BC6491DC80BFD00ED5A47 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIColor+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
 		414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIFont+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
 		41BAFEF31DC00B1B00104C80 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerts.swift; path = Zeitblick/Alerts.swift; sourceTree = SOURCE_ROOT; };
@@ -140,6 +142,7 @@
 				41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */,
 				4113833C1DB3A2BA005530CE /* AlamofireImage.framework in Frameworks */,
 				41C67CA81DC533AE0049C9D8 /* PromiseKit.framework in Frameworks */,
+				412BC64A1DC80BFD00ED5A47 /* SnapKit.framework in Frameworks */,
 				4104E7BD1DAEB0DD0005B019 /* SwiftyJSON.framework in Frameworks */,
 				41F83B071DC4FC0700FBF4EC /* Rswift.framework in Frameworks */,
 				41F699BA1DC54DCE002FCE5D /* Async.framework in Frameworks */,
@@ -254,6 +257,7 @@
 				41F699B91DC54DCE002FCE5D /* Async.framework */,
 				41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */,
 				41F83B061DC4FC0700FBF4EC /* Rswift.framework */,
+				412BC6491DC80BFD00ED5A47 /* SnapKit.framework */,
 				41F405181DAEB45800B17E0E /* Spring */,
 				4104E7BC1DAEB0DD0005B019 /* SwiftyJSON.framework */,
 			);
@@ -389,6 +393,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Async.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 			);
 			name = Carthage;
 			outputPaths = (
