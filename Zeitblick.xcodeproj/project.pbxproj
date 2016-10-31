@@ -24,6 +24,7 @@
 		412B31AA1DAEB1CF003DD5FE /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */; };
 		412B31B21DAEB24D003DD5FE /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412B31B11DAEB24D003DD5FE /* Environment.swift */; };
 		412B31B41DAEB259003DD5FE /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 412B31B31DAEB259003DD5FE /* Environment.plist */; };
+		412BC6481DC8040800ED5A47 /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BC6471DC8040800ED5A47 /* InfoController.swift */; };
 		412BC64A1DC80BFD00ED5A47 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 412BC6491DC80BFD00ED5A47 /* SnapKit.framework */; };
 		414EA8C71DB93CD50097CBAF /* UIColor+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */; };
 		414EA8C81DB93CD50097CBAF /* UIFont+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */; };
@@ -88,6 +89,7 @@
 		412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = Zeitblick/ImageHelper.swift; sourceTree = SOURCE_ROOT; };
 		412B31B11DAEB24D003DD5FE /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = Zeitblick/Environment/Environment.swift; sourceTree = SOURCE_ROOT; };
 		412B31B31DAEB259003DD5FE /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Environment.plist; path = Zeitblick/Environment/Environment.plist; sourceTree = SOURCE_ROOT; };
+		412BC6471DC8040800ED5A47 /* InfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoController.swift; path = Zeitblick/InfoController.swift; sourceTree = SOURCE_ROOT; };
 		412BC6491DC80BFD00ED5A47 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = SOURCE_ROOT; };
 		414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIColor+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
 		414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIFont+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
@@ -203,6 +205,7 @@
 				41BAFEF31DC00B1B00104C80 /* Alerts.swift */,
 				412B31A71DAEB1BE003DD5FE /* AppDelegate.swift */,
 				412B31A91DAEB1CF003DD5FE /* ImageHelper.swift */,
+				412BC6471DC8040800ED5A47 /* InfoController.swift */,
 				412673101DC6856100B78E27 /* ResultController.swift */,
 				41E174181DC4E35A00DCDF43 /* StartViewController.swift */,
 			);
@@ -462,6 +465,7 @@
 				41F405511DAEB45800B17E0E /* TransitionManager.swift in Sources */,
 				414EA8C81DB93CD50097CBAF /* UIFont+ZBAdditions.swift in Sources */,
 				412673061DC667AF00B78E27 /* GoogleDatastore.swift in Sources */,
+				412BC6481DC8040800ED5A47 /* InfoController.swift in Sources */,
 				41F4053F1DAEB45800B17E0E /* DesignableTextField.swift in Sources */,
 				41F405451DAEB45800B17E0E /* LoadingView.swift in Sources */,
 				41F405491DAEB45800B17E0E /* Spring.swift in Sources */,
