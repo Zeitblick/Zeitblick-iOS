@@ -36,16 +36,8 @@ class InfoController: UIViewController {
 
     lazy var scroller: UIScrollView = {
         let scroller = UIScrollView(frame: .zero)
-        scroller.isScrollEnabled = true
-        scroller.delegate = self
+        scroller.backgroundColor = UIColor.white
         return scroller
-    }()
-
-    lazy var imageView: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFill
-        view.clipsToBounds = true
-        return view
     }()
 
     lazy var titleLabel: UILabel = {
@@ -117,11 +109,9 @@ class InfoController: UIViewController {
     }()
 
     var metadata: ImageMetadata!
-    var image: UIImage!
 
-    init(image: UIImage, metadata: ImageMetadata) {
+    init(metadata: ImageMetadata) {
         super.init(nibName: nil, bundle: nil)
-        self.image = image
         self.metadata = metadata
     }
     
@@ -132,7 +122,6 @@ class InfoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageView.image = image
         titleLabel.text = metadata?.title
         artistText.text = metadata?.artist
         yearLocationText.text = metadata?.yearLocation
@@ -143,11 +132,10 @@ class InfoController: UIViewController {
         linkButton.addTarget(self, action: #selector(openLink), for: .touchUpInside)
 
         view.addSubview(header)
+        header.addSubview(logo)
         header.addSubview(closeButton)
 
         view.addSubview(scroller)
-
-        scroller.addSubview(imageView)
         scroller.addSubview(titleLabel)
         scroller.addSubview(artistLabel)
         scroller.addSubview(artistText)
@@ -167,21 +155,23 @@ class InfoController: UIViewController {
             make.height.equalTo(100).priority(1000)
         }
 
+        logo.snp.makeConstraints { make in
+            make.width.equalTo(59)
+            make.height.equalTo(40)
+            make.centerX.equalTo(header)
+            make.top.equalTo(view).offset(42)
+        }
+
         closeButton.snp.makeConstraints { make in
             make.width.height.equalTo(44)
-            make.right.centerY.equalTo(header)
+            make.right.equalTo(header).inset(8)
+            make.centerY.equalTo(logo)
         }
 
         scroller.snp.makeConstraints { make in
             make.top.equalTo(header.snp.bottom)
             make.left.right.bottom.equalTo(view)
         }
-
-        //imageView.snp.makeConstraints { make in
-          //  make.top.equalTo(scroller)
-            //make.left.right.equalTo(scroller)
-            //make.height.equalTo(200)
-        //}
 
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(scroller).offset(30)
@@ -259,9 +249,8 @@ class InfoController: UIViewController {
             make.top.equalTo(licenseText.snp.bottom).offset(40)
             make.left.right.equalTo(scroller).offset(16)
             make.height.equalTo(64).priority(1000)
-            make.bottom.equalTo(scroller.snp.bottom).inset(16)
+            make.bottom.equalTo(scroller).inset(32)
         }
-
     }
 
     // MARK: factories
@@ -301,8 +290,4 @@ class InfoController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-}
-
-extension InfoController: UIScrollViewDelegate {
-    
 }

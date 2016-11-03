@@ -55,7 +55,7 @@ class ResultController: UIViewController {
         guard let image = resultImage, let metadata = metadata else {
             return
         }
-        let controller = InfoController(image: image, metadata: metadata)
+        let controller = InfoController(metadata: metadata)
         present(controller, animated: true, completion: nil)
     }
 }
