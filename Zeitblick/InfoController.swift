@@ -14,13 +14,38 @@ import SwiftyJSON
 class InfoController: UIViewController {
     typealias Me = InfoController
 
-    @IBOutlet weak var header: UIView!
+    lazy var header: UIView = {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = UIColor.zbMkgold
+        return view
+    }()
+
+    lazy var logo: UIImageView = {
+        let image = R.image.logo()
+        let view = UIImageView(image: image)
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+
+    lazy var closeButton: UIButton = {
+        let image = R.image.button_x()
+        let button = UIButton(frame: .zero)
+        button.setImage(image, for: .normal)
+        return button
+    }()
 
     lazy var scroller: UIScrollView = {
         let scroller = UIScrollView(frame: .zero)
         scroller.isScrollEnabled = true
         scroller.delegate = self
         return scroller
+    }()
+
+    lazy var imageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        return view
     }()
 
     lazy var titleLabel: UILabel = {
@@ -91,20 +116,38 @@ class InfoController: UIViewController {
         return button
     }()
 
-    var metadata: ImageMetadata?
+    var metadata: ImageMetadata!
+    var image: UIImage!
+
+    init(image: UIImage, metadata: ImageMetadata) {
+        super.init(nibName: nil, bundle: nil)
+        self.image = image
+        self.metadata = metadata
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imageView.image = image
         titleLabel.text = metadata?.title
         artistText.text = metadata?.artist
         yearLocationText.text = metadata?.yearLocation
         inventoryNumberText.text = metadata?.inventoryNumber
         licenseText.text = metadata?.license
+
+        closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         linkButton.addTarget(self, action: #selector(openLink), for: .touchUpInside)
+
+        view.addSubview(header)
+        header.addSubview(closeButton)
 
         view.addSubview(scroller)
 
+        scroller.addSubview(imageView)
         scroller.addSubview(titleLabel)
         scroller.addSubview(artistLabel)
         scroller.addSubview(artistText)
@@ -119,97 +162,109 @@ class InfoController: UIViewController {
         scroller.addSubview(licenseText)
         scroller.addSubview(linkButton)
 
+        header.snp.makeConstraints { make in
+            make.top.left.right.equalTo(view)
+            make.height.equalTo(100).priority(1000)
+        }
+
+        closeButton.snp.makeConstraints { make in
+            make.width.height.equalTo(44)
+            make.right.centerY.equalTo(header)
+        }
+
         scroller.snp.makeConstraints { make in
             make.top.equalTo(header.snp.bottom)
             make.left.right.bottom.equalTo(view)
         }
 
+        //imageView.snp.makeConstraints { make in
+          //  make.top.equalTo(scroller)
+            //make.left.right.equalTo(scroller)
+            //make.height.equalTo(200)
+        //}
+
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(30)
-            make.left.right.equalTo(scroller).inset(16)
+            make.top.equalTo(scroller).offset(30)
+            make.left.right.equalTo(scroller).offset(16)
             make.centerX.equalTo(scroller)
         }
 
         artistLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(30)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.centerX.equalTo(scroller)
         }
 
         artistText.snp.makeConstraints { make in
             make.top.equalTo(artistLabel.snp.bottom)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.centerX.equalTo(scroller)
         }
 
         artistLine.snp.makeConstraints { make in
             make.top.equalTo(artistText.snp.bottom).offset(20)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.height.equalTo(1)
         }
 
         yearLocationLabel.snp.makeConstraints { make in
             make.top.equalTo(artistLine.snp.bottom).offset(16)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.centerX.equalTo(scroller)
         }
 
         yearLocationText.snp.makeConstraints { make in
             make.top.equalTo(yearLocationLabel.snp.bottom)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.centerX.equalTo(scroller)
         }
 
         yearLocationLine.snp.makeConstraints { make in
             make.top.equalTo(yearLocationText.snp.bottom).offset(20)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.height.equalTo(1)
         }
 
         inventoryNumberLabel.snp.makeConstraints { make in
             make.top.equalTo(yearLocationLine.snp.bottom).offset(16)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.centerX.equalTo(scroller)
         }
 
         inventoryNumberText.snp.makeConstraints { make in
             make.top.equalTo(inventoryNumberLabel.snp.bottom)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.centerX.equalTo(scroller)
         }
 
         inventoryNumberLine.snp.makeConstraints { make in
             make.top.equalTo(inventoryNumberText.snp.bottom).offset(20)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.height.equalTo(1)
         }
 
         licenseLabel.snp.makeConstraints { make in
             make.top.equalTo(inventoryNumberLine.snp.bottom).offset(16)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.centerX.equalTo(scroller)
         }
 
         licenseText.snp.makeConstraints { make in
             make.top.equalTo(licenseLabel.snp.bottom)
-            make.left.right.equalTo(scroller).inset(16)
+            make.left.right.equalTo(scroller).offset(16)
             make.centerX.equalTo(scroller)
         }
 
         linkButton.snp.makeConstraints { make in
             make.top.equalTo(licenseText.snp.bottom).offset(40)
-            make.left.right.equalTo(scroller).inset(16)
-            make.height.equalTo(64)
-            make.bottom.equalTo(scroller).inset(32)
+            make.left.right.equalTo(scroller).offset(16)
+            make.height.equalTo(64).priority(1000)
+            make.bottom.equalTo(scroller.snp.bottom).inset(16)
         }
 
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        scroller.contentSize = view.bounds.size
-    }
-
+    // MARK: factories
     private static func createLabel(text: String) -> UILabel {
         let label = UILabel()
         label.text = text
@@ -237,10 +292,13 @@ class InfoController: UIViewController {
         return view
     }
 
+    // MARK: actions
     func openLink() {
-        if let url = metadata?.infoUrl {
-            UIApplication.shared.openURL(url)
-        }
+        UIApplication.shared.openURL(metadata.infoUrl)
+    }
+
+    func close() {
+        dismiss(animated: true, completion: nil)
     }
 
 }

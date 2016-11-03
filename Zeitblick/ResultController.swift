@@ -36,15 +36,11 @@ class ResultController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print(#function)
-        if let typedInfo = R.segue.resultController.info(segue: segue)  {
-            typedInfo.destination.metadata = metadata
-        }
     }
 
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         print("did call unwind")
     }
-    
 
     func configureImageView() {
         resultImageView.image = resultImage
@@ -53,6 +49,14 @@ class ResultController: UIViewController {
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 3.0
+    }
+
+    @IBAction func tappedInfo(_ sender: AnyObject) {
+        guard let image = resultImage, let metadata = metadata else {
+            return
+        }
+        let controller = InfoController(image: image, metadata: metadata)
+        present(controller, animated: true, completion: nil)
     }
 }
 

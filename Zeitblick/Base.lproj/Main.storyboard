@@ -154,7 +154,7 @@
                                 </constraints>
                                 <state key="normal" image="button_info"/>
                                 <connections>
-                                    <segue destination="dsU-5n-cN1" kind="show" identifier="info" id="oYY-Py-F7f"/>
+                                    <action selector="tappedInfo:" destination="b1V-2i-Evg" eventType="touchUpInside" id="RJa-km-rxX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -185,69 +185,11 @@
             </objects>
             <point key="canvasLocation" x="1920.8" y="-111.0944527736132"/>
         </scene>
-        <!--Info Controller-->
-        <scene sceneID="SrF-uo-XHY">
-            <objects>
-                <viewController id="dsU-5n-cN1" customClass="InfoController" customModule="Zeitblick" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iFY-tR-P6y"/>
-                        <viewControllerLayoutGuide type="bottom" id="im2-gg-s5O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="f9C-N5-WlP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8r6-jL-WeK" userLabel="Header">
-                                <subviews>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="B9g-bt-GOf">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="EOw-q8-bHY"/>
-                                            <constraint firstAttribute="width" constant="59" id="Yli-sr-iVl"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWN-fM-BwL" userLabel="Back">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="8bf-iU-iwi"/>
-                                            <constraint firstAttribute="height" constant="44" id="XjG-l3-qLT"/>
-                                        </constraints>
-                                        <state key="normal" image="button_x"/>
-                                        <connections>
-                                            <segue destination="cR9-Sd-Qed" kind="unwind" unwindAction="unwindToViewControllerWithSender:" id="1L3-kH-HcW"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.72156862745098038" green="0.64313725490196072" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="B9g-bt-GOf" firstAttribute="top" secondItem="8r6-jL-WeK" secondAttribute="top" constant="42" id="NuD-9X-Dce"/>
-                                    <constraint firstItem="uWN-fM-BwL" firstAttribute="centerY" secondItem="B9g-bt-GOf" secondAttribute="centerY" id="Qig-be-TAN"/>
-                                    <constraint firstAttribute="trailing" secondItem="uWN-fM-BwL" secondAttribute="trailing" constant="16" id="iVZ-wQ-lxC"/>
-                                    <constraint firstAttribute="height" constant="100" id="qwX-Z2-kgu"/>
-                                    <constraint firstItem="B9g-bt-GOf" firstAttribute="centerX" secondItem="8r6-jL-WeK" secondAttribute="centerX" id="yYc-Nw-ZJT"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="8r6-jL-WeK" firstAttribute="top" secondItem="f9C-N5-WlP" secondAttribute="top" id="Rq3-vs-Uz4"/>
-                            <constraint firstItem="8r6-jL-WeK" firstAttribute="leading" secondItem="f9C-N5-WlP" secondAttribute="leading" id="TnG-I6-uYa"/>
-                            <constraint firstAttribute="trailing" secondItem="8r6-jL-WeK" secondAttribute="trailing" id="pMK-2X-kNq"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="header" destination="8r6-jL-WeK" id="GCU-Sy-vXH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s5Q-NM-II2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="cR9-Sd-Qed" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2938.4000000000001" y="-111.0944527736132"/>
-        </scene>
     </scenes>
     <resources>
         <image name="button_camera" width="62" height="62"/>
         <image name="button_info" width="52" height="52"/>
         <image name="button_plus" width="52" height="52"/>
-        <image name="button_x" width="20" height="20"/>
         <image name="image_02.png" width="375" height="667"/>
         <image name="logo" width="59" height="39"/>
     </resources>
