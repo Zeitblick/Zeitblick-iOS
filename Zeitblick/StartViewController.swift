@@ -15,14 +15,16 @@ import SwiftyJSON
 class StartViewController: UIViewController {
     typealias Me = StartViewController
 
+    private static let hasSelfieTopConstant: CGFloat = 42
+
     @IBOutlet weak var photoButton: DesignableButton!
     @IBOutlet weak var selfieImageView: DesignableImageView!
 
-    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+    var logoHasSelfieConstraint: NSLayoutConstraint!
+    @IBOutlet var logoNoSelfieConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var logoSubtitle: UILabel!
-
-    static let logoTopOffset: CGFloat = 254.0
 
     var resultImage: UIImage?
     var metadata: ImageMetadata?
@@ -31,6 +33,9 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        logoHasSelfieConstraint = logo.topAnchor.constraint(equalTo: view.topAnchor)
+        logoHasSelfieConstraint.constant = Me.hasSelfieTopConstant
+
         resetController()
     }
 
@@ -82,7 +87,8 @@ class StartViewController: UIViewController {
         selfieImageView.isHidden = true
         photoButton.isHidden = false
 
-        logoTopConstraint.constant = Me.logoTopOffset
+        logoHasSelfieConstraint.isActive = false
+        logoNoSelfieConstraint.isActive = true
         logoSubtitle.isHidden = false
     }
 }
@@ -107,12 +113,9 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
         selfieImageView.isHidden = false
         photoButton.isHidden = true
 
-        logoTopConstraint.constant = 22.0
+        logoNoSelfieConstraint.isActive = false
+        logoHasSelfieConstraint.isActive = true
         logoSubtitle.isHidden = true
-
-        // Start processing animation
-        // images durchrattern, bis result kommt 
-        // dann zum Ende kommen und ResultViewController aufrufen
 
         let q = DispatchQueue.global()
 

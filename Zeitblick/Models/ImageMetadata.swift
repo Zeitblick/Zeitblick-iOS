@@ -31,9 +31,7 @@ class ImageMetadata {
     var infoUrl: URL
     // description
 
-
     init(fromJson json: JSON) {
-        dump(json)
         title           = Me.parseTitle(title: json["mkg_metadata"]["title"].stringValue)
         inventoryNumber = json["inventory_no"].stringValue
         artist          = Me.parseArtist(artist: json["mkg_metadata"]["event"]["eventActor"].stringValue)

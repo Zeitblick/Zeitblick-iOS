@@ -19,6 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_02.png" translatesAutoresizingMaskIntoConstraints="NO" id="75W-Cm-Tn4" userLabel="Image"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7g-2X-fD0" userLabel="CenterDot">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="RYf-gP-sA6"/>
+                                    <constraint firstAttribute="width" constant="1" id="eB3-iu-NUu"/>
+                                </constraints>
+                            </view>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tE9-WW-g34">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="Xdp-iq-ZuW"/>
@@ -72,18 +79,20 @@
                             <constraint firstItem="tE9-WW-g34" firstAttribute="centerX" secondItem="xyC-v3-gdx" secondAttribute="centerX" id="7Hl-Ql-SYq"/>
                             <constraint firstItem="75W-Cm-Tn4" firstAttribute="leading" secondItem="xyC-v3-gdx" secondAttribute="leading" id="8id-V9-LBB"/>
                             <constraint firstItem="6in-3t-bqD" firstAttribute="centerX" secondItem="tE9-WW-g34" secondAttribute="centerX" id="9T0-cD-PlD"/>
+                            <constraint firstItem="O7g-2X-fD0" firstAttribute="top" secondItem="tE9-WW-g34" secondAttribute="bottom" constant="19" id="CLZ-4F-X8z"/>
                             <constraint firstItem="XwH-52-KeU" firstAttribute="centerX" secondItem="cqc-gt-lVN" secondAttribute="centerX" id="EDO-pB-l5X"/>
-                            <constraint firstItem="tE9-WW-g34" firstAttribute="top" secondItem="BJp-Wn-3R8" secondAttribute="bottom" constant="254" id="IpA-mn-VQC"/>
                             <constraint firstItem="XwH-52-KeU" firstAttribute="centerY" secondItem="cqc-gt-lVN" secondAttribute="centerY" id="QYz-ej-DWj"/>
+                            <constraint firstItem="O7g-2X-fD0" firstAttribute="centerX" secondItem="xyC-v3-gdx" secondAttribute="centerX" id="RxD-WL-CuN"/>
                             <constraint firstItem="6in-3t-bqD" firstAttribute="top" secondItem="tE9-WW-g34" secondAttribute="bottom" constant="20" id="WSP-MQ-H0E"/>
+                            <constraint firstItem="O7g-2X-fD0" firstAttribute="centerY" secondItem="xyC-v3-gdx" secondAttribute="centerY" id="XxP-Zp-jaZ"/>
                             <constraint firstItem="75W-Cm-Tn4" firstAttribute="top" secondItem="xyC-v3-gdx" secondAttribute="top" id="e0T-Q5-Oc9"/>
                             <constraint firstItem="x83-aD-mRL" firstAttribute="top" secondItem="cqc-gt-lVN" secondAttribute="bottom" constant="53" id="koQ-gb-8Y7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="logo" destination="tE9-WW-g34" id="XCm-Cq-Qwj"/>
+                        <outlet property="logoNoSelfieConstraint" destination="CLZ-4F-X8z" id="3dv-hE-ex7"/>
                         <outlet property="logoSubtitle" destination="6in-3t-bqD" id="lBZ-vy-kOl"/>
-                        <outlet property="logoTopConstraint" destination="IpA-mn-VQC" id="U30-54-Mj4"/>
                         <outlet property="photoButton" destination="cqc-gt-lVN" id="1Q1-VU-y4K"/>
                         <outlet property="selfieImageView" destination="XwH-52-KeU" id="PfB-wm-wSN"/>
                         <segue destination="b1V-2i-Evg" kind="showDetail" identifier="result" animates="NO" id="xxX-4M-CZh"/>
