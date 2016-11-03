@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ResultController: UIViewController {
 
@@ -16,6 +17,7 @@ class ResultController: UIViewController {
 
     var selfieImage: UIImage?
     var resultImage: UIImage?
+    var metadata: ImageMetadata?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,6 @@ class ResultController: UIViewController {
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         print("did call unwind")
     }
-    
 
     func configureImageView() {
         resultImageView.image = resultImage
@@ -48,6 +49,14 @@ class ResultController: UIViewController {
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 3.0
+    }
+
+    @IBAction func tappedInfo(_ sender: AnyObject) {
+        guard let metadata = metadata else {
+            return
+        }
+        let controller = InfoController(metadata: metadata)
+        present(controller, animated: true, completion: nil)
     }
 }
 

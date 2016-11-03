@@ -10,3 +10,14 @@
 "ImagePicker_cancel"    = "Zurück";
 "ImagePicker_takePhoto" = "Foto aufnehmen";
 "ImagePicker_pickPhoto" = "Aus Fotoalbum wählen";
+
+/* InfoController */
+"InfoController_title"  = "Titel";
+"InfoController_artist" = "Künstler/in";
+"InfoController_year"   = "Jahr";
+"InfoController_inventoryNumber" = "Inventarnummer";
+"InfoController_license" = "Lizenz";
+"InfoController_linkButtonText" = "In der >>Sammlung Online<< \n des MKG öffnen";
+
+/* ImageMetadata */
+"Unknown" = "Unbekannt";

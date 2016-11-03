@@ -10,3 +10,14 @@
 "ImagePicker_cancel"    = "Back";
 "ImagePicker_takePhoto" = "Take photo";
 "ImagePicker_pickPhoto" = "Pick photo from library";
+
+/* InfoController */
+"InfoController_title"  = "Title";
+"InfoController_artist" = "Artist";
+"InfoController_year"   = "Year";
+"InfoController_inventoryNumber" = "Inventory Number";
+"InfoController_license" = "License";
+"InfoController_linkButtonText" = "Open inside the MKG\n>>Collection Online<<";
+
+/* ImageMetadata */
+"Unknown" = "Unknown";
