@@ -52,7 +52,7 @@ class ResultController: UIViewController {
     }
 
     @IBAction func tappedInfo(_ sender: AnyObject) {
-        guard let image = resultImage, let metadata = metadata else {
+        guard let metadata = metadata else {
             return
         }
         let controller = InfoController(metadata: metadata)

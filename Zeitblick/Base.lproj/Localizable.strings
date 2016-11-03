@@ -17,7 +17,7 @@
 "InfoController_year"   = "Jahr";
 "InfoController_inventoryNumber" = "Inventarnummer";
 "InfoController_license" = "Lizenz";
-"InfoController_linkButtonText" = "In der >>Sammlung Online<< des MKG öffnen";
+"InfoController_linkButtonText" = "In der >>Sammlung Online<< \n des MKG öffnen";
 
 /* ImageMetadata */
 "Unknown" = "Unbekannt";
