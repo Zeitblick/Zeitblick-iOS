@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ResultController: UIViewController {
 
@@ -16,6 +17,7 @@ class ResultController: UIViewController {
 
     var selfieImage: UIImage?
     var resultImage: UIImage?
+    var metadata: ImageMetadata?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,9 @@ class ResultController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print(#function)
+        if let typedInfo = R.segue.resultController.info(segue: segue)  {
+            typedInfo.destination.metadata = metadata
+        }
     }
 
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {

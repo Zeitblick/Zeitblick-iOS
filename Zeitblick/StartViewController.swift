@@ -10,6 +10,7 @@ import UIKit
 import Async
 import Alamofire
 import PromiseKit
+import SwiftyJSON
 
 class StartViewController: UIViewController {
     typealias Me = StartViewController
@@ -24,6 +25,7 @@ class StartViewController: UIViewController {
     static let logoTopOffset: CGFloat = 254.0
 
     var resultImage: UIImage?
+    var metadata: ImageMetadata?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,7 @@ class StartViewController: UIViewController {
             //typedInfo.destination.startProcessing(image: image)
             typedInfo.destination.selfieImage = selfieImageView.image
             typedInfo.destination.resultImage = resultImage
+            typedInfo.destination.metadata = metadata
         }
     }
 
@@ -111,21 +114,24 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
         // images durchrattern, bis result kommt 
         // dann zum Ende kommen und ResultViewController aufrufen
 
+        let q = DispatchQueue.global()
+
         // Find match
         firstly {
             return try GoogleVision().findOneFace(image: image)
-        }.then { face -> Promise<String> in
+        }.then { face -> Promise<ImageMetadata> in
             return try ZeitblickBackend().findSimilarRotation(face: face)
-        }.then { inventoryNumber -> Promise<UIImage> in
-            return try GoogleDatastore().getImage(inventoryNumber: inventoryNumber)
+        }.then { [weak self] metadata -> Promise<UIImage> in
+            self?.metadata = metadata
+            return try GoogleDatastore().getImage(inventoryNumber: metadata.inventoryNumber)
         }.then { [weak self] image -> Void in
             print("got image")
             self?.resultImage = image
             self?.performSegue(withIdentifier: R.segue.startViewController.result, sender: self)
+        }.always(on: q) { [weak self] in
+            self?.view.hideLoading()
         }.catch { error in
             print(error)
-        }.always { [weak self] in
-            self?.view.hideLoading()
         }
     }
 

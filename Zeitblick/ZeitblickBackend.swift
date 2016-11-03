@@ -18,7 +18,7 @@ enum ZeitblickBackendError: Error {
 
 class ZeitblickBackend {
 
-    func findSimilarRotation(face: Face) throws -> Promise<String> {
+    func findSimilarRotation(face: Face) throws -> Promise<ImageMetadata> {
         let q = DispatchQueue.global()
 
         let parameters: Parameters = [
@@ -42,13 +42,9 @@ class ZeitblickBackend {
                 throw ZeitblickBackendError.invalidJsonResponse
             }
 
-            // Get inventory number
-            guard let inventoryNumber = json["inventory_no"].string else {
-                print("No inventory number returned")
-                throw ZeitblickBackendError.noMatch
-            }
+            let metadata = ImageMetadata(fromJson: json)
 
-            return Promise(value: inventoryNumber)
+            return Promise(value: metadata)
         }
     }
 }

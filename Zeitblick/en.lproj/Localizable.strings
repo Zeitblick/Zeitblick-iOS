@@ -10,3 +10,6 @@
 "ImagePicker_cancel"    = "Back";
 "ImagePicker_takePhoto" = "Take photo";
 "ImagePicker_pickPhoto" = "Pick photo from library";
+
+/* InfoController */
+"InfoController_artist" = "Artist";
