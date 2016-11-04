@@ -108,9 +108,10 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
 
         // Find match
         firstly {
-            return try GoogleVision().findOneFace(image: image)
-        }.then { face -> Promise<ImageMetadata> in
-            return try ZeitblickBackend().findSimilarRotation(face: face)
+            return try GoogleVision().analyse(image: image)
+        }.then { visionResponseJson -> Promise<ImageMetadata> in
+            dump(visionResponseJson)
+            return try ZeitblickBackend().findSimilarEmotion(json: visionResponseJson)
         }.then { [weak self] metadata -> Promise<UIImage> in
             self?.metadata = metadata
             return try GoogleDatastore().getImage(inventoryNumber: metadata.inventoryNumber)

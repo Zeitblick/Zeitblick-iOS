@@ -18,6 +18,16 @@ enum GoogleVisionError: Error {
 
 class GoogleVision {
 
+    func analyse(image: UIImage) throws -> Promise<JSON> {
+        let q = DispatchQueue.global()
+
+        return firstly {
+            Alamofire.request(GoogleVisionRouter.analyseImage(image: image)).responseData()
+        }.then(on: q) { data in
+            return JSON(data: data)
+        }
+    }
+
     func findOneFace(image: UIImage) throws -> Promise<Face> {
         let q = DispatchQueue.global()
 
