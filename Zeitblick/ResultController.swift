@@ -120,6 +120,12 @@ class ResultController: UIViewController {
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        UIApplication.shared.setStatusBarHidden(true, with: .fade)
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -133,6 +139,12 @@ class ResultController: UIViewController {
         }
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        UIApplication.shared.setStatusBarHidden(false, with: .fade)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -140,7 +152,7 @@ class ResultController: UIViewController {
 
     // MARK: Actions
     func tappedInfo() {
-        let controller = InfoController(metadata: metadata)
+        let controller = InfoController(image: resultImage, metadata: metadata)
         present(controller, animated: true, completion: nil)
     }
 

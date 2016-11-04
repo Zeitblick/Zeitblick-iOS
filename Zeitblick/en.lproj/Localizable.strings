@@ -26,3 +26,6 @@
 "Alert_error_title" = "Error";
 "Alert_error_text"  = "Hm, something went wrong.\nIs your internet-connection working?";
 "Alert_error_close" = "Back";
+
+/* Share */
+"Share_text" = "Look what I found with the app Zeitblick in the >Online Collection< of the MKG Hamburg:";
