@@ -43,7 +43,7 @@ extension GoogleVisionRouter: URLRequestConvertible {
                     "features": [
                         [
                             "type": "FACE_DETECTION",
-                            "maxResults": 1
+                            "maxResults": 3
                         ]
                     ]
                 ]
