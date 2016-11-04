@@ -87,16 +87,13 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
 
         print("selected photo")
 
-        dismiss(animated: true) {
+        dismiss(animated: true) { [weak self] in
             UIApplication.shared.setStatusBarHidden(false, with: .fade)
+            self?.view.showLoading()
         }
 
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             return
-        }
-
-        Async.main { [weak self] in
-            self?.view.showLoading()
         }
 
         // Change UI
