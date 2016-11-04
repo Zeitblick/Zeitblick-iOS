@@ -21,3 +21,8 @@
 
 /* ImageMetadata */
 "Unknown" = "Unbekannt";
+
+/* ResultController */
+"Alert_error_title" = "Fehler";
+"Alert_error_text"  = "Hm, da gab es einen Fehler...\nHast du eine stabile Internetverbindung?";
+"Alert_error_close" = "Zurück";

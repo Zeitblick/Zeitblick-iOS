@@ -122,14 +122,19 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
                 throw StartError.invalidData
             }
 
-            let controller = ResultController(resultImage: result , metadata: metadata, selfieImage: selfie)
+            let controller = ResultController(resultImage: result , metadata: metadata, selfieImage: selfie, errorHappened: false)
             self?.present(controller, animated: false) {
                 self?.resetController()
             }
         }.always(on: q) { [weak self] in
             self?.view.hideLoading()
-        }.catch { error in
+        }.catch { [weak self] error in
             print(error)
+            let errorImage = R.image.errorJpg()
+            let controller = ResultController(resultImage: errorImage!, errorHappened: true)
+            self?.present(controller, animated: false) {
+                self?.resetController()
+            }
         }
     }
 

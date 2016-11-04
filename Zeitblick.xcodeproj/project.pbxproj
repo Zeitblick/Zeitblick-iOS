@@ -30,6 +30,7 @@
 		412BC64F1DC80F8D00ED5A47 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412BC64E1DC80F8D00ED5A47 /* InfoViewModel.swift */; };
 		414EA8C71DB93CD50097CBAF /* UIColor+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */; };
 		414EA8C81DB93CD50097CBAF /* UIFont+ZBAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */; };
+		418892E51DCCA4F60049BE5E /* error.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 418892E41DCCA4F60049BE5E /* error.jpg */; };
 		41BAFEF41DC00B1B00104C80 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BAFEF31DC00B1B00104C80 /* Alerts.swift */; };
 		41BB7D8B1D9C65530007ADFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB7D8A1D9C65530007ADFE /* Alamofire.framework */; };
 		41C67CA81DC533AE0049C9D8 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */; };
@@ -98,6 +99,7 @@
 		412BC64E1DC80F8D00ED5A47 /* InfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewModel.swift; path = Zeitblick/ViewModel/InfoViewModel.swift; sourceTree = SOURCE_ROOT; };
 		414EA8C51DB93CD50097CBAF /* UIColor+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIColor+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
 		414EA8C61DB93CD50097CBAF /* UIFont+ZBAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+ZBAdditions.swift"; path = "Zeitblick/Extensions/UIFont+ZBAdditions.swift"; sourceTree = SOURCE_ROOT; };
+		418892E41DCCA4F60049BE5E /* error.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = error.jpg; path = Zeitblick/Images/error.jpg; sourceTree = SOURCE_ROOT; };
 		41BAFEF31DC00B1B00104C80 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerts.swift; path = Zeitblick/Alerts.swift; sourceTree = SOURCE_ROOT; };
 		41BB7D8A1D9C65530007ADFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		41C67CA71DC533AE0049C9D8 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = SOURCE_ROOT; };
@@ -244,6 +246,7 @@
 		412673071DC6734A00B78E27 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				418892E41DCCA4F60049BE5E /* error.jpg */,
 				412673081DC6736100B78E27 /* image_01.png */,
 				412673091DC6736100B78E27 /* image_02.png */,
 				4126730A1DC6736100B78E27 /* image_03.png */,
@@ -387,6 +390,7 @@
 			files = (
 				4126730D1DC6736100B78E27 /* image_02.png in Resources */,
 				41DBE59D1DC4F38800C91AC8 /* Main.storyboard in Resources */,
+				418892E51DCCA4F60049BE5E /* error.jpg in Resources */,
 				4126730E1DC6736100B78E27 /* image_03.png in Resources */,
 				41F83B001DC4F8FB00FBF4EC /* InfoPlist.strings in Resources */,
 				4126730C1DC6736100B78E27 /* image_01.png in Resources */,

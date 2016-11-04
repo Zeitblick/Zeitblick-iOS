@@ -52,13 +52,19 @@ class ResultController: UIViewController {
     var selfieImage: UIImage!
     var resultImage: UIImage!
     var metadata: ImageMetadata!
+    var errorHappened: Bool!
 
-    init(resultImage: UIImage, metadata: ImageMetadata, selfieImage: UIImage) {
+    init(resultImage: UIImage, metadata: ImageMetadata, selfieImage: UIImage, errorHappened: Bool = false) {
         super.init(nibName: nil, bundle: nil)
 
         self.resultImage = resultImage
         self.metadata = metadata
         self.selfieImage = selfieImage
+        self.errorHappened = errorHappened
+    }
+
+    convenience init(resultImage: UIImage, errorHappened: Bool) {
+        self.init(resultImage: resultImage, metadata: ImageMetadata(), selfieImage: UIImage(), errorHappened: true)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -110,6 +116,20 @@ class ResultController: UIViewController {
         againButton.snp.makeConstraints { make in
             make.width.height.equalTo(50)
             make.right.bottom.equalTo(view).inset(32)
+        }
+
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if errorHappened == true {
+            self.infoButton.isHidden = true
+            self.selfieView.isHidden = true
+            self.againButton.isHidden = true
+            Alerts.error(viewController: self) { [weak self] in
+                self?.tappedAgain()
+            }
         }
     }
 

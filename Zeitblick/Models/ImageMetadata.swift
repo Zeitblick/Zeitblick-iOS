@@ -41,6 +41,16 @@ class ImageMetadata {
         infoUrl         = Me.parseInfoUrl(url: json["mkg_metadata"]["administrativeMetadata"]["infoLink"].stringValue)
     }
 
+    init() {
+        title = "Title"
+        inventoryNumber = "123"
+        artist = "XYZ"
+        year = "2016"
+        location = "Hamburg"
+        license = "CC0"
+        infoUrl = URL(string: "http://sammlungonline.mkg-hamburg.de")!
+    }
+
     private static func parseTitle(title: String) -> String {
         return title == "" ? R.string.localizable.unknown() : title
     }
