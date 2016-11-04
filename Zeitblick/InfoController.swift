@@ -27,6 +27,15 @@ class InfoController: UIViewController {
         return view
     }()
 
+    lazy var shareButton: UIButton = {
+        let image = R.image.shareArrow()
+        let button = UIButton(frame: .zero)
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.clipsToBounds = true
+        return button
+    }()
+
     lazy var closeButton: UIButton = {
         let image = R.image.button_x()
         let button = UIButton(frame: .zero)
@@ -109,9 +118,11 @@ class InfoController: UIViewController {
     }()
 
     var metadata: ImageMetadata!
+    var image: UIImage!
 
-    init(metadata: ImageMetadata) {
+    init(image: UIImage, metadata: ImageMetadata) {
         super.init(nibName: nil, bundle: nil)
+        self.image = image
         self.metadata = metadata
     }
     
@@ -128,11 +139,13 @@ class InfoController: UIViewController {
         inventoryNumberText.text = metadata?.inventoryNumber
         licenseText.text = metadata?.license
 
+        shareButton.addTarget(self, action: #selector(share), for: .touchUpInside)
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         linkButton.addTarget(self, action: #selector(openLink), for: .touchUpInside)
 
         view.addSubview(header)
         header.addSubview(logo)
+        header.addSubview(shareButton)
         header.addSubview(closeButton)
 
         view.addSubview(scroller)
@@ -160,6 +173,17 @@ class InfoController: UIViewController {
             make.height.equalTo(40)
             make.centerX.equalTo(header)
             make.top.equalTo(view).offset(42)
+        }
+
+        shareButton.snp.makeConstraints { make in
+            make.width.height.equalTo(44)
+            make.left.equalTo(header).inset(8)
+            make.centerY.equalTo(logo)
+        }
+
+        shareButton.imageView?.snp.makeConstraints { make in
+            make.width.height.equalTo(25)
+            make.centerY.centerY.equalTo(shareButton)
         }
 
         closeButton.snp.makeConstraints { make in
@@ -284,6 +308,23 @@ class InfoController: UIViewController {
     // MARK: actions
     func openLink() {
         UIApplication.shared.openURL(metadata.infoUrl)
+    }
+
+    func share() {
+        print(#function)
+        let text = R.string.localizable.share_text()
+        let url  = metadata.infoUrl
+
+        let controller = UIActivityViewController(activityItems: [text, url, image], applicationActivities: nil)
+        controller.excludedActivityTypes = [
+            .addToReadingList,
+            .assignToContact,
+            .print,
+            .openInIBooks,
+            .postToVimeo
+        ]
+
+        present(controller, animated: true, completion: nil)
     }
 
     func close() {

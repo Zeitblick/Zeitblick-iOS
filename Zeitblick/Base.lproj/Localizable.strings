@@ -26,3 +26,6 @@
 "Alert_error_title" = "Fehler";
 "Alert_error_text"  = "Hm, da gab es einen Fehler...\nHast du eine stabile Internetverbindung?";
 "Alert_error_close" = "Zurück";
+
+/* Share */
+"Share_text" = "Das hier habe ich mit der App Zeitblick in der >Sammlung Online< des MKG Hamburg gefunden:";

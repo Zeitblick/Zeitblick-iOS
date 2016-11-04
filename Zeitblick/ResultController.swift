@@ -152,7 +152,7 @@ class ResultController: UIViewController {
 
     // MARK: Actions
     func tappedInfo() {
-        let controller = InfoController(metadata: metadata)
+        let controller = InfoController(image: resultImage, metadata: metadata)
         present(controller, animated: true, completion: nil)
     }
 
