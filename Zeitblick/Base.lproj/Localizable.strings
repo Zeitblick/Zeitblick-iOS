@@ -10,3 +10,22 @@
 "ImagePicker_cancel"    = "Zurück";
 "ImagePicker_takePhoto" = "Foto aufnehmen";
 "ImagePicker_pickPhoto" = "Aus Fotoalbum wählen";
+
+/* InfoController */
+"InfoController_title"  = "Titel";
+"InfoController_artist" = "Künstler/in";
+"InfoController_year"   = "Jahr";
+"InfoController_inventoryNumber" = "Inventarnummer";
+"InfoController_license" = "Lizenz";
+"InfoController_linkButtonText" = "In der >>Sammlung Online<< \n des MKG öffnen";
+
+/* ImageMetadata */
+"Unknown" = "Unbekannt";
+
+/* ResultController */
+"Alert_error_title" = "Fehler";
+"Alert_error_text"  = "Hm, da gab es einen Fehler...\nHast du eine stabile Internetverbindung?";
+"Alert_error_close" = "Zurück";
+
+/* Share */
+"Share_text" = "Das hier habe ich mit der App Zeitblick in der >Sammlung Online< des MKG Hamburg gefunden:";

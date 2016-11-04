@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.2</string>
 	<key>CFBundleVersion</key>
-	<string>6</string>
+	<string>10</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -28,8 +28,12 @@
 	<string>Mache ein Foto und lass es analysieren.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Lasse ein Foto aus deinem Archiv analysieren.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Didot.ttc</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

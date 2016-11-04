@@ -10,41 +10,41 @@ import UIKit
 import Async
 import Alamofire
 import PromiseKit
+import SwiftyJSON
+
+enum StartError: Error {
+    case invalidData
+}
 
 class StartViewController: UIViewController {
     typealias Me = StartViewController
 
+    private static let hasSelfieTopConstant: CGFloat = 42
+
     @IBOutlet weak var photoButton: DesignableButton!
     @IBOutlet weak var selfieImageView: DesignableImageView!
 
-    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+    var logoHasSelfieConstraint: NSLayoutConstraint!
+    @IBOutlet var logoNoSelfieConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var logoSubtitle: UILabel!
 
-    static let logoTopOffset: CGFloat = 254.0
-
     var resultImage: UIImage?
+    var metadata: ImageMetadata?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        logoHasSelfieConstraint = logo.topAnchor.constraint(equalTo: view.topAnchor)
+        logoHasSelfieConstraint.constant = Me.hasSelfieTopConstant
         resetController()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if let typedInfo = R.segue.startViewController.result(segue: segue) {
-            //typedInfo.destination.startProcessing(image: image)
-            typedInfo.destination.selfieImage = selfieImageView.image
-            typedInfo.destination.resultImage = resultImage
-        }
     }
 
     @IBAction func pickPhoto(_ sender: AnyObject) {
@@ -58,7 +58,9 @@ class StartViewController: UIViewController {
                 }
                 imagePicker.sourceType = .camera
                 imagePicker.cameraDevice = .front
-                strongSelf.present(imagePicker, animated: true, completion: nil)
+                strongSelf.present(imagePicker, animated: true) {
+                    UIApplication.shared.setStatusBarHidden(true, with: .fade)
+                }
             },
             choosePhotoAction: { [weak self] in
                 guard let strongSelf = self else {
@@ -69,17 +71,13 @@ class StartViewController: UIViewController {
             })
     }
 
-    @IBAction func unwindToStart(segue: UIStoryboardSegue) {
-        print(#function)
-        resetController()
-    }
-
-    private func resetController() {
+    func resetController() {
         selfieImageView.image = nil
         selfieImageView.isHidden = true
         photoButton.isHidden = false
 
-        logoTopConstraint.constant = Me.logoTopOffset
+        logoHasSelfieConstraint.isActive = false
+        logoNoSelfieConstraint.isActive = true
         logoSubtitle.isHidden = false
     }
 }
@@ -89,7 +87,9 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
 
         print("selected photo")
 
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            UIApplication.shared.setStatusBarHidden(false, with: .fade)
+        }
 
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             return
@@ -104,32 +104,48 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
         selfieImageView.isHidden = false
         photoButton.isHidden = true
 
-        logoTopConstraint.constant = 22.0
+        logoNoSelfieConstraint.isActive = false
+        logoHasSelfieConstraint.isActive = true
         logoSubtitle.isHidden = true
 
-        // Start processing animation
-        // images durchrattern, bis result kommt 
-        // dann zum Ende kommen und ResultViewController aufrufen
+        let q = DispatchQueue.global()
 
         // Find match
         firstly {
-            return try GoogleVision().findOneFace(image: image)
-        }.then { face -> Promise<String> in
-            return try ZeitblickBackend().findSimilarRotation(face: face)
-        }.then { inventoryNumber -> Promise<UIImage> in
-            return try GoogleDatastore().getImage(inventoryNumber: inventoryNumber)
+            return try GoogleVision().analyse(image: image)
+        }.then { visionResponseJson -> Promise<ImageMetadata> in
+            dump(visionResponseJson)
+            return try ZeitblickBackend().findSimilarEmotion(json: visionResponseJson)
+        }.then { [weak self] metadata -> Promise<UIImage> in
+            self?.metadata = metadata
+            return try GoogleDatastore().getImage(inventoryNumber: metadata.inventoryNumber)
         }.then { [weak self] image -> Void in
             print("got image")
             self?.resultImage = image
-            self?.performSegue(withIdentifier: R.segue.startViewController.result, sender: self)
-        }.catch { error in
-            print(error)
-        }.always { [weak self] in
+
+            guard let result = self?.resultImage, let metadata = self?.metadata, let selfie = self?.selfieImageView.image else {
+                throw StartError.invalidData
+            }
+
+            let controller = ResultController(resultImage: result , metadata: metadata, selfieImage: selfie, errorHappened: false)
+            self?.present(controller, animated: false) {
+                self?.resetController()
+            }
+        }.always(on: q) { [weak self] in
             self?.view.hideLoading()
+        }.catch { [weak self] error in
+            print(error)
+            let errorImage = R.image.errorJpg()
+            let controller = ResultController(resultImage: errorImage!, errorHappened: true)
+            self?.present(controller, animated: false) {
+                self?.resetController()
+            }
         }
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            UIApplication.shared.setStatusBarHidden(false, with: .fade)
+        }
     }
 }

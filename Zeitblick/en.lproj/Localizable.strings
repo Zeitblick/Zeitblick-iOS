@@ -10,3 +10,22 @@
 "ImagePicker_cancel"    = "Back";
 "ImagePicker_takePhoto" = "Take photo";
 "ImagePicker_pickPhoto" = "Pick photo from library";
+
+/* InfoController */
+"InfoController_title"  = "Title";
+"InfoController_artist" = "Artist";
+"InfoController_year"   = "Year";
+"InfoController_inventoryNumber" = "Inventory Number";
+"InfoController_license" = "License";
+"InfoController_linkButtonText" = "Open inside the MKG\n>>Collection Online<<";
+
+/* ImageMetadata */
+"Unknown" = "Unknown";
+
+/* ResultController */
+"Alert_error_title" = "Error";
+"Alert_error_text"  = "Hm, something went wrong.\nIs your internet-connection working?";
+"Alert_error_close" = "Back";
+
+/* Share */
+"Share_text" = "Look what I found with the app Zeitblick in the >Online Collection< of the MKG Hamburg:";
