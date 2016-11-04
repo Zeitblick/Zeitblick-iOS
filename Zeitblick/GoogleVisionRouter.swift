@@ -19,7 +19,7 @@ public enum GoogleVisionRouter {
     static let API_KEY = Environment.sharedInstance.googleCloudApiKey
     static let baseURLString = "https://vision.googleapis.com"
 
-    case analyseImage(image: UIImage)
+    case detectFaces(image: UIImage)
 }
 
 extension GoogleVisionRouter: URLRequestConvertible {
@@ -27,7 +27,7 @@ extension GoogleVisionRouter: URLRequestConvertible {
     public func asURLRequest() throws -> URLRequest {
         var urlRequest: URLRequest
         switch self {
-        case .analyseImage(let image):
+        case .detectFaces(let image):
             guard let imageBase64 = ImageHelper.prepareForGoogleCloud(image: image) else {
                 print("couldn't prepare image")
                 throw GoogleVisionRouterError.invalidImage

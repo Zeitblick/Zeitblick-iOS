@@ -22,7 +22,7 @@ class GoogleVision {
         let q = DispatchQueue.global()
 
         return firstly {
-            Alamofire.request(GoogleVisionRouter.analyseImage(image: image)).responseData()
+            Alamofire.request(GoogleVisionRouter.detectFaces(image: image)).responseData()
         }.then(on: q) { data in
             return JSON(data: data)
         }
@@ -32,7 +32,7 @@ class GoogleVision {
         let q = DispatchQueue.global()
 
         return firstly {
-            Alamofire.request(GoogleVisionRouter.analyseImage(image: image)).responseData()
+            Alamofire.request(GoogleVisionRouter.detectFaces(image: image)).responseData()
         }.then(on: q) { data in
             let json = JSON(data: data)
             let errorObj: JSON = json["error"]
