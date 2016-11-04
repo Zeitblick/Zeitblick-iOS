@@ -58,7 +58,9 @@ class StartViewController: UIViewController {
                 }
                 imagePicker.sourceType = .camera
                 imagePicker.cameraDevice = .front
-                strongSelf.present(imagePicker, animated: true, completion: nil)
+                strongSelf.present(imagePicker, animated: true) {
+                    UIApplication.shared.setStatusBarHidden(true, with: .fade)
+                }
             },
             choosePhotoAction: { [weak self] in
                 guard let strongSelf = self else {
@@ -85,7 +87,9 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
 
         print("selected photo")
 
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            UIApplication.shared.setStatusBarHidden(false, with: .fade)
+        }
 
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             return
@@ -140,6 +144,8 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            UIApplication.shared.setStatusBarHidden(false, with: .fade)
+        }
     }
 }
