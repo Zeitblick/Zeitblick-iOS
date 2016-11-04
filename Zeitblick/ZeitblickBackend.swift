@@ -13,10 +13,36 @@ import SwiftyJSON
 
 enum ZeitblickBackendError: Error {
     case invalidJsonResponse
+    case jsonToParams
     case noMatch
 }
 
 class ZeitblickBackend {
+
+    func findSimilarEmotion(json: JSON) throws -> Promise<ImageMetadata> {
+        let q = DispatchQueue.global()
+
+        guard let parameters = json.dictionaryObject else {
+            throw ZeitblickBackendError.jsonToParams
+        }
+
+        return firstly {
+            Alamofire.request("https://projekt-lisa.appspot.com/SimilarEmotion",
+                              method: .post,
+                              parameters: parameters,
+                              encoding: JSONEncoding.default).responseData()
+        }.then(on: q) { data in
+            let json = JSON(data: data)
+
+            // Check for errors
+            guard json["error"].dictionaryValue == [:] else {
+                throw ZeitblickBackendError.invalidJsonResponse
+            }
+
+            let metadata = ImageMetadata(fromJson: json)
+            return Promise(value: metadata)
+        }
+    }
 
     func findSimilarRotation(face: Face) throws -> Promise<ImageMetadata> {
         let q = DispatchQueue.global()
