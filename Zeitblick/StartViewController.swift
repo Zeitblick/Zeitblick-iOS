@@ -12,6 +12,10 @@ import Alamofire
 import PromiseKit
 import SwiftyJSON
 
+enum StartError: Error {
+    case invalidData
+}
+
 class StartViewController: UIViewController {
     typealias Me = StartViewController
 
@@ -35,24 +39,12 @@ class StartViewController: UIViewController {
         // Do any additional setup after loading the view.
         logoHasSelfieConstraint = logo.topAnchor.constraint(equalTo: view.topAnchor)
         logoHasSelfieConstraint.constant = Me.hasSelfieTopConstant
-
         resetController()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if let typedInfo = R.segue.startViewController.result(segue: segue) {
-            //typedInfo.destination.startProcessing(image: image)
-            typedInfo.destination.selfieImage = selfieImageView.image
-            typedInfo.destination.resultImage = resultImage
-            typedInfo.destination.metadata = metadata
-        }
     }
 
     @IBAction func pickPhoto(_ sender: AnyObject) {
@@ -77,12 +69,7 @@ class StartViewController: UIViewController {
             })
     }
 
-    @IBAction func unwindToStart(segue: UIStoryboardSegue) {
-        print(#function)
-        resetController()
-    }
-
-    private func resetController() {
+    func resetController() {
         selfieImageView.image = nil
         selfieImageView.isHidden = true
         photoButton.isHidden = false
@@ -130,7 +117,15 @@ extension StartViewController: UIImagePickerControllerDelegate, UINavigationCont
         }.then { [weak self] image -> Void in
             print("got image")
             self?.resultImage = image
-            self?.performSegue(withIdentifier: R.segue.startViewController.result, sender: self)
+
+            guard let result = self?.resultImage, let metadata = self?.metadata, let selfie = self?.selfieImageView.image else {
+                throw StartError.invalidData
+            }
+
+            let controller = ResultController(resultImage: result , metadata: metadata, selfieImage: selfie)
+            self?.present(controller, animated: false) {
+                self?.resetController()
+            }
         }.always(on: q) { [weak self] in
             self?.view.hideLoading()
         }.catch { error in

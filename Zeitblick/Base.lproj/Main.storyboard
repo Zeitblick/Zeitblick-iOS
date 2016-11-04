@@ -95,110 +95,15 @@
                         <outlet property="logoSubtitle" destination="6in-3t-bqD" id="lBZ-vy-kOl"/>
                         <outlet property="photoButton" destination="cqc-gt-lVN" id="1Q1-VU-y4K"/>
                         <outlet property="selfieImageView" destination="XwH-52-KeU" id="PfB-wm-wSN"/>
-                        <segue destination="b1V-2i-Evg" kind="showDetail" identifier="result" animates="NO" id="xxX-4M-CZh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUc-Vf-cf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="970" y="-111"/>
         </scene>
-        <!--Result Controller-->
-        <scene sceneID="f8w-51-bu6">
-            <objects>
-                <viewController id="b1V-2i-Evg" customClass="ResultController" customModule="Zeitblick" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4xs-Ho-Hmb"/>
-                        <viewControllerLayoutGuide type="bottom" id="wxT-uQ-8N7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hcg-O5-UcW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eae-AN-FVC">
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DX1-0y-hqe">
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="DX1-0y-hqe" firstAttribute="leading" secondItem="eae-AN-FVC" secondAttribute="leading" id="8Ap-u3-YEm"/>
-                                    <constraint firstAttribute="trailing" secondItem="DX1-0y-hqe" secondAttribute="trailing" id="Har-kj-4Do"/>
-                                    <constraint firstItem="DX1-0y-hqe" firstAttribute="top" secondItem="eae-AN-FVC" secondAttribute="top" id="eLS-Bx-jGl"/>
-                                    <constraint firstAttribute="bottom" secondItem="DX1-0y-hqe" secondAttribute="bottom" id="iTU-GD-NyI"/>
-                                </constraints>
-                            </scrollView>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E5r-qI-rX8" customClass="DesignableImageView" customModule="Zeitblick" customModuleProvider="target">
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Xho-MF-ScK"/>
-                                    <constraint firstAttribute="height" constant="100" id="mIH-KX-ejw"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="49"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkI-5A-Hde">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="mlf-nj-Ptc"/>
-                                    <constraint firstAttribute="height" constant="52" id="yDq-Xm-S0c"/>
-                                </constraints>
-                                <state key="normal" image="button_plus"/>
-                                <connections>
-                                    <segue destination="DlD-de-NqD" kind="unwind" unwindAction="unwindToStartWithSegue:" id="RpX-dS-TfF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPH-J5-Ech">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="a92-qX-UbH"/>
-                                    <constraint firstAttribute="height" constant="52" id="mzB-wK-3tJ"/>
-                                </constraints>
-                                <state key="normal" image="button_info"/>
-                                <connections>
-                                    <action selector="tappedInfo:" destination="b1V-2i-Evg" eventType="touchUpInside" id="RJa-km-rxX"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="DX1-0y-hqe" firstAttribute="height" secondItem="hcg-O5-UcW" secondAttribute="height" id="3ED-lQ-yue"/>
-                            <constraint firstAttribute="bottom" secondItem="E5r-qI-rX8" secondAttribute="bottom" constant="30" id="70q-8S-Ua6"/>
-                            <constraint firstItem="E5r-qI-rX8" firstAttribute="centerX" secondItem="hcg-O5-UcW" secondAttribute="centerX" id="AMu-VY-9N9"/>
-                            <constraint firstAttribute="trailing" secondItem="HkI-5A-Hde" secondAttribute="trailing" constant="30" id="Hip-nt-mfi"/>
-                            <constraint firstItem="GPH-J5-Ech" firstAttribute="leading" secondItem="hcg-O5-UcW" secondAttribute="leading" constant="30" id="JAa-Rp-w6O"/>
-                            <constraint firstAttribute="trailing" secondItem="eae-AN-FVC" secondAttribute="trailing" id="M17-Sq-QTi"/>
-                            <constraint firstItem="wxT-uQ-8N7" firstAttribute="top" secondItem="eae-AN-FVC" secondAttribute="bottom" id="Oi5-RB-Au3"/>
-                            <constraint firstAttribute="bottom" secondItem="GPH-J5-Ech" secondAttribute="bottom" constant="30" id="PGc-6i-vse"/>
-                            <constraint firstItem="eae-AN-FVC" firstAttribute="leading" secondItem="hcg-O5-UcW" secondAttribute="leading" id="TT2-cI-iFB"/>
-                            <constraint firstItem="eae-AN-FVC" firstAttribute="top" secondItem="hcg-O5-UcW" secondAttribute="top" id="XoZ-hs-jcH"/>
-                            <constraint firstAttribute="bottom" secondItem="HkI-5A-Hde" secondAttribute="bottom" constant="30" id="pq3-Sj-p36"/>
-                            <constraint firstItem="DX1-0y-hqe" firstAttribute="width" secondItem="hcg-O5-UcW" secondAttribute="width" id="vjy-nb-gfC"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="resultImageView" destination="DX1-0y-hqe" id="BEM-Ia-vbh"/>
-                        <outlet property="scrollView" destination="eae-AN-FVC" id="4BT-X8-7pY"/>
-                        <outlet property="selfieImageView" destination="E5r-qI-rX8" id="ynJ-AL-4M0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v9O-5q-i6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="DlD-de-NqD" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1920.8" y="-111.0944527736132"/>
-        </scene>
     </scenes>
     <resources>
         <image name="button_camera" width="62" height="62"/>
-        <image name="button_info" width="52" height="52"/>
-        <image name="button_plus" width="52" height="52"/>
         <image name="image_02.png" width="375" height="667"/>
         <image name="logo" width="59" height="39"/>
     </resources>
