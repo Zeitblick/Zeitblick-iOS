@@ -23,7 +23,7 @@
 "Unknown" = "Unknown";
 
 /* ResultController */
-"Alert_error_title" = "Error";
+"Alert_error_title" = "No Match";
 "Alert_error_text"  = "Hm, something went wrong.\nIs your internet-connection working?";
 "Alert_error_close" = "Back";
 
